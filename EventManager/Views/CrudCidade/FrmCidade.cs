@@ -4,7 +4,6 @@ using EventManager.Repositories;
 using EventManager.Services;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace EventManager.Views.CrudCidade
@@ -28,28 +27,7 @@ namespace EventManager.Views.CrudCidade
             LoadCidades();
             FillUfComboBox(cbUf);
 
-            #region CUSTOMIZAÇÃO DO DATAGRID
-            // Linhas alternadas
-            dataGridViewCidades.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(234, 234, 234);
-            dataGridViewCidades.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
-
-            // Linha selecionada
-            dataGridViewCidades.DefaultCellStyle.SelectionBackColor = Color.FromArgb(230, 125, 33);
-            dataGridViewCidades.DefaultCellStyle.SelectionForeColor = Color.White;
-
-            dataGridViewCidades.DefaultCellStyle.ForeColor = Color.FromArgb(75, 75, 75);
-
-            // Bordas
-            dataGridViewCidades.CellBorderStyle = DataGridViewCellBorderStyle.None;
-
-            // Cabeçalho
-            dataGridViewCidades.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 8, FontStyle.Bold);
-
-            dataGridViewCidades.EnableHeadersVisualStyles = false; // Habilita a edição do cabeçalho
-
-            dataGridViewCidades.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(211, 84, 21);
-            dataGridViewCidades.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            #endregion
+            DataGridViewCustomizations.ApplyCustomizations(dataGridViewCidades);
         }
 
         private void LoadCidades()

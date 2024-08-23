@@ -4,7 +4,6 @@ using EventManager.Repositories;
 using EventManager.Services;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace EventManager.Views.CrudUf
@@ -28,28 +27,7 @@ namespace EventManager.Views.CrudUf
             LoadUfs();
             FillPaisComboBox(cbPais);
 
-            #region CUSTOMIZAÇÃO DO DATAGRID
-            // Linhas alternadas
-            dataGridViewUfs.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(234, 234, 234);
-            dataGridViewUfs.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
-
-            // Linha selecionada
-            dataGridViewUfs.DefaultCellStyle.SelectionBackColor = Color.FromArgb(230, 125, 33);
-            dataGridViewUfs.DefaultCellStyle.SelectionForeColor = Color.White;
-
-            dataGridViewUfs.DefaultCellStyle.ForeColor = Color.FromArgb(75, 75, 75);
-
-            // Bordas
-            dataGridViewUfs.CellBorderStyle = DataGridViewCellBorderStyle.None;
-
-            // Cabeçalho
-            dataGridViewUfs.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 8, FontStyle.Bold);
-
-            dataGridViewUfs.EnableHeadersVisualStyles = false; // Habilita a edição do cabeçalho
-
-            dataGridViewUfs.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(211, 84, 21);
-            dataGridViewUfs.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            #endregion
+            DataGridViewCustomizations.ApplyCustomizations(dataGridViewUfs);
         }
 
         private void LoadUfs()

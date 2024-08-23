@@ -3,7 +3,6 @@ using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
 using System;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -26,28 +25,7 @@ namespace EventManager.Views.CrudPais
             // Carregar todos os países na lista ao iniciar o formulário
             LoadPaises();
 
-            #region CUSTOMIZAÇÃO DO DATAGRID
-            // Linhas alternadas
-            dataGridViewPaises.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(234, 234, 234);
-            dataGridViewPaises.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
-
-            // Linha selecionada
-            dataGridViewPaises.DefaultCellStyle.SelectionBackColor = Color.FromArgb(230, 125, 33);
-            dataGridViewPaises.DefaultCellStyle.SelectionForeColor = Color.White;
-
-            dataGridViewPaises.DefaultCellStyle.ForeColor = Color.FromArgb(75, 75, 75);
-
-            // Bordas
-            dataGridViewPaises.CellBorderStyle = DataGridViewCellBorderStyle.None;
-
-            // Cabeçalho
-            dataGridViewPaises.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 8, FontStyle.Bold);
-
-            dataGridViewPaises.EnableHeadersVisualStyles = false; // Habilita a edição do cabeçalho
-
-            dataGridViewPaises.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(211, 84, 21);
-            dataGridViewPaises.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            #endregion
+            DataGridViewCustomizations.ApplyCustomizations(dataGridViewPaises);
         }
 
         private void LoadPaises()

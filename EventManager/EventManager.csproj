@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\DatabaseConfig.cs" />
+    <Compile Include="Config\DataGridViewCustomizations.cs" />
     <Compile Include="DTOs\CidadeDTO.cs" />
     <Compile Include="DTOs\PaisDTO.cs" />
     <Compile Include="DTOs\UfDTO.cs" />
