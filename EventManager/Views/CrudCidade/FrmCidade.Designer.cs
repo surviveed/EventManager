@@ -1,6 +1,6 @@
-﻿namespace EventManager.Views.CrudUf
+﻿namespace EventManager.Views.CrudCidade
 {
-    partial class FrmUf
+    partial class FrmCidade
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cbPais = new System.Windows.Forms.ComboBox();
+            this.cbUf = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCodigoIbge = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,15 +42,15 @@
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.dataGridViewUfs = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCidades = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUfs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCidades)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.cbPais);
+            this.panel2.Controls.Add(this.cbUf);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtCodigoIbge);
             this.panel2.Controls.Add(this.label3);
@@ -61,24 +61,24 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(944, 135);
-            this.panel2.TabIndex = 4;
+            this.panel2.TabIndex = 7;
             // 
-            // cbPais
+            // cbUf
             // 
-            this.cbPais.FormattingEnabled = true;
-            this.cbPais.Location = new System.Drawing.Point(311, 42);
-            this.cbPais.Name = "cbPais";
-            this.cbPais.Size = new System.Drawing.Size(173, 21);
-            this.cbPais.TabIndex = 6;
+            this.cbUf.FormattingEnabled = true;
+            this.cbUf.Location = new System.Drawing.Point(311, 42);
+            this.cbUf.Name = "cbUf";
+            this.cbUf.Size = new System.Drawing.Size(173, 21);
+            this.cbUf.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(277, 47);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 13);
+            this.label4.Size = new System.Drawing.Size(21, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Pais";
+            this.label4.Text = "UF";
             // 
             // txtCodigoIbge
             // 
@@ -117,9 +117,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Uf";
+            this.label1.Text = "Cidade";
             // 
             // panel1
             // 
@@ -130,7 +130,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 530);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(944, 87);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 6;
             // 
             // btnDeletar
             // 
@@ -162,15 +162,15 @@
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
-            // dataGridViewUfs
+            // dataGridViewCidades
             // 
-            this.dataGridViewUfs.AllowUserToAddRows = false;
-            this.dataGridViewUfs.AllowUserToDeleteRows = false;
-            this.dataGridViewUfs.AllowUserToResizeRows = false;
-            this.dataGridViewUfs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewUfs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewUfs.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.dataGridViewUfs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewCidades.AllowUserToAddRows = false;
+            this.dataGridViewCidades.AllowUserToDeleteRows = false;
+            this.dataGridViewCidades.AllowUserToResizeRows = false;
+            this.dataGridViewCidades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewCidades.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGridViewCidades.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(125)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
@@ -178,8 +178,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(21)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewUfs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewUfs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewCidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,38 +187,38 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewUfs.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewUfs.Location = new System.Drawing.Point(12, 150);
-            this.dataGridViewUfs.MultiSelect = false;
-            this.dataGridViewUfs.Name = "dataGridViewUfs";
-            this.dataGridViewUfs.ReadOnly = true;
-            this.dataGridViewUfs.RowHeadersVisible = false;
-            this.dataGridViewUfs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUfs.ShowCellErrors = false;
-            this.dataGridViewUfs.ShowCellToolTips = false;
-            this.dataGridViewUfs.ShowEditingIcon = false;
-            this.dataGridViewUfs.ShowRowErrors = false;
-            this.dataGridViewUfs.Size = new System.Drawing.Size(920, 374);
-            this.dataGridViewUfs.TabIndex = 5;
-            this.dataGridViewUfs.SelectionChanged += new System.EventHandler(this.dataGridViewUfs_SelectionChanged);
+            this.dataGridViewCidades.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewCidades.Location = new System.Drawing.Point(12, 150);
+            this.dataGridViewCidades.MultiSelect = false;
+            this.dataGridViewCidades.Name = "dataGridViewCidades";
+            this.dataGridViewCidades.ReadOnly = true;
+            this.dataGridViewCidades.RowHeadersVisible = false;
+            this.dataGridViewCidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewCidades.ShowCellErrors = false;
+            this.dataGridViewCidades.ShowCellToolTips = false;
+            this.dataGridViewCidades.ShowEditingIcon = false;
+            this.dataGridViewCidades.ShowRowErrors = false;
+            this.dataGridViewCidades.Size = new System.Drawing.Size(920, 374);
+            this.dataGridViewCidades.TabIndex = 8;
+            this.dataGridViewCidades.SelectionChanged += new System.EventHandler(this.dataGridViewCidades_SelectionChanged);
             // 
-            // FrmUf
+            // FrmCidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 617);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridViewUfs);
+            this.Controls.Add(this.dataGridViewCidades);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "FrmUf";
+            this.Name = "FrmCidade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Uf";
+            this.Text = "Cidade";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUfs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCidades)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,6 +226,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox cbUf;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCodigoIbge;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescricao;
@@ -235,8 +237,6 @@
         private System.Windows.Forms.Button btnDeletar;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.DataGridView dataGridViewUfs;
-        private System.Windows.Forms.ComboBox cbPais;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGridViewCidades;
     }
 }
