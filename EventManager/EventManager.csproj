@@ -100,6 +100,7 @@
     <Compile Include="DTOs\CidadeDTO.cs" />
     <Compile Include="DTOs\LocalDTO.cs" />
     <Compile Include="DTOs\PaisDTO.cs" />
+    <Compile Include="DTOs\TipoEventoDTO.cs" />
     <Compile Include="DTOs\UfDTO.cs" />
     <Compile Include="Entities\Avaliacao.cs" />
     <Compile Include="Entities\Cidade.cs" />
@@ -116,10 +117,12 @@
     <Compile Include="Repositories\CidadeRepository.cs" />
     <Compile Include="Repositories\LocalRepository.cs" />
     <Compile Include="Repositories\PaisRepository.cs" />
+    <Compile Include="Repositories\TipoEventoRepository.cs" />
     <Compile Include="Repositories\UfRepository.cs" />
     <Compile Include="Services\CidadeService.cs" />
     <Compile Include="Services\LocalService.cs" />
     <Compile Include="Services\PaisService.cs" />
+    <Compile Include="Services\TipoEventoService.cs" />
     <Compile Include="Services\UfService.cs" />
     <Compile Include="Views\CrudCidade\FrmCidade.cs">
       <SubType>Form</SubType>
@@ -139,17 +142,17 @@
     <Compile Include="Views\CrudPais\FrmPais.Designer.cs">
       <DependentUpon>FrmPais.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CrudTipoEvento\FrmTipoEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CrudTipoEvento\FrmTipoEvento.Designer.cs">
+      <DependentUpon>FrmTipoEvento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CrudUf\FrmUf.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\CrudUf\FrmUf.Designer.cs">
       <DependentUpon>FrmUf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -176,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CrudPais\FrmPais.resx">
       <DependentUpon>FrmPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CrudTipoEvento\FrmTipoEvento.resx">
+      <DependentUpon>FrmTipoEvento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CrudUf\FrmUf.resx">
       <DependentUpon>FrmUf.cs</DependentUpon>
