@@ -95,10 +95,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="DTOs\PaisDTO.cs" />
+    <Compile Include="Entities\Avaliacao.cs" />
+    <Compile Include="Entities\Cidade.cs" />
+    <Compile Include="Entities\enums\TipoPessoa.cs" />
+    <Compile Include="Entities\Evento.cs" />
+    <Compile Include="Entities\Local.cs" />
+    <Compile Include="Entities\Pais.cs" />
+    <Compile Include="Entities\Papel.cs" />
+    <Compile Include="Entities\Pessoa.cs" />
+    <Compile Include="Entities\Sessao.cs" />
+    <Compile Include="Entities\TipoEvento.cs" />
+    <Compile Include="Entities\Uf.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Repositories\PaisRepository.cs" />
+    <Compile Include="Services\PaisService.cs" />
+    <Compile Include="Views\CrudPais\FrmPais.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Views\CrudPais\FrmPais.Designer.cs">
+      <DependentUpon>FrmPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -112,6 +133,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\CrudPais\FrmPais.resx">
+      <DependentUpon>FrmPais.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -126,5 +150,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
