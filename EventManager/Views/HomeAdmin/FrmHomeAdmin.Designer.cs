@@ -34,12 +34,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnUfs = new System.Windows.Forms.Button();
             this.btnCidades = new System.Windows.Forms.Button();
+            this.btnLocais = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnLocais);
             this.panel1.Controls.Add(this.btnCidades);
             this.panel1.Controls.Add(this.btnUfs);
             this.panel1.Controls.Add(this.btnPaises);
@@ -95,6 +97,16 @@
             this.btnCidades.UseVisualStyleBackColor = true;
             this.btnCidades.Click += new System.EventHandler(this.btnCidades_Click);
             // 
+            // btnLocais
+            // 
+            this.btnLocais.Location = new System.Drawing.Point(98, 101);
+            this.btnLocais.Name = "btnLocais";
+            this.btnLocais.Size = new System.Drawing.Size(209, 23);
+            this.btnLocais.TabIndex = 3;
+            this.btnLocais.Text = "Locais";
+            this.btnLocais.UseVisualStyleBackColor = true;
+            this.btnLocais.Click += new System.EventHandler(this.btnLocais_Click);
+            // 
             // FrmHomeAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,5 +134,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnUfs;
         private System.Windows.Forms.Button btnCidades;
+        private System.Windows.Forms.Button btnLocais;
     }
 }

@@ -98,6 +98,7 @@
     <Compile Include="Config\DatabaseConfig.cs" />
     <Compile Include="Config\DataGridViewCustomizations.cs" />
     <Compile Include="DTOs\CidadeDTO.cs" />
+    <Compile Include="DTOs\LocalDTO.cs" />
     <Compile Include="DTOs\PaisDTO.cs" />
     <Compile Include="DTOs\UfDTO.cs" />
     <Compile Include="Entities\Avaliacao.cs" />
@@ -113,9 +114,11 @@
     <Compile Include="Entities\Uf.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Repositories\CidadeRepository.cs" />
+    <Compile Include="Repositories\LocalRepository.cs" />
     <Compile Include="Repositories\PaisRepository.cs" />
     <Compile Include="Repositories\UfRepository.cs" />
     <Compile Include="Services\CidadeService.cs" />
+    <Compile Include="Services\LocalService.cs" />
     <Compile Include="Services\PaisService.cs" />
     <Compile Include="Services\UfService.cs" />
     <Compile Include="Views\CrudCidade\FrmCidade.cs">
@@ -123,6 +126,12 @@
     </Compile>
     <Compile Include="Views\CrudCidade\FrmCidade.Designer.cs">
       <DependentUpon>FrmCidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CrudLocal\FrmLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CrudLocal\FrmLocal.Designer.cs">
+      <DependentUpon>FrmLocal.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CrudPais\FrmPais.cs">
       <SubType>Form</SubType>
@@ -161,6 +170,9 @@
     </Compile>
     <EmbeddedResource Include="Views\CrudCidade\FrmCidade.resx">
       <DependentUpon>FrmCidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CrudLocal\FrmLocal.resx">
+      <DependentUpon>FrmLocal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CrudPais\FrmPais.resx">
       <DependentUpon>FrmPais.cs</DependentUpon>
