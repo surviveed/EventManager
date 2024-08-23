@@ -1,4 +1,5 @@
 ﻿using EventManager.Views.CrudPais;
+using EventManager.Views.CrudUf;
 using System;
 using System.Windows.Forms;
 
@@ -14,7 +15,7 @@ namespace EventManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPais());
+            Application.Run(new FrmUf());
         }
     }
 }

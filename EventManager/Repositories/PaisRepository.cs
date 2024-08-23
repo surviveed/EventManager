@@ -21,7 +21,7 @@ namespace EventManager.Repositories
             using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
-                var command = new NpgsqlCommand("SELECT id, descricao, codigo_ibge FROM pais", connection);
+                var command = new NpgsqlCommand("SELECT id, descricao, codigo_ibge FROM pais ORDER BY id", connection);
 
                 using (var reader = command.ExecuteReader())
                 {

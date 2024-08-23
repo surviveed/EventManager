@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\PaisDTO.cs" />
+    <Compile Include="DTOs\UfDTO.cs" />
     <Compile Include="Entities\Avaliacao.cs" />
     <Compile Include="Entities\Cidade.cs" />
     <Compile Include="Entities\enums\TipoPessoa.cs" />
@@ -109,12 +110,20 @@
     <Compile Include="Entities\Uf.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Repositories\PaisRepository.cs" />
+    <Compile Include="Repositories\UfRepository.cs" />
     <Compile Include="Services\PaisService.cs" />
+    <Compile Include="Services\UfService.cs" />
     <Compile Include="Views\CrudPais\FrmPais.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\CrudPais\FrmPais.Designer.cs">
       <DependentUpon>FrmPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CrudUf\FrmUf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CrudUf\FrmUf.Designer.cs">
+      <DependentUpon>FrmUf.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>
@@ -135,6 +144,9 @@
     </Compile>
     <EmbeddedResource Include="Views\CrudPais\FrmPais.resx">
       <DependentUpon>FrmPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CrudUf\FrmUf.resx">
+      <DependentUpon>FrmUf.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
