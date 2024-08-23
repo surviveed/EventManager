@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Config;
+using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
 using System;
@@ -18,7 +19,7 @@ namespace EventManager.Views.CrudPais
             InitializeComponent();
 
             // Inicializar a conexão com o banco de dados
-            var connectionString = "Host=localhost;Port=5432;Username=postgres;Password=12345;Database=eventmanager";
+            var connectionString = DatabaseConfig.connectionString;
             var paisRepository = new PaisRepository(connectionString);
             _paisService = new PaisService(paisRepository);
 

@@ -95,6 +95,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\DatabaseConfig.cs" />
     <Compile Include="DTOs\PaisDTO.cs" />
     <Compile Include="DTOs\UfDTO.cs" />
     <Compile Include="Entities\Avaliacao.cs" />

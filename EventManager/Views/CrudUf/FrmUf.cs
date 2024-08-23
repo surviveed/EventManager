@@ -1,17 +1,11 @@
-﻿using EventManager.DTOs;
-using EventManager.Entities;
+﻿using EventManager.Config;
+using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
 
 namespace EventManager.Views.CrudUf
 {
@@ -24,7 +18,7 @@ namespace EventManager.Views.CrudUf
         {
             InitializeComponent();
             // Inicializar a conexão com o banco de dados
-            var connectionString = "Host=localhost;Port=5432;Username=postgres;Password=12345;Database=eventmanager";
+            var connectionString = DatabaseConfig.connectionString;
             var ufRepository = new UfRepository(connectionString);
             _ufService = new UfService(ufRepository);
 
