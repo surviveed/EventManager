@@ -13,6 +13,7 @@ namespace EventManager.Config
         public DbSet<Uf> Ufs { get; set; }
         public DbSet<Cidade> Cidades { get; set; }
         public DbSet<Local> Locais { get; set; }
+        public DbSet<TipoEvento> TiposEvento { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -53,6 +54,10 @@ namespace EventManager.Config
                 .WithMany()
                 .HasForeignKey(l => l.CidadeId)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TipoEvento>()
+                .ToTable("public.tipo_evento")
+                .HasKey(p => p.Id);
         }
     }
 }

@@ -19,8 +19,7 @@ namespace EventManager.Views.CrudEvento
         {
             InitializeComponent();
             var connectionString = DatabaseConfig.connectionString;
-            var tipoEventoRepository = new TipoEventoRepository(connectionString);
-            _tipoEventoService = new TipoEventoService(tipoEventoRepository);
+            _tipoEventoService = new TipoEventoService(new TipoEventoRepository());
 
             var eventoRepository = new EventoRepository(connectionString);
             _eventoService = new EventoService(eventoRepository);

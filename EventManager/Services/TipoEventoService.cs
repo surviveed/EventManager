@@ -17,8 +17,8 @@ namespace EventManager.Services
 
         public List<TipoEventoDTO> BuscarTodos()
         {
-            var tiposEvento = _tipoEventoRepository.BuscarTodos();
-            return tiposEvento.Select(tipoEvento => new TipoEventoDTO(tipoEvento)).ToList();
+            var tipoEventos = _tipoEventoRepository.BuscarTodos();
+            return tipoEventos.Select(tipoEvento => new TipoEventoDTO(tipoEvento)).ToList();
         }
 
         public TipoEventoDTO BuscarPorId(int id)

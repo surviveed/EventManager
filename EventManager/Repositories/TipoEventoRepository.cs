@@ -1,115 +1,53 @@
-﻿using EventManager.Entities;
-using Npgsql;
+﻿using EventManager.Config;
+using EventManager.Entities;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EventManager.Repositories
 {
     public class TipoEventoRepository
     {
-        private readonly string _connectionString;
+        private readonly AppDbContext _context;
 
-        public TipoEventoRepository(string connectionString)
+        public TipoEventoRepository()
         {
-            _connectionString = connectionString;
+            _context = new AppDbContext();
         }
 
         public List<TipoEvento> BuscarTodos()
         {
-            var tiposEvento = new List<TipoEvento>();
-
-            using (var connection = new NpgsqlConnection(_connectionString))
-            {
-                connection.Open();
-                var query = @"SELECT id, descricao FROM tipo_evento ORDER BY id";
-
-                using (var command = new NpgsqlCommand(query, connection))
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var tipoEvento = new TipoEvento(
-                            reader.GetInt32(0),   // Id
-                            reader.GetString(1)    // Descrição
-                        );
-                        tiposEvento.Add(tipoEvento);
-                    }
-                }
-            }
-
-            return tiposEvento;
+            return _context.TiposEvento.OrderBy(u => u.Id).ToList();
         }
 
         public TipoEvento BuscarPorId(int id)
         {
-            TipoEvento tipoEvento = null;
-
-            using (var connection = new NpgsqlConnection(_connectionString))
-            {
-                connection.Open();
-                var query = @"SELECT id, descricao FROM tipo_evento WHERE id = @id";
-
-                using (var command = new NpgsqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@id", id);
-                    using (var reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            tipoEvento = new TipoEvento(
-                                reader.GetInt32(0),  // Id
-                                reader.GetString(1)   // Descrição
-                            );
-                        }
-                    }
-                }
-            }
-
-            return tipoEvento;
+            return _context.TiposEvento.FirstOrDefault(u => u.Id == id);
         }
 
         public void Inserir(TipoEvento tipoEvento)
         {
-            using (var connection = new NpgsqlConnection(_connectionString))
-            {
-                connection.Open();
-                var query = "INSERT INTO tipo_evento (descricao) VALUES (@descricao)";
-
-                using (var command = new NpgsqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@descricao", tipoEvento.Descricao);
-                    command.ExecuteNonQuery();
-                }
-            }
+            _context.TiposEvento.Add(tipoEvento);
+            _context.SaveChanges();
         }
 
         public void Atualizar(TipoEvento tipoEvento)
         {
-            using (var connection = new NpgsqlConnection(_connectionString))
+            var tipoEventoExistente = _context.TiposEvento.Find(tipoEvento.Id);
+            if (tipoEventoExistente != null)
             {
-                connection.Open();
-                var query = "UPDATE tipo_evento SET descricao = @descricao WHERE id = @id";
+                tipoEventoExistente.Descricao = tipoEvento.Descricao;
 
-                using (var command = new NpgsqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@descricao", tipoEvento.Descricao);
-                    command.Parameters.AddWithValue("@id", tipoEvento.Id);
-                    command.ExecuteNonQuery();
-                }
+                _context.SaveChanges();
             }
         }
 
         public void Remover(int id)
         {
-            using (var connection = new NpgsqlConnection(_connectionString))
+            var tipoEvento = _context.TiposEvento.Find(id);
+            if (tipoEvento != null)
             {
-                connection.Open();
-                var query = "DELETE FROM tipo_evento WHERE id = @id";
-
-                using (var command = new NpgsqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@id", id);
-                    command.ExecuteNonQuery();
-                }
+                _context.TiposEvento.Remove(tipoEvento);
+                _context.SaveChanges();
             }
         }
     }

@@ -14,9 +14,7 @@ namespace EventManager.Views.CrudTipoEvento
         public FrmTipoEvento()
         {
             InitializeComponent();
-            var connectionString = DatabaseConfig.connectionString;
-            var tipoEventoRepository = new TipoEventoRepository(connectionString);
-            _tipoEventoService = new TipoEventoService(tipoEventoRepository);
+            _tipoEventoService = new TipoEventoService(new TipoEventoRepository());
 
             LoadTiposEvento();
             DataGridViewCustomizations.ApplyCustomizations(dataGridViewTiposEvento);
