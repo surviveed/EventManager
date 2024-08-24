@@ -29,15 +29,13 @@ namespace EventManager.Services
 
         public void Inserir(EventoDTO eventoDto)
         {
-            var tipoEvento = new TipoEvento(eventoDto.TipoEventoId, eventoDto.TipoEventoDescricao);
-            var evento = new Evento(0, eventoDto.Nome, eventoDto.Descricao, tipoEvento.Id);
+            var evento = new Evento(0, eventoDto.Nome, eventoDto.Descricao, eventoDto.TipoEventoId);
             _eventoRepository.Inserir(evento);
         }
 
         public void Atualizar(EventoDTO eventoDto)
         {
-            var tipoEvento = new TipoEvento(eventoDto.TipoEventoId, eventoDto.TipoEventoDescricao);
-            var evento = new Evento(eventoDto.Id, eventoDto.Nome, eventoDto.Descricao, tipoEvento.Id);
+            var evento = new Evento(eventoDto.Id, eventoDto.Nome, eventoDto.Descricao, eventoDto.TipoEventoId);
             _eventoRepository.Atualizar(evento);
         }
 

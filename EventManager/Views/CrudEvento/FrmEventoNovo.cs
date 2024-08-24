@@ -23,12 +23,8 @@ namespace EventManager.Views.CrudSessao
         public FrmEventoNovo()
         {
             InitializeComponent();
-            var connectionString = DatabaseConfig.connectionString;
             _tipoEventoService = new TipoEventoService(new TipoEventoRepository());
-
-            var eventoRepository = new EventoRepository(connectionString);
-            _eventoService = new EventoService(eventoRepository);
-
+            _eventoService = new EventoService(new EventoRepository());
 
             LoadEventos();
             FillTipoEventoComboBox(cbTipoEvento);
