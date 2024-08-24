@@ -257,7 +257,6 @@
             this.materialListViewEventos.TabIndex = 8;
             this.materialListViewEventos.UseCompatibleStateImageBehavior = false;
             this.materialListViewEventos.View = System.Windows.Forms.View.Details;
-            this.materialListViewEventos.SelectedIndexChanged += new System.EventHandler(this.materialListViewEventos_SelectedIndexChanged_1);
             // 
             // FrmSessao
             // 

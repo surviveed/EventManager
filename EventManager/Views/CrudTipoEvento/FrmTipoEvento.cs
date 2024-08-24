@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Config;
+using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
 using System;
@@ -17,6 +18,8 @@ namespace EventManager.Views.CrudTipoEvento
 
             ConfigureMaterialListView();
             LoadTiposEvento();
+
+            MaterialListViewCustomizations.ApplyCustomizations(materialListViewTiposEvento);
         }
 
         private void ConfigureMaterialListView()

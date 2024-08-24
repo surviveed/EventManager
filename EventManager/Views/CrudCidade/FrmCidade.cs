@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Config;
+using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
 using System;
@@ -27,6 +28,7 @@ namespace EventManager.Views.CrudCidade
             ConfigureMaterialListView();
             LoadCidades();
             FillUfComboBox(cbUf);
+            MaterialListViewCustomizations.ApplyCustomizations(materialListViewCidades);
         }
 
         private void ConfigureMaterialListView()

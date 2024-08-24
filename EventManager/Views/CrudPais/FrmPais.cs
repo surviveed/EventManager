@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Config;
+using EventManager.DTOs;
 using EventManager.Entities.enums;
 using EventManager.Repositories;
 using EventManager.Services;
@@ -14,10 +15,10 @@ namespace EventManager.Views.CrudPais
         public FrmPais()
         {
             InitializeComponent();
+            ConfigureMaterialListView();
             _paisService = new PaisService(new PaisRepository());
             LoadPaises();
-
-            ConfigureMaterialListView();
+            MaterialListViewCustomizations.ApplyCustomizations(materialListViewPaises);
         }
 
         private void ConfigureMaterialListView()

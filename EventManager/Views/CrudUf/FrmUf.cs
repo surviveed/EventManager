@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Config;
+using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
 using System;
@@ -21,6 +22,8 @@ namespace EventManager.Views.CrudUf
             ConfigureMaterialListView();
             LoadUfs();
             FillPaisComboBox(cbPais);
+
+            MaterialListViewCustomizations.ApplyCustomizations(materialListViewUfs);
         }
 
         private void ConfigureMaterialListView()

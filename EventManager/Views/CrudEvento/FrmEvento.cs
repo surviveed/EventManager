@@ -1,10 +1,9 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Config;
+using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
-using ReaLTaiizor.Controls;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace EventManager.Views.CrudSessao
@@ -23,20 +22,14 @@ namespace EventManager.Views.CrudSessao
             LoadEventos();
             FillTipoEventoComboBox(cbTipoEvento);
 
-            //DataGridViewCustomizations.ApplyCustomizations(dataGridViewEventos);
+            ConfigureMaterialListView();
 
-            materialListViewEventos.Columns.Add("Id", materialListViewEventos.Size.Width / 4);
-            materialListViewEventos.Columns.Add("Nome", materialListViewEventos.Size.Width / 4);
-            materialListViewEventos.Columns.Add("Descrição", materialListViewEventos.Size.Width / 4);
-            materialListViewEventos.Columns.Add("Tipo de Evento", materialListViewEventos.Size.Width / 4);
-
-            CustomizarMaterialListView(materialListViewEventos);
+            MaterialListViewCustomizations.ApplyCustomizations(materialListViewEventos);
         }
 
         private void LoadEventos()
         {
             var eventos = _eventoService.BuscarTodos();
-            //dataGridViewEventos.DataSource = eventos;
 
             materialListViewEventos.Items.Clear();
             foreach (var evento in eventos)
@@ -45,9 +38,18 @@ namespace EventManager.Views.CrudSessao
                 listItem.SubItems.Add(evento.Nome);
                 listItem.SubItems.Add(evento.Descricao);
                 listItem.SubItems.Add(evento.TipoEventoDescricao);
-                listItem.Tag = evento; // Armazene o DTO completo para facilitar a edição e exclusão
+                listItem.Tag = evento; 
                 materialListViewEventos.Items.Add(listItem);
             }
+        }
+
+        private void ConfigureMaterialListView()
+        {
+            int size = materialListViewEventos.Size.Width / 4;
+            materialListViewEventos.Columns.Add("ID", size);
+            materialListViewEventos.Columns.Add("Nome", size);
+            materialListViewEventos.Columns.Add("Descrição", size);
+            materialListViewEventos.Columns.Add("Tipo de Evento", size);
         }
 
         private void FillTipoEventoComboBox(ComboBox comboBox)
@@ -73,19 +75,42 @@ namespace EventManager.Views.CrudSessao
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (materialListViewEventos.SelectedItems.Count > 0)
+            {
+                var selectedItem = materialListViewEventos.SelectedItems[0];
+                var eventoDto = (EventoDTO)selectedItem.Tag;
 
+                eventoDto.Nome = txtNome.Text;
+                eventoDto.Descricao = txtDescricao.Text;
+                eventoDto.TipoEventoId = Convert.ToInt32(cbTipoEvento.SelectedValue);
+
+                _eventoService.Atualizar(eventoDto);
+                LoadEventos();
+                ClearFields();
+            }
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
+            if (materialListViewEventos.SelectedItems.Count > 0)
+            {
+                var selectedItem = materialListViewEventos.SelectedItems[0];
+                var eventoDto = (EventoDTO)selectedItem.Tag;
 
-        }
+                var confirmResult = MessageBox.Show(
+                    "Você realmente deseja excluir?",
+                    "Confirmação de Exclusão",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
 
-        private void ClearFields()
-        {
-            txtNome.Clear();
-            txtDescricao.Clear();
-            cbTipoEvento.SelectedIndex = -1;
+                if (confirmResult == DialogResult.Yes)
+                {
+                    _eventoService.Remover(eventoDto.Id);
+                    LoadEventos();
+                    ClearFields();
+                }
+            }
         }
 
         private void materialListViewEventos_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,38 +126,11 @@ namespace EventManager.Views.CrudSessao
             }
         }
 
-        private void CustomizarMaterialListView(MaterialListView listView)
+        private void ClearFields()
         {
-            listView.Font = new Font("Segoe UI", 10);
-
-            listView.DrawSubItem += (sender, e) =>
-            {
-                var subItem = e.SubItem;
-                if (e.Item.Selected)
-                {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(92, 173, 255)), e.Bounds);
-                    TextRenderer.DrawText(e.Graphics, subItem.Text, listView.Font, new Rectangle(e.Bounds.X + 5, e.Bounds.Y, e.Bounds.Width - 10, e.Bounds.Height), Color.Black, TextFormatFlags.VerticalCenter | TextFormatFlags.Left);
-                }
-                else
-                {
-                    var backgroundColor = e.ItemIndex % 2 == 0 ? Color.FromArgb(245, 245, 245) : Color.FromArgb(230, 230, 230);
-                    e.Graphics.FillRectangle(new SolidBrush(backgroundColor), e.Bounds);
-                    TextRenderer.DrawText(e.Graphics, subItem.Text, listView.Font, new Rectangle(e.Bounds.X + 5, e.Bounds.Y, e.Bounds.Width - 10, e.Bounds.Height), Color.Black, TextFormatFlags.VerticalCenter | TextFormatFlags.Left);
-                }
-            };
-        }
-
-        private void materialListViewEventos_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            if (materialListViewEventos.SelectedItems.Count > 0)
-            {
-                var selectedItem = materialListViewEventos.SelectedItems[0];
-                var eventoDto = (EventoDTO)selectedItem.Tag;
-
-                txtNome.Text = eventoDto.Nome;
-                txtDescricao.Text = eventoDto.Descricao;
-                cbTipoEvento.SelectedValue = eventoDto.TipoEventoId;
-            }
+            txtNome.Clear();
+            txtDescricao.Clear();
+            cbTipoEvento.SelectedIndex = -1;
         }
     }
 }

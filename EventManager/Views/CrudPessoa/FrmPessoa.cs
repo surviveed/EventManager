@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Config;
+using EventManager.DTOs;
 using EventManager.Entities.enums;
 using EventManager.Repositories;
 using EventManager.Services;
@@ -21,6 +22,8 @@ namespace EventManager.Views.CrudPessoa
 
             ConfigureMaterialListView();
             FillTipoPessoaComboBox();
+
+            MaterialListViewCustomizations.ApplyCustomizations(materialListViewPessoas);
         }
 
         private void ConfigureMaterialListView()

@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Config;
+using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
 using System;
@@ -16,6 +17,8 @@ namespace EventManager.Views.CrudUsuario
             _usuarioService = new UsuarioService(new UsuarioRepository());
             ConfigureMaterialListView();
             LoadUsuarios();
+
+            MaterialListViewCustomizations.ApplyCustomizations(materialListViewUsuarios);
         }
 
         private void ConfigureMaterialListView()

@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Config;
+using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
 using System;
@@ -24,6 +25,7 @@ namespace EventManager.Views.CrudAvaliacao
             ConfigureMaterialListView();
             LoadAvaliacoes();
             FillComboBoxes();
+            MaterialListViewCustomizations.ApplyCustomizations(materialListViewAvaliacoes);
         }
 
         private void ConfigureMaterialListView()
