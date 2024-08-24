@@ -18,8 +18,8 @@ namespace EventManager.Views.CrudLocal
             InitializeComponent();
             // Inicializar a conexão com o banco de dados
             var connectionString = DatabaseConfig.connectionString;
-            var cidadeRepository = new CidadeRepository(connectionString);
-            _cidadeService = new CidadeService(cidadeRepository);
+
+            _cidadeService = new CidadeService(new CidadeRepository());
 
             var localRepository = new LocalRepository(connectionString);
             _localService = new LocalService(localRepository);

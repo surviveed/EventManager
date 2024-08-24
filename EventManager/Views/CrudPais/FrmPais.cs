@@ -20,7 +20,6 @@ namespace EventManager.Views.CrudPais
             var paisRepository = new PaisRepository();
             _paisService = new PaisService(paisRepository);
 
-            // Carregar todos os países na lista ao iniciar o formulário
             LoadPaises();
 
             DataGridViewCustomizations.ApplyCustomizations(dataGridViewPaises);

@@ -16,13 +16,8 @@ namespace EventManager.Views.CrudCidade
         public FrmCidade()
         {
             InitializeComponent();
-            // Inicializar a conexão com o banco de dados
-            var connectionString = DatabaseConfig.connectionString;
-            var ufRepository = new UfRepository();
-            _ufService = new UfService(ufRepository);
-
-            var cidadeRepository = new CidadeRepository(connectionString);
-            _cidadeService = new CidadeService(cidadeRepository);
+            _ufService = new UfService(new UfRepository());
+            _cidadeService = new CidadeService(new CidadeRepository());
 
             LoadCidades();
             FillUfComboBox(cbUf);

@@ -34,7 +34,7 @@ namespace EventManager.Repositories
                             reader.GetInt32(5),    // ID da cidade
                             reader.GetString(6),   // Descrição da cidade
                             0,                     // Código IBGE (não utilizado aqui)
-                            null                   // Uf (não carregado neste exemplo)
+                            0                   // Uf (não carregado neste exemplo)
                         );
 
                         var local = new Local(
@@ -77,7 +77,7 @@ namespace EventManager.Repositories
                                 reader.GetInt32(5),    // ID da cidade
                                 reader.GetString(6),   // Descrição da cidade
                                 0,                     // Código IBGE (não utilizado aqui)
-                                null                   // Uf (não carregado neste exemplo)
+                                0// Uf (não carregado neste exemplo)
                             );
 
                             local = new Local(

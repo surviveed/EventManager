@@ -14,8 +14,10 @@ namespace EventManager.Entities
         [MaxLength(100)]
         [Column("descricao")]
         public string Descricao { get; set; }
+
         [Column("codigo_ibge")]
         public int CodigoIbge { get; set; }
+
         [Column("pais_id")]
         public int PaisId { get; set; }
 

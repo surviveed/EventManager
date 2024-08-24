@@ -29,14 +29,14 @@ namespace EventManager.Services
 
         public void Inserir(LocalDTO localDto)
         {
-            var cidade = new Cidade(localDto.CidadeId, localDto.CidadeDescricao, 0, null);
+            var cidade = new Cidade(localDto.CidadeId, localDto.CidadeDescricao, 0, 0);
             var local = new Local(0, localDto.Nome, localDto.Capacidade, localDto.Endereco, localDto.Observacoes, cidade);
             _localRepository.Inserir(local);
         }
 
         public void Atualizar(LocalDTO localDto)
         {
-            var cidade = new Cidade(localDto.CidadeId, localDto.CidadeDescricao, 0, null);
+            var cidade = new Cidade(localDto.CidadeId, localDto.CidadeDescricao, 0, 0);
             var local = new Local(localDto.Id, localDto.Nome, localDto.Capacidade, localDto.Endereco, localDto.Observacoes, cidade);
             _localRepository.Atualizar(local);
         }
