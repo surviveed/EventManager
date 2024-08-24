@@ -123,10 +123,12 @@
     <Compile Include="DTOs\EventoDTO.cs" />
     <Compile Include="DTOs\LocalDTO.cs" />
     <Compile Include="DTOs\PaisDTO.cs" />
+    <Compile Include="DTOs\PapelDTO.cs" />
     <Compile Include="DTOs\PessoaDTO.cs" />
     <Compile Include="DTOs\SessaoDTO.cs" />
     <Compile Include="DTOs\TipoEventoDTO.cs" />
     <Compile Include="DTOs\UfDTO.cs" />
+    <Compile Include="DTOs\UsuarioDTO.cs" />
     <Compile Include="Entities\Avaliacao.cs" />
     <Compile Include="Entities\Cidade.cs" />
     <Compile Include="Entities\enums\TipoPessoa.cs" />
@@ -150,6 +152,7 @@
     <Compile Include="Repositories\SessaoRepository.cs" />
     <Compile Include="Repositories\TipoEventoRepository.cs" />
     <Compile Include="Repositories\UfRepository.cs" />
+    <Compile Include="Repositories\UsuarioRepository.cs" />
     <Compile Include="Services\AvaliacaoService.cs" />
     <Compile Include="Services\CidadeService.cs" />
     <Compile Include="Services\EventoService.cs" />
@@ -159,6 +162,7 @@
     <Compile Include="Services\SessaoService.cs" />
     <Compile Include="Services\TipoEventoService.cs" />
     <Compile Include="Services\UfService.cs" />
+    <Compile Include="Services\UsuarioService.cs" />
     <Compile Include="Views\CrudAvaliacao\FrmAvaliacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +225,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\CrudUsuario\FrmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CrudUsuario\FrmUsuario.Designer.cs">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomeAdmin\FrmHomeAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CrudUf\FrmUf.resx">
       <DependentUpon>FrmUf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CrudUsuario\FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HomeAdmin\FrmHomeAdmin.resx">
       <DependentUpon>FrmHomeAdmin.cs</DependentUpon>

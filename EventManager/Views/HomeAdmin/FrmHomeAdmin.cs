@@ -7,6 +7,7 @@ using EventManager.Views.CrudPessoa;
 using EventManager.Views.CrudSessao;
 using EventManager.Views.CrudTipoEvento;
 using EventManager.Views.CrudUf;
+using EventManager.Views.CrudUsuario;
 using System;
 using System.Windows.Forms;
 
@@ -76,6 +77,12 @@ namespace EventManager.Views.HomeAdmin
         private void btnAvaliacoes_Click(object sender, EventArgs e)
         {
             FrmAvaliacao frm = new FrmAvaliacao();
+            frm.Show();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuario frm = new FrmUsuario();
             frm.Show();
         }
     }
