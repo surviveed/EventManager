@@ -176,29 +176,23 @@
     <Compile Include="Views\CrudCidade\FrmCidade.Designer.cs">
       <DependentUpon>FrmCidade.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CrudEvento\FrmEvento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\CrudEvento\FrmEvento.Designer.cs">
-      <DependentUpon>FrmEvento.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\CrudLocal\FrmLocal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\CrudLocal\FrmLocal.Designer.cs">
       <DependentUpon>FrmLocal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CrudEvento\FrmEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CrudEvento\FrmEvento.Designer.cs">
+      <DependentUpon>FrmEvento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CrudPais\FrmPais.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\CrudPais\FrmPais.Designer.cs">
       <DependentUpon>FrmPais.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CrudEvento\FrmEventoNovo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\CrudEvento\FrmEventoNovo.Designer.cs">
-      <DependentUpon>FrmEventoNovo.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CrudPessoa\FrmPessoa.cs">
       <SubType>Form</SubType>
@@ -254,17 +248,14 @@
     <EmbeddedResource Include="Views\CrudCidade\FrmCidade.resx">
       <DependentUpon>FrmCidade.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CrudEvento\FrmEvento.resx">
-      <DependentUpon>FrmEvento.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\CrudLocal\FrmLocal.resx">
       <DependentUpon>FrmLocal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\CrudEvento\FrmEvento.resx">
+      <DependentUpon>FrmEvento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CrudPais\FrmPais.resx">
       <DependentUpon>FrmPais.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\CrudEvento\FrmEventoNovo.resx">
-      <DependentUpon>FrmEventoNovo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CrudPessoa\FrmPessoa.resx">
       <DependentUpon>FrmPessoa.cs</DependentUpon>

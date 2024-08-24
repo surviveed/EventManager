@@ -34,15 +34,15 @@
             this.btnAdicionar = new ReaLTaiizor.Controls.HopeRoundButton();
             this.hopeForm1 = new ReaLTaiizor.Forms.HopeForm();
             this.hopeGroupBox1 = new ReaLTaiizor.Controls.HopeGroupBox();
+            this.dtpDataFim = new ReaLTaiizor.Controls.PoisonDateTime();
+            this.dtpDataInicio = new ReaLTaiizor.Controls.PoisonDateTime();
+            this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
+            this.foxLabel4 = new ReaLTaiizor.Controls.FoxLabel();
+            this.cbLocal = new ReaLTaiizor.Controls.HopeComboBox();
             this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
             this.cbEvento = new ReaLTaiizor.Controls.HopeComboBox();
             this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
             this.materialListViewSessoes = new ReaLTaiizor.Controls.MaterialListView();
-            this.foxLabel4 = new ReaLTaiizor.Controls.FoxLabel();
-            this.cbLocal = new ReaLTaiizor.Controls.HopeComboBox();
-            this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
-            this.dtpDataInicio = new ReaLTaiizor.Controls.PoisonDateTime();
-            this.dtpDataFim = new ReaLTaiizor.Controls.PoisonDateTime();
             this.hopeGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,7 +124,7 @@
             this.hopeForm1.Name = "hopeForm1";
             this.hopeForm1.Size = new System.Drawing.Size(944, 40);
             this.hopeForm1.TabIndex = 15;
-            this.hopeForm1.Text = "Pessoas";
+            this.hopeForm1.Text = "Sessões";
             this.hopeForm1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             // 
             // hopeGroupBox1
@@ -149,6 +149,57 @@
             this.hopeGroupBox1.TabStop = false;
             this.hopeGroupBox1.Text = "hopeGroupBox1";
             this.hopeGroupBox1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            // 
+            // dtpDataFim
+            // 
+            this.dtpDataFim.Location = new System.Drawing.Point(127, 77);
+            this.dtpDataFim.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpDataFim.Name = "dtpDataFim";
+            this.dtpDataFim.Size = new System.Drawing.Size(287, 29);
+            this.dtpDataFim.TabIndex = 13;
+            // 
+            // dtpDataInicio
+            // 
+            this.dtpDataInicio.Location = new System.Drawing.Point(127, 35);
+            this.dtpDataInicio.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpDataInicio.Name = "dtpDataInicio";
+            this.dtpDataInicio.Size = new System.Drawing.Size(287, 29);
+            this.dtpDataInicio.TabIndex = 12;
+            // 
+            // foxLabel2
+            // 
+            this.foxLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
+            this.foxLabel2.Location = new System.Drawing.Point(27, 82);
+            this.foxLabel2.Name = "foxLabel2";
+            this.foxLabel2.Size = new System.Drawing.Size(94, 19);
+            this.foxLabel2.TabIndex = 11;
+            this.foxLabel2.Text = "Data de Fim";
+            // 
+            // foxLabel4
+            // 
+            this.foxLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
+            this.foxLabel4.Location = new System.Drawing.Point(447, 82);
+            this.foxLabel4.Name = "foxLabel4";
+            this.foxLabel4.Size = new System.Drawing.Size(52, 19);
+            this.foxLabel4.TabIndex = 9;
+            this.foxLabel4.Text = "Local";
+            // 
+            // cbLocal
+            // 
+            this.cbLocal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbLocal.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbLocal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLocal.FormattingEnabled = true;
+            this.cbLocal.ItemHeight = 30;
+            this.cbLocal.Location = new System.Drawing.Point(505, 73);
+            this.cbLocal.Name = "cbLocal";
+            this.cbLocal.Size = new System.Drawing.Size(388, 36);
+            this.cbLocal.TabIndex = 10;
             // 
             // foxLabel3
             // 
@@ -205,57 +256,6 @@
             this.materialListViewSessoes.UseCompatibleStateImageBehavior = false;
             this.materialListViewSessoes.View = System.Windows.Forms.View.Details;
             this.materialListViewSessoes.SelectedIndexChanged += new System.EventHandler(this.materialListViewSessoes_SelectedIndexChanged);
-            // 
-            // foxLabel4
-            // 
-            this.foxLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.foxLabel4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.foxLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
-            this.foxLabel4.Location = new System.Drawing.Point(447, 82);
-            this.foxLabel4.Name = "foxLabel4";
-            this.foxLabel4.Size = new System.Drawing.Size(52, 19);
-            this.foxLabel4.TabIndex = 9;
-            this.foxLabel4.Text = "Local";
-            // 
-            // cbLocal
-            // 
-            this.cbLocal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbLocal.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbLocal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLocal.FormattingEnabled = true;
-            this.cbLocal.ItemHeight = 30;
-            this.cbLocal.Location = new System.Drawing.Point(505, 73);
-            this.cbLocal.Name = "cbLocal";
-            this.cbLocal.Size = new System.Drawing.Size(388, 36);
-            this.cbLocal.TabIndex = 10;
-            // 
-            // foxLabel2
-            // 
-            this.foxLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.foxLabel2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.foxLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
-            this.foxLabel2.Location = new System.Drawing.Point(27, 82);
-            this.foxLabel2.Name = "foxLabel2";
-            this.foxLabel2.Size = new System.Drawing.Size(94, 19);
-            this.foxLabel2.TabIndex = 11;
-            this.foxLabel2.Text = "Data de Fim";
-            // 
-            // dtpDataInicio
-            // 
-            this.dtpDataInicio.Location = new System.Drawing.Point(127, 35);
-            this.dtpDataInicio.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtpDataInicio.Name = "dtpDataInicio";
-            this.dtpDataInicio.Size = new System.Drawing.Size(287, 29);
-            this.dtpDataInicio.TabIndex = 12;
-            // 
-            // dtpDataFim
-            // 
-            this.dtpDataFim.Location = new System.Drawing.Point(127, 77);
-            this.dtpDataFim.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtpDataFim.Name = "dtpDataFim";
-            this.dtpDataFim.Size = new System.Drawing.Size(287, 29);
-            this.dtpDataFim.TabIndex = 13;
             // 
             // FrmSessao
             // 

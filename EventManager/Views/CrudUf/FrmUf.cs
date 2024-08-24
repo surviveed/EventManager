@@ -33,7 +33,7 @@ namespace EventManager.Views.CrudUf
 
         private void FillPaisComboBox(ComboBox comboBox)
         {
-            IEnumerable<PaisDTO> paises = _paisService.ObterTodos();
+            IEnumerable<PaisDTO> paises = _paisService.BuscarTodos();
             comboBox.DataSource = paises;
             comboBox.DisplayMember = "descricao";
             comboBox.ValueMember = "id";

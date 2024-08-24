@@ -1,6 +1,5 @@
 ﻿using EventManager.Views.CrudAvaliacao;
 using EventManager.Views.CrudCidade;
-using EventManager.Views.CrudEvento;
 using EventManager.Views.CrudLocal;
 using EventManager.Views.CrudPais;
 using EventManager.Views.CrudPessoa;
@@ -50,15 +49,9 @@ namespace EventManager.Views.HomeAdmin
             frm.Show();
         }
 
-        private void btnEventos_Click(object sender, EventArgs e)
-        {
-            FrmEvento frm = new FrmEvento();
-            frm.Show();
-        }
-
         private void btnSessoes_Click(object sender, EventArgs e)
         {
-            FrmEventoNovo frm = new FrmEventoNovo();
+            FrmEvento frm = new FrmEvento();
             frm.Show();
         }
 

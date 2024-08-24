@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnAvaliacoes = new System.Windows.Forms.Button();
             this.btnSessoes = new System.Windows.Forms.Button();
             this.btnPessoas = new System.Windows.Forms.Button();
-            this.btnEventosNovo = new System.Windows.Forms.Button();
             this.btnEventos = new System.Windows.Forms.Button();
             this.btnTiposEvento = new System.Windows.Forms.Button();
             this.btnLocais = new System.Windows.Forms.Button();
@@ -41,7 +41,6 @@
             this.btnPaises = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +51,6 @@
             this.panel1.Controls.Add(this.btnAvaliacoes);
             this.panel1.Controls.Add(this.btnSessoes);
             this.panel1.Controls.Add(this.btnPessoas);
-            this.panel1.Controls.Add(this.btnEventosNovo);
             this.panel1.Controls.Add(this.btnEventos);
             this.panel1.Controls.Add(this.btnTiposEvento);
             this.panel1.Controls.Add(this.btnLocais);
@@ -64,9 +62,19 @@
             this.panel1.Size = new System.Drawing.Size(405, 332);
             this.panel1.TabIndex = 0;
             // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Location = new System.Drawing.Point(98, 275);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(209, 23);
+            this.btnUsuarios.TabIndex = 10;
+            this.btnUsuarios.Text = "Usuários";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
             // btnAvaliacoes
             // 
-            this.btnAvaliacoes.Location = new System.Drawing.Point(98, 275);
+            this.btnAvaliacoes.Location = new System.Drawing.Point(98, 246);
             this.btnAvaliacoes.Name = "btnAvaliacoes";
             this.btnAvaliacoes.Size = new System.Drawing.Size(209, 23);
             this.btnAvaliacoes.TabIndex = 9;
@@ -76,7 +84,7 @@
             // 
             // btnSessoes
             // 
-            this.btnSessoes.Location = new System.Drawing.Point(98, 246);
+            this.btnSessoes.Location = new System.Drawing.Point(98, 217);
             this.btnSessoes.Name = "btnSessoes";
             this.btnSessoes.Size = new System.Drawing.Size(209, 23);
             this.btnSessoes.TabIndex = 8;
@@ -86,7 +94,7 @@
             // 
             // btnPessoas
             // 
-            this.btnPessoas.Location = new System.Drawing.Point(98, 217);
+            this.btnPessoas.Location = new System.Drawing.Point(98, 188);
             this.btnPessoas.Name = "btnPessoas";
             this.btnPessoas.Size = new System.Drawing.Size(209, 23);
             this.btnPessoas.TabIndex = 7;
@@ -94,25 +102,15 @@
             this.btnPessoas.UseVisualStyleBackColor = true;
             this.btnPessoas.Click += new System.EventHandler(this.btnPessoas_Click);
             // 
-            // btnEventosNovo
-            // 
-            this.btnEventosNovo.Location = new System.Drawing.Point(98, 188);
-            this.btnEventosNovo.Name = "btnEventosNovo";
-            this.btnEventosNovo.Size = new System.Drawing.Size(209, 23);
-            this.btnEventosNovo.TabIndex = 6;
-            this.btnEventosNovo.Text = "Eventos form novo";
-            this.btnEventosNovo.UseVisualStyleBackColor = true;
-            this.btnEventosNovo.Click += new System.EventHandler(this.btnSessoes_Click);
-            // 
             // btnEventos
             // 
             this.btnEventos.Location = new System.Drawing.Point(98, 159);
             this.btnEventos.Name = "btnEventos";
             this.btnEventos.Size = new System.Drawing.Size(209, 23);
-            this.btnEventos.TabIndex = 5;
+            this.btnEventos.TabIndex = 6;
             this.btnEventos.Text = "Eventos";
             this.btnEventos.UseVisualStyleBackColor = true;
-            this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
+            this.btnEventos.Click += new System.EventHandler(this.btnSessoes_Click);
             // 
             // btnTiposEvento
             // 
@@ -181,16 +179,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Admin";
             // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Location = new System.Drawing.Point(98, 304);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(209, 23);
-            this.btnUsuarios.TabIndex = 10;
-            this.btnUsuarios.Text = "Usuários";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
             // FrmHomeAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,7 +209,6 @@
         private System.Windows.Forms.Button btnLocais;
         private System.Windows.Forms.Button btnTiposEvento;
         private System.Windows.Forms.Button btnEventos;
-        private System.Windows.Forms.Button btnEventosNovo;
         private System.Windows.Forms.Button btnPessoas;
         private System.Windows.Forms.Button btnSessoes;
         private System.Windows.Forms.Button btnAvaliacoes;

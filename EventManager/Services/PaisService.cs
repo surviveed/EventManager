@@ -15,7 +15,7 @@ namespace EventManager.Services
             _paisRepository = paisRepository;
         }
 
-        public List<PaisDTO> ObterTodos()
+        public List<PaisDTO> BuscarTodos()
         {
             var paises = _paisRepository.BuscarTodos();
             return paises.Select(p => new PaisDTO(p)).ToList();

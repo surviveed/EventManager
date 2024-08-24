@@ -124,7 +124,7 @@
             this.hopeForm1.Name = "hopeForm1";
             this.hopeForm1.Size = new System.Drawing.Size(944, 40);
             this.hopeForm1.TabIndex = 15;
-            this.hopeForm1.Text = "Pessoas";
+            this.hopeForm1.Text = "Avaliações";
             this.hopeForm1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             // 
             // hopeGroupBox1
