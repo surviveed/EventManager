@@ -38,6 +38,7 @@ namespace EventManager.Views.CrudSessao
                 listItem.SubItems.Add(evento.Nome);
                 listItem.SubItems.Add(evento.Descricao);
                 listItem.SubItems.Add(evento.TipoEventoDescricao);
+                listItem.SubItems.Add(evento.MediaAvaliacoes.ToString() != "NaN" ? evento.MediaAvaliacoes.ToString("0.0") : "0.0");
                 listItem.Tag = evento; 
                 materialListViewEventos.Items.Add(listItem);
             }
@@ -45,11 +46,12 @@ namespace EventManager.Views.CrudSessao
 
         private void ConfigureMaterialListView()
         {
-            int size = materialListViewEventos.Size.Width / 4;
+            int size = materialListViewEventos.Size.Width / 5;
             materialListViewEventos.Columns.Add("ID", size);
             materialListViewEventos.Columns.Add("Nome", size);
             materialListViewEventos.Columns.Add("Descrição", size);
             materialListViewEventos.Columns.Add("Tipo de Evento", size);
+            materialListViewEventos.Columns.Add("Média Avaliações", size);
         }
 
         private void FillTipoEventoComboBox(ComboBox comboBox)

@@ -1,4 +1,5 @@
 ﻿using EventManager.Entities;
+using System.Collections.Generic;
 
 namespace EventManager.DTOs
 {
@@ -9,6 +10,10 @@ namespace EventManager.DTOs
         public string Descricao { get; set; }
         public int TipoEventoId { get; set; }
         public string TipoEventoDescricao { get; set; }
+
+        public double MediaAvaliacoes { get; set; }
+
+        public List<SessaoDTO> Sessoes { get; set; } = new List<SessaoDTO>();
 
         public EventoDTO() { }
 
@@ -31,6 +36,12 @@ namespace EventManager.DTOs
             {
                 TipoEventoDescricao = entity.TipoEvento.Descricao;
             }
+
+            foreach(Sessao sessao in entity.Sessoes){
+                Sessoes.Add(new SessaoDTO(sessao));
+            }
+
+            MediaAvaliacoes = entity.CalcularMediaAvaliacoes();
             
         }
     }

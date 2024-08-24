@@ -50,6 +50,11 @@ namespace EventManager.DTOs
                                 e.Pessoa.Id, e.Pessoa.Nome, e.Pessoa.Cpf, e.Pessoa.TipoPessoa))
                             .ToList();
             }
+
+            foreach(Avaliacao avaliacao in entity.Avaliacoes)
+            {
+                Avaliacoes.Add(new AvaliacaoDTO(avaliacao));
+            }
         }
     }
 }

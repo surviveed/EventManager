@@ -17,18 +17,41 @@ namespace EventManager.Repositories
 
         public List<Evento> BuscarTodos()
         {
-            return _context.Eventos
+            var eventos = _context.Eventos
                 .Include(e => e.TipoEvento)
                 .Include(e => e.Sessoes)
                 .OrderBy(u => u.Id).ToList();
+
+            // Carrega avaliações para cada sessão
+            foreach (var evento in eventos)
+            {
+                foreach (var sessao in evento.Sessoes)
+                {
+                    _context.Entry(sessao).Collection(s => s.Avaliacoes).Load();
+                }
+            }
+
+            return eventos;
+
         }
 
         public Evento BuscarPorId(int id)
         {
-            return _context.Eventos
+            var evento = _context.Eventos
                 .Include(e => e.TipoEvento)
                 .Include(e => e.Sessoes)
                 .FirstOrDefault(u => u.Id == id);
+
+            if (evento != null)
+            {
+                // Carrega avaliações para cada sessão
+                foreach (var sessao in evento.Sessoes)
+                {
+                    _context.Entry(sessao).Collection(s => s.Avaliacoes).Load();
+                }
+            }
+
+            return evento;
         }
 
         public void Inserir(Evento evento)
