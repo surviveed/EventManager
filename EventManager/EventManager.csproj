@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>EventManager</RootNamespace>
     <AssemblyName>EventManager</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,8 +46,12 @@
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Npgsql, Version=8.0.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.8.0.3\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="ReaLTaiizor, Version=3.8.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReaLTaiizor.3.8.0.6\lib\net48\ReaLTaiizor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -56,6 +61,7 @@
       <HintPath>..\packages\System.Collections.Immutable.8.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -98,6 +104,7 @@
     <Compile Include="Config\DatabaseConfig.cs" />
     <Compile Include="Config\DataGridViewCustomizations.cs" />
     <Compile Include="DTOs\CidadeDTO.cs" />
+    <Compile Include="DTOs\EventoDTO.cs" />
     <Compile Include="DTOs\LocalDTO.cs" />
     <Compile Include="DTOs\PaisDTO.cs" />
     <Compile Include="DTOs\TipoEventoDTO.cs" />
@@ -115,11 +122,13 @@
     <Compile Include="Entities\Uf.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Repositories\CidadeRepository.cs" />
+    <Compile Include="Repositories\EventoRepository.cs" />
     <Compile Include="Repositories\LocalRepository.cs" />
     <Compile Include="Repositories\PaisRepository.cs" />
     <Compile Include="Repositories\TipoEventoRepository.cs" />
     <Compile Include="Repositories\UfRepository.cs" />
     <Compile Include="Services\CidadeService.cs" />
+    <Compile Include="Services\EventoService.cs" />
     <Compile Include="Services\LocalService.cs" />
     <Compile Include="Services\PaisService.cs" />
     <Compile Include="Services\TipoEventoService.cs" />
@@ -129,6 +138,12 @@
     </Compile>
     <Compile Include="Views\CrudCidade\FrmCidade.Designer.cs">
       <DependentUpon>FrmCidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CrudEvento\FrmEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CrudEvento\FrmEvento.Designer.cs">
+      <DependentUpon>FrmEvento.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CrudLocal\FrmLocal.cs">
       <SubType>Form</SubType>
@@ -170,9 +185,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\CrudCidade\FrmCidade.resx">
       <DependentUpon>FrmCidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CrudEvento\FrmEvento.resx">
+      <DependentUpon>FrmEvento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CrudLocal\FrmLocal.resx">
       <DependentUpon>FrmLocal.cs</DependentUpon>

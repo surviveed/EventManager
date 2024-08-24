@@ -1,4 +1,5 @@
 ﻿using EventManager.Views.CrudCidade;
+using EventManager.Views.CrudEvento;
 using EventManager.Views.CrudLocal;
 using EventManager.Views.CrudPais;
 using EventManager.Views.CrudTipoEvento;
@@ -42,6 +43,12 @@ namespace EventManager.Views.HomeAdmin
         private void btnTiposEvento_Click(object sender, EventArgs e)
         {
             FrmTipoEvento frm = new FrmTipoEvento();
+            frm.Show();
+        }
+
+        private void btnEventos_Click(object sender, EventArgs e)
+        {
+            FrmEvento frm = new FrmEvento();
             frm.Show();
         }
     }

@@ -32,6 +32,7 @@ namespace EventManager.Views.CrudPais
         {
             var paises = _paisService.ObterTodos().ToList();
             dataGridViewPaises.DataSource = paises;
+
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
