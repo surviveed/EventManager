@@ -1,9 +1,14 @@
-﻿using EventManager.Config;
-using EventManager.DTOs;
+﻿using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EventManager.Views.CrudCidade
@@ -19,16 +24,37 @@ namespace EventManager.Views.CrudCidade
             _ufService = new UfService(new UfRepository());
             _cidadeService = new CidadeService(new CidadeRepository());
 
+            ConfigureMaterialListView();
             LoadCidades();
             FillUfComboBox(cbUf);
+        }
 
-            DataGridViewCustomizations.ApplyCustomizations(dataGridViewCidades);
+        private void ConfigureMaterialListView()
+        {
+            int size = materialListViewCidades.Size.Width / 4;
+            materialListViewCidades.Columns.Add("ID", size);
+            materialListViewCidades.Columns.Add("Descrição", size);
+            materialListViewCidades.Columns.Add("Código IBGE", size);
+            materialListViewCidades.Columns.Add("UF", size);
         }
 
         private void LoadCidades()
         {
+            materialListViewCidades.Items.Clear();
             var cidades = _cidadeService.BuscarTodos();
-            dataGridViewCidades.DataSource = cidades;
+
+            foreach (var cidade in cidades)
+            {
+                var listViewItem = new ListViewItem(cidade.Id.ToString())
+                {
+                    Tag = cidade
+                };
+                listViewItem.SubItems.Add(cidade.Descricao);
+                listViewItem.SubItems.Add(cidade.CodigoIbge.ToString());
+                listViewItem.SubItems.Add(cidade.UfDescricao);
+
+                materialListViewCidades.Items.Add(listViewItem);
+            }
         }
 
         private void FillUfComboBox(ComboBox comboBox)
@@ -52,12 +78,12 @@ namespace EventManager.Views.CrudCidade
             ClearFields();
         }
 
-        private void btnAtualizar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewCidades.SelectedRows.Count > 0)
+            if (materialListViewCidades.SelectedItems.Count > 0)
             {
-                var selectedRow = dataGridViewCidades.SelectedRows[0];
-                var cidadeDto = (CidadeDTO)selectedRow.DataBoundItem;
+                var selectedItem = materialListViewCidades.SelectedItems[0];
+                var cidadeDto = (CidadeDTO)selectedItem.Tag;
 
                 cidadeDto.Descricao = txtDescricao.Text;
                 cidadeDto.CodigoIbge = Convert.ToInt32(txtCodigoIbge.Text);
@@ -71,10 +97,10 @@ namespace EventManager.Views.CrudCidade
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewCidades.SelectedRows.Count > 0)
+            if (materialListViewCidades.SelectedItems.Count > 0)
             {
-                var selectedRow = dataGridViewCidades.SelectedRows[0];
-                var cidadeDto = (CidadeDTO)selectedRow.DataBoundItem;
+                var selectedItem = materialListViewCidades.SelectedItems[0];
+                var cidadeDto = (CidadeDTO)selectedItem.Tag;
 
                 var confirmResult = MessageBox.Show(
                     "Você realmente deseja excluir?",
@@ -92,16 +118,16 @@ namespace EventManager.Views.CrudCidade
             }
         }
 
-        private void dataGridViewCidades_SelectionChanged(object sender, EventArgs e)
+        private void materialListViewCidades_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dataGridViewCidades.SelectedRows.Count > 0)
+            if (materialListViewCidades.SelectedItems.Count > 0)
             {
-                var selectedRow = dataGridViewCidades.SelectedRows[0];
-                var cidadeDto = (CidadeDTO)selectedRow.DataBoundItem;
+                var selectedItem = materialListViewCidades.SelectedItems[0];
+                var cidadeDto = (CidadeDTO)selectedItem.Tag;
 
                 txtDescricao.Text = cidadeDto.Descricao;
                 txtCodigoIbge.Text = cidadeDto.CodigoIbge.ToString();
-                cbUf.SelectedIndex = (int)selectedRow.Cells[3].Value - 1;
+                cbUf.SelectedValue = cidadeDto.UfId;
             }
         }
 
