@@ -1,5 +1,4 @@
-﻿using EventManager.Config;
-using EventManager.DTOs;
+﻿using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
 using System;
@@ -18,17 +17,38 @@ namespace EventManager.Views.CrudUf
             InitializeComponent();
             _ufService = new UfService(new UfRepository());
             _paisService = new PaisService(new PaisRepository());
-            
+
+            ConfigureMaterialListView();
             LoadUfs();
             FillPaisComboBox(cbPais);
+        }
 
-            DataGridViewCustomizations.ApplyCustomizations(dataGridViewUfs);
+        private void ConfigureMaterialListView()
+        {
+            int size = materialListViewUfs.Size.Width / 3;
+            materialListViewUfs.Columns.Add("ID", size);
+            materialListViewUfs.Columns.Add("Descrição", size);
+            materialListViewUfs.Columns.Add("Código IBGE", size);
+            materialListViewUfs.Columns.Add("País", size);
         }
 
         private void LoadUfs()
         {
+            materialListViewUfs.Items.Clear();
             var ufs = _ufService.BuscarTodos();
-            dataGridViewUfs.DataSource = ufs;
+
+            foreach (var uf in ufs)
+            {
+                var listViewItem = new ListViewItem(uf.Id.ToString())
+                {
+                    Tag = uf
+                };
+                listViewItem.SubItems.Add(uf.Descricao);
+                listViewItem.SubItems.Add(uf.CodigoIbge.ToString());
+                listViewItem.SubItems.Add(uf.PaisDescricao);
+
+                materialListViewUfs.Items.Add(listViewItem);
+            }
         }
 
         private void FillPaisComboBox(ComboBox comboBox)
@@ -52,12 +72,12 @@ namespace EventManager.Views.CrudUf
             ClearFields();
         }
 
-        private void btnAtualizar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewUfs.SelectedRows.Count > 0)
+            if (materialListViewUfs.SelectedItems.Count > 0)
             {
-                var selectedRow = dataGridViewUfs.SelectedRows[0];
-                var ufDto = (UfDTO)selectedRow.DataBoundItem;
+                var selectedItem = materialListViewUfs.SelectedItems[0];
+                var ufDto = (UfDTO)selectedItem.Tag;
 
                 ufDto.Descricao = txtDescricao.Text;
                 ufDto.CodigoIbge = Convert.ToInt32(txtCodigoIbge.Text);
@@ -71,10 +91,10 @@ namespace EventManager.Views.CrudUf
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewUfs.SelectedRows.Count > 0)
+            if (materialListViewUfs.SelectedItems.Count > 0)
             {
-                var selectedRow = dataGridViewUfs.SelectedRows[0];
-                var ufDto = (UfDTO)selectedRow.DataBoundItem;
+                var selectedItem = materialListViewUfs.SelectedItems[0];
+                var ufDto = (UfDTO)selectedItem.Tag;
 
                 var confirmResult = MessageBox.Show(
                     "Você realmente deseja excluir?",
@@ -92,24 +112,24 @@ namespace EventManager.Views.CrudUf
             }
         }
 
+        private void materialListViewUfs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (materialListViewUfs.SelectedItems.Count > 0)
+            {
+                var selectedItem = materialListViewUfs.SelectedItems[0];
+                var ufDto = (UfDTO)selectedItem.Tag;
+
+                txtDescricao.Text = ufDto.Descricao;
+                txtCodigoIbge.Text = ufDto.CodigoIbge.ToString();
+                cbPais.SelectedValue = ufDto.PaisId;
+            }
+        }
+
         private void ClearFields()
         {
             txtDescricao.Clear();
             txtCodigoIbge.Clear();
             cbPais.SelectedIndex = -1;
-        }
-
-        private void dataGridViewUfs_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dataGridViewUfs.SelectedRows.Count > 0)
-            {
-                var selectedRow = dataGridViewUfs.SelectedRows[0];
-                var ufDto = (UfDTO)selectedRow.DataBoundItem;
-
-                txtDescricao.Text = ufDto.Descricao;
-                txtCodigoIbge.Text = ufDto.CodigoIbge.ToString();
-                cbPais.SelectedIndex = (int)selectedRow.Cells[3].Value - 1;
-            }
         }
     }
 }
