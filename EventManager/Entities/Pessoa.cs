@@ -24,9 +24,11 @@ namespace EventManager.Entities
         [Column("tipopessoa")]
         public TipoPessoa TipoPessoa { get; set; }
 
-        public List<Evento> EventosOrganizados { get; set; } = new List<Evento>();
-        public List<Avaliacao> Avaliacoes { get; set; } = new List<Avaliacao>();
-        public List<Sessao> Sessoes { get; set; } = new List<Sessao>(); // como integrante
+        public virtual ICollection<EventoOrganizadores> EventoOrganizadores { get; set; }
+
+        public virtual List<Avaliacao> Avaliacoes { get; set; } = new List<Avaliacao>();
+
+        public virtual ICollection<SessaoIntegrante> SessaoIntegrantes { get; set; }
 
         public Pessoa() { }
 

@@ -38,12 +38,14 @@
             this.btnPaises = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPessoas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnPessoas);
             this.panel1.Controls.Add(this.btnEventosNovo);
             this.panel1.Controls.Add(this.btnEventos);
             this.panel1.Controls.Add(this.btnTiposEvento);
@@ -143,6 +145,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Admin";
             // 
+            // btnPessoas
+            // 
+            this.btnPessoas.Location = new System.Drawing.Point(98, 217);
+            this.btnPessoas.Name = "btnPessoas";
+            this.btnPessoas.Size = new System.Drawing.Size(209, 23);
+            this.btnPessoas.TabIndex = 7;
+            this.btnPessoas.Text = "Pessoas";
+            this.btnPessoas.UseVisualStyleBackColor = true;
+            this.btnPessoas.Click += new System.EventHandler(this.btnPessoas_Click);
+            // 
             // FrmHomeAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,5 +186,6 @@
         private System.Windows.Forms.Button btnTiposEvento;
         private System.Windows.Forms.Button btnEventos;
         private System.Windows.Forms.Button btnEventosNovo;
+        private System.Windows.Forms.Button btnPessoas;
     }
 }

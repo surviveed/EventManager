@@ -35,7 +35,7 @@ namespace EventManager.Entities
         public int LocalId { get; set; }
 
         public List<Avaliacao> Avaliacoes { get; set; } = new List<Avaliacao>();
-        public List<Pessoa> Integrantes { get; set; } = new List<Pessoa>();
+        public virtual ICollection<SessaoIntegrante> SessaoIntegrantes { get; set; }
 
         public Sessao() { }
 

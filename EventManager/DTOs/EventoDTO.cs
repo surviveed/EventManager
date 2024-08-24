@@ -26,8 +26,12 @@ namespace EventManager.DTOs
             Id = entity.Id;
             Nome = entity.Nome;
             Descricao = entity.Descricao;
-            TipoEventoId = entity.TipoEvento.Id;
-            TipoEventoDescricao = entity.TipoEvento.Descricao;
+            TipoEventoId = entity.TipoEventoId;
+            if(entity.TipoEvento != null) 
+            {
+                TipoEventoDescricao = entity.TipoEvento.Descricao;
+            }
+            
         }
     }
 }

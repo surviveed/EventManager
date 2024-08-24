@@ -1,5 +1,6 @@
 ﻿using EventManager.Entities;
 using System.Data.Entity;
+using System.Diagnostics.Contracts;
 
 namespace EventManager.Config
 {
@@ -8,6 +9,7 @@ namespace EventManager.Config
         public AppDbContext() : base("name=EventManagerDbContext")
         {
         }
+
         public DbSet<Pais> Paises { get; set; }
         public DbSet<Uf> Ufs { get; set; }
         public DbSet<Cidade> Cidades { get; set; }
@@ -19,10 +21,22 @@ namespace EventManager.Config
         public DbSet<Pessoa> Pessoas{ get; set; }
         public DbSet<Papel> Papeis{ get; set; }
         public DbSet<Usuario> Usuarios{ get; set; }
+        public DbSet<EventoOrganizadores> EventoOrganizadores { get; set; }
+        public DbSet<SessaoIntegrante> SessaoIntegrantes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // EventoOrganizadores
+            modelBuilder.Entity<EventoOrganizadores>()
+                .ToTable("public.evento_organizadores")
+                .HasKey(te => new { te.EventoId, te.PessoaId });
+
+            // SessaoIntegrantes
+            modelBuilder.Entity<SessaoIntegrante>()
+                .ToTable("public.sessao_integrantes")
+                .HasKey(te => new {te.SessaoId, te.PessoaId});
 
             // TipoEvento
             modelBuilder.Entity<TipoEvento>()
@@ -34,6 +48,7 @@ namespace EventManager.Config
                 .WithRequired(e => e.TipoEvento)
                 .HasForeignKey(e => e.TipoEventoId);
 
+
             // Evento
             modelBuilder.Entity<Evento>()
                 .ToTable("public.evento")
@@ -44,15 +59,20 @@ namespace EventManager.Config
                 .WithRequired(s => s.Evento)
                 .HasForeignKey(s => s.EventoId);
 
+            /*modelBuilder.Entity<Evento>()
+                    .HasMany(e => e.Organizadores)
+                    .WithMany(p => p.EventoOrganizadores)
+                    .Map(m =>
+                    {
+                        m.ToTable("public.evento_organizadores");
+                        m.MapLeftKey("evento_id");
+                        m.MapRightKey("pessoa_id");
+                    });*/
+
             modelBuilder.Entity<Evento>()
-                .HasMany(e => e.Organizadores)
-                .WithMany(p => p.EventosOrganizados)
-                .Map(m =>
-                {
-                    m.ToTable("public.evento_organizadores");
-                    m.MapLeftKey("evento_id");
-                    m.MapRightKey("pessoa_id");
-                });
+               .HasMany(e => e.EventoOrganizadores)
+               .WithRequired()
+               .HasForeignKey(e => e.EventoId);
 
             // Pais
             modelBuilder.Entity<Pais>()
@@ -104,6 +124,11 @@ namespace EventManager.Config
                 .WithRequired(a => a.Sessao)
                 .HasForeignKey(a => a.SessaoId);
 
+            modelBuilder.Entity<Sessao>()
+               .HasMany(p => p.SessaoIntegrantes)
+               .WithRequired()
+               .HasForeignKey(p => p.SessaoId);
+
             // Pessoa
             modelBuilder.Entity<Pessoa>()
                 .ToTable("public.pessoa")
@@ -114,7 +139,7 @@ namespace EventManager.Config
                 .WithRequired(a => a.Pessoa)
                 .HasForeignKey(a => a.PessoaId);
 
-            modelBuilder.Entity<Pessoa>()
+            /*modelBuilder.Entity<Pessoa>()
                 .HasMany(p => p.Sessoes)
                 .WithMany(s => s.Integrantes)
                 .Map(m =>
@@ -122,7 +147,17 @@ namespace EventManager.Config
                     m.ToTable("public.sessao_integrantes");
                     m.MapLeftKey("pessoa_id");
                     m.MapRightKey("sessao_id");
-                });
+                });*/
+
+            modelBuilder.Entity<Pessoa>()
+               .HasMany(p => p.EventoOrganizadores)
+               .WithRequired()
+               .HasForeignKey(p => p.PessoaId);
+
+            modelBuilder.Entity<Pessoa>()
+               .HasMany(p => p.SessaoIntegrantes)
+               .WithRequired()
+               .HasForeignKey(p => p.PessoaId);
 
             // Avaliacao
             modelBuilder.Entity<Avaliacao>()

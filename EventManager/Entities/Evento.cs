@@ -27,8 +27,10 @@ namespace EventManager.Entities
         [ForeignKey("tipoevento_id")]
         public TipoEvento TipoEvento { get; set; }
 
-        public List<Sessao> Sessoes { get; set; } = new List<Sessao>();
-        public List<Pessoa> Organizadores { get; set; } = new List<Pessoa>();
+  
+        public virtual List<Sessao> Sessoes { get; set; } = new List<Sessao>();
+
+        public virtual ICollection<EventoOrganizadores> EventoOrganizadores { get; set; }
 
         public Evento() { }
 

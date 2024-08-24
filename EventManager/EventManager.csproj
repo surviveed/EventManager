@@ -117,23 +117,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\AppDbContext.cs" />
-    <Compile Include="Config\DatabaseConfig.cs" />
     <Compile Include="Config\DataGridViewCustomizations.cs" />
     <Compile Include="DTOs\CidadeDTO.cs" />
     <Compile Include="DTOs\EventoDTO.cs" />
     <Compile Include="DTOs\LocalDTO.cs" />
     <Compile Include="DTOs\PaisDTO.cs" />
+    <Compile Include="DTOs\PessoaDTO.cs" />
     <Compile Include="DTOs\TipoEventoDTO.cs" />
     <Compile Include="DTOs\UfDTO.cs" />
     <Compile Include="Entities\Avaliacao.cs" />
     <Compile Include="Entities\Cidade.cs" />
     <Compile Include="Entities\enums\TipoPessoa.cs" />
     <Compile Include="Entities\Evento.cs" />
+    <Compile Include="Entities\EventoOrganizadores.cs" />
     <Compile Include="Entities\Local.cs" />
     <Compile Include="Entities\Pais.cs" />
     <Compile Include="Entities\Papel.cs" />
     <Compile Include="Entities\Pessoa.cs" />
     <Compile Include="Entities\Sessao.cs" />
+    <Compile Include="Entities\SessaoIntegrante.cs" />
     <Compile Include="Entities\TipoEvento.cs" />
     <Compile Include="Entities\Uf.cs" />
     <Compile Include="Entities\Usuario.cs" />
@@ -141,12 +143,14 @@
     <Compile Include="Repositories\EventoRepository.cs" />
     <Compile Include="Repositories\LocalRepository.cs" />
     <Compile Include="Repositories\PaisRepository.cs" />
+    <Compile Include="Repositories\PessoaRepository.cs" />
     <Compile Include="Repositories\TipoEventoRepository.cs" />
     <Compile Include="Repositories\UfRepository.cs" />
     <Compile Include="Services\CidadeService.cs" />
     <Compile Include="Services\EventoService.cs" />
     <Compile Include="Services\LocalService.cs" />
     <Compile Include="Services\PaisService.cs" />
+    <Compile Include="Services\PessoaService.cs" />
     <Compile Include="Services\TipoEventoService.cs" />
     <Compile Include="Services\UfService.cs" />
     <Compile Include="Views\CrudCidade\FrmCidade.cs">
@@ -178,6 +182,12 @@
     </Compile>
     <Compile Include="Views\CrudEvento\FrmEventoNovo.Designer.cs">
       <DependentUpon>FrmEventoNovo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CrudPessoa\FrmPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CrudPessoa\FrmPessoa.Designer.cs">
+      <DependentUpon>FrmPessoa.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CrudTipoEvento\FrmTipoEvento.cs">
       <SubType>Form</SubType>
@@ -223,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CrudEvento\FrmEventoNovo.resx">
       <DependentUpon>FrmEventoNovo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CrudPessoa\FrmPessoa.resx">
+      <DependentUpon>FrmPessoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CrudTipoEvento\FrmTipoEvento.resx">
       <DependentUpon>FrmTipoEvento.cs</DependentUpon>

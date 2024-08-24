@@ -2,6 +2,7 @@
 using EventManager.Views.CrudEvento;
 using EventManager.Views.CrudLocal;
 using EventManager.Views.CrudPais;
+using EventManager.Views.CrudPessoa;
 using EventManager.Views.CrudSessao;
 using EventManager.Views.CrudTipoEvento;
 using EventManager.Views.CrudUf;
@@ -56,6 +57,12 @@ namespace EventManager.Views.HomeAdmin
         private void btnSessoes_Click(object sender, EventArgs e)
         {
             FrmEventoNovo frm = new FrmEventoNovo();
+            frm.Show();
+        }
+
+        private void btnPessoas_Click(object sender, EventArgs e)
+        {
+            FrmPessoa frm = new FrmPessoa();
             frm.Show();
         }
     }
