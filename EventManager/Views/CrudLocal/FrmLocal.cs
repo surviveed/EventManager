@@ -16,13 +16,8 @@ namespace EventManager.Views.CrudLocal
         public FrmLocal()
         {
             InitializeComponent();
-            // Inicializar a conexão com o banco de dados
-            var connectionString = DatabaseConfig.connectionString;
-
             _cidadeService = new CidadeService(new CidadeRepository());
-
-            var localRepository = new LocalRepository(connectionString);
-            _localService = new LocalService(localRepository);
+            _localService = new LocalService(new LocalRepository());
 
             LoadLocais();
             FillCidadeComboBox(cbCidade);

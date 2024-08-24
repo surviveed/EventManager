@@ -18,7 +18,7 @@ namespace EventManager.Services
         public List<LocalDTO> BuscarTodos()
         {
             var locais = _localRepository.BuscarTodos();
-            return locais.Select(local => new LocalDTO(local)).ToList();
+            return locais.Select(Local => new LocalDTO(Local)).ToList();
         }
 
         public LocalDTO BuscarPorId(int id)
@@ -27,17 +27,15 @@ namespace EventManager.Services
             return local != null ? new LocalDTO(local) : null;
         }
 
-        public void Inserir(LocalDTO localDto)
+        public void Inserir(LocalDTO localDTO)
         {
-            var cidade = new Cidade(localDto.CidadeId, localDto.CidadeDescricao, 0, 0);
-            var local = new Local(0, localDto.Nome, localDto.Capacidade, localDto.Endereco, localDto.Observacoes, cidade);
+            var local = new Local(0, localDTO.Nome, localDTO.Capacidade, localDTO.Endereco, localDTO.Observacoes, localDTO.CidadeId);
             _localRepository.Inserir(local);
         }
 
-        public void Atualizar(LocalDTO localDto)
+        public void Atualizar(LocalDTO localDTO)
         {
-            var cidade = new Cidade(localDto.CidadeId, localDto.CidadeDescricao, 0, 0);
-            var local = new Local(localDto.Id, localDto.Nome, localDto.Capacidade, localDto.Endereco, localDto.Observacoes, cidade);
+            var local = new Local(localDTO.Id, localDTO.Nome, localDTO.Capacidade, localDTO.Endereco, localDTO.Observacoes, localDTO.CidadeId);
             _localRepository.Atualizar(local);
         }
 

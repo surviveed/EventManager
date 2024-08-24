@@ -1,10 +1,5 @@
 ﻿using EventManager.Entities;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventManager.Config
 {
@@ -17,6 +12,7 @@ namespace EventManager.Config
         public DbSet<Pais> Paises { get; set; }
         public DbSet<Uf> Ufs { get; set; }
         public DbSet<Cidade> Cidades { get; set; }
+        public DbSet<Local> Locais { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -32,10 +28,6 @@ namespace EventManager.Config
                 .ToTable("public.uf")
                 .HasKey(u => u.Id);
 
-            modelBuilder.Entity<Cidade>()
-                .ToTable("public.cidade")
-                .HasKey(c => c.Id);
-
             modelBuilder.Entity<Uf>()
                 .HasRequired(u => u.Pais)
                 .WithMany()
@@ -43,9 +35,23 @@ namespace EventManager.Config
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Cidade>()
+                .ToTable("public.cidade")
+                .HasKey(c => c.Id);
+
+            modelBuilder.Entity<Cidade>()
                 .HasRequired(c => c.Uf)
                 .WithMany() 
                 .HasForeignKey(c => c.UfId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Local>()
+                .ToTable("public.local")
+                .HasKey(l => l.Id);
+
+            modelBuilder.Entity<Local>()
+                .HasRequired(l => l.Cidade)
+                .WithMany()
+                .HasForeignKey(l => l.CidadeId)
                 .WillCascadeOnDelete(false);
         }
     }
