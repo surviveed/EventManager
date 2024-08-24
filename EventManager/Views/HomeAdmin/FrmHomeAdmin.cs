@@ -65,5 +65,11 @@ namespace EventManager.Views.HomeAdmin
             FrmPessoa frm = new FrmPessoa();
             frm.Show();
         }
+
+        private void btnSessoes_Click_1(object sender, EventArgs e)
+        {
+            FrmSessao frm = new FrmSessao();
+            frm.Show();
+        }
     }
 }
