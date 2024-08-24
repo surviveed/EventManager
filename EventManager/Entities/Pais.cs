@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace EventManager.Entities
 {
@@ -16,6 +17,8 @@ namespace EventManager.Entities
         public string Descricao { get; set; }
         [Column("codigo_ibge")]
         public int CodigoIbge { get; set; }
+
+        public List<Uf> Ufs { get; set; } = new List<Uf>();
 
         public Pais() { }
 

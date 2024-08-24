@@ -38,7 +38,7 @@ namespace EventManager.Repositories
                             reader.GetInt32(0),   // EventoId
                             reader.GetString(1),   // Nome
                             reader.GetString(2),   // Descrição
-                            tipoEvento
+                            tipoEvento.Id
                         );
                         eventos.Add(evento);
                     }
@@ -75,7 +75,7 @@ namespace EventManager.Repositories
                                 reader.GetInt32(0),  // EventoId
                                 reader.GetString(1),  // Nome
                                 reader.GetString(2),  // Descrição
-                                tipoEvento
+                                tipoEvento.Id
                             );
                         }
                     }

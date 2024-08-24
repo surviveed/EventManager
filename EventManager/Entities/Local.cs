@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace EventManager.Entities
 {
@@ -27,6 +28,8 @@ namespace EventManager.Entities
 
         [ForeignKey("cidade_id")]
         public Cidade Cidade { get; set; }
+
+        public List<Sessao> Sessoes { get; set; } = new List<Sessao>();
 
         public Local() { }
 

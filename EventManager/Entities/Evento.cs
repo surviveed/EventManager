@@ -1,12 +1,30 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace EventManager.Entities
 {
     public class Evento
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("id")]
         public int Id { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        [Column("nome")]
         public string Nome { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        [Column("descricao")]
         public string Descricao { get; set; }
+
+        [Column("tipoevento_id")]
+        public int TipoEventoId { get; set; }
+
+        [ForeignKey("tipoevento_id")]
         public TipoEvento TipoEvento { get; set; }
 
         public List<Sessao> Sessoes { get; set; } = new List<Sessao>();
@@ -14,12 +32,12 @@ namespace EventManager.Entities
 
         public Evento() { }
 
-        public Evento(int id, string nome, string descricao, TipoEvento tipoEvento)
+        public Evento(int id, string nome, string descricao, int tipoEventoId)
         {
             Id = id;
             Nome = nome;
             Descricao = descricao;
-            TipoEvento = tipoEvento;
+            TipoEventoId = tipoEventoId;
         }
 
         public double CalcularMediaAvaliacoes() 
