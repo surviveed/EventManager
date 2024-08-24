@@ -1,6 +1,5 @@
 ﻿using EventManager.Entities;
 using System.Data.Entity;
-using System.Diagnostics.Contracts;
 
 namespace EventManager.Config
 {
@@ -23,6 +22,7 @@ namespace EventManager.Config
         public DbSet<Usuario> Usuarios{ get; set; }
         public DbSet<EventoOrganizadores> EventoOrganizadores { get; set; }
         public DbSet<SessaoIntegrante> SessaoIntegrantes { get; set; }
+        public DbSet<UsuarioPapel> UsuarioPapeis { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -37,6 +37,11 @@ namespace EventManager.Config
             modelBuilder.Entity<SessaoIntegrante>()
                 .ToTable("public.sessao_integrantes")
                 .HasKey(te => new {te.SessaoId, te.PessoaId});
+
+            // SessaoIntegrantes
+            modelBuilder.Entity<UsuarioPapel>()
+                .ToTable("public.usuario_papel")
+                .HasKey(te => new { te.UsuarioId, te.PapelId });
 
             // TipoEvento
             modelBuilder.Entity<TipoEvento>()
@@ -169,20 +174,20 @@ namespace EventManager.Config
                 .ToTable("public.papel")
                 .HasKey(p => p.Id);
 
+            modelBuilder.Entity<Papel>()
+               .HasMany(e => e.UsuarioPapeis)
+               .WithRequired()
+               .HasForeignKey(e => e.PapelId);
+
             // Usuario
             modelBuilder.Entity<Usuario>()
                 .ToTable("public.usuario")
                 .HasKey(u => u.Id);
 
             modelBuilder.Entity<Usuario>()
-                .HasMany(u => u.Papeis)
-                .WithMany(p => p.Usuarios)
-                .Map(m =>
-                {
-                    m.ToTable("public.usuario_papel");
-                    m.MapLeftKey("usuario_id");
-                    m.MapRightKey("papel_id");
-                });
+               .HasMany(e => e.UsuarioPapeis)
+               .WithRequired()
+               .HasForeignKey(e => e.UsuarioId);
         }
     }
 }

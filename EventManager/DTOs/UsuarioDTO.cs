@@ -29,9 +29,9 @@ namespace EventManager.DTOs
             Email = usuario.Email;
             Senha = usuario.Senha;
 
-            foreach (Papel papel in usuario.Papeis)
+            foreach (UsuarioPapel usuarioPapel in usuario.UsuarioPapeis)
             {
-                Papeis.Add(new PapelDTO(papel));
+                Papeis.Add(new PapelDTO(usuarioPapel.Papel));
             }
         }
     }

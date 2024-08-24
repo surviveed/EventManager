@@ -17,12 +17,22 @@ namespace EventManager.Repositories
 
         public List<Sessao> BuscarTodos()
         {
-            return _context.Sessoes.Include(s => s.Evento).Include(s => s.Local).OrderBy(u => u.Id).ToList();
+            return _context.Sessoes
+                .Include(s => s.Evento)
+                .Include(s => s.Local)
+                .Include(s => s.Avaliacoes)
+                .Include(s => s.SessaoIntegrantes)
+                .OrderBy(u => u.Id).ToList();
         }
 
         public Sessao BuscarPorId(int id)
         {
-            return _context.Sessoes.Include(s => s.Evento).Include(s => s.Local).FirstOrDefault(s => s.Id == id);
+            return _context.Sessoes
+                .Include(s => s.Evento)
+                .Include(s => s.Local)
+                .Include(s => s.Avaliacoes)
+                .Include(s => s.SessaoIntegrantes)
+                .FirstOrDefault(s => s.Id == id);
         }
 
         public void Inserir(Sessao sessao)

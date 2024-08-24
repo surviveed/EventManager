@@ -1,6 +1,7 @@
 ﻿using EventManager.Config;
 using EventManager.Entities;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace EventManager.Repositories
@@ -16,12 +17,18 @@ namespace EventManager.Repositories
 
         public List<Cidade> BuscarTodos()
         {
-            return _context.Cidades.Include("Uf").OrderBy(c => c.Id).ToList();
+            return _context.Cidades
+                .Include(c => c.Uf)
+                .Include(c => c.Locais)
+                .OrderBy(c => c.Id).ToList();
         }
 
         public Cidade BuscarPorId(int id)
         {
-            return _context.Cidades.Include("Uf").FirstOrDefault(c => c.Id == id);
+            return _context.Cidades
+                .Include(c => c.Uf)
+                .Include(c => c.Locais)
+                .FirstOrDefault(c => c.Id == id);
         }
 
         public void Inserir(Cidade cidade)

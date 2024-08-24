@@ -15,7 +15,7 @@ namespace EventManager.DTOs
         public int LocalId { get; set; }
         public string LocalNome { get; set; }
 
-        //public List<AvaliacaoDTO> Avaliacoes { get; set; } = new List<AvaliacaoDTO>();
+        public List<AvaliacaoDTO> Avaliacoes { get; set; } = new List<AvaliacaoDTO>();
         public List<PessoaDTO> Integrantes { get; set; } = new List<PessoaDTO>();
 
         public SessaoDTO() { }
@@ -39,7 +39,10 @@ namespace EventManager.DTOs
             EventoId = entity.EventoId;
             EventoNome = entity.Evento.Nome;
             LocalId = entity.LocalId;
-            LocalNome = entity.Local.Nome;
+            if(entity.Local != null)
+            {
+                LocalNome = entity.Local.Nome;
+            }
 
             if(entity.SessaoIntegrantes != null)
             {

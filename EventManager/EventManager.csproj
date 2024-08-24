@@ -143,6 +143,7 @@
     <Compile Include="Entities\TipoEvento.cs" />
     <Compile Include="Entities\Uf.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Entities\UsuarioPapel.cs" />
     <Compile Include="Repositories\AvaliacaoRepository.cs" />
     <Compile Include="Repositories\CidadeRepository.cs" />
     <Compile Include="Repositories\EventoRepository.cs" />

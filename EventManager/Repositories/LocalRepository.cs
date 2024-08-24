@@ -1,6 +1,7 @@
 ﻿using EventManager.Config;
 using EventManager.Entities;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace EventManager.Repositories
@@ -16,7 +17,10 @@ namespace EventManager.Repositories
 
         public List<Local> BuscarTodos()
         {
-            return _context.Locais.Include("Cidade").OrderBy(u => u.Id).ToList();
+            return _context.Locais
+                .Include(l => l.Cidade)
+                .Include(l => l.Sessoes)
+                .OrderBy(u => u.Id).ToList();
         }
 
         public Local BuscarPorId(int id)

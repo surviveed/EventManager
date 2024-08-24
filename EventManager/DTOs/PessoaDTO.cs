@@ -13,8 +13,8 @@ namespace EventManager.DTOs
         public TipoPessoa TipoPessoa { get; set; }
 
         public List<EventoDTO> EventosOrganizados { get; set; } = new List<EventoDTO>();
-        //public List<AvaliacaoDTO> Avaliacoes { get; set; } = new List<AvaliacaoDTO>();
-        //public List<SessaoDTO> Sessoes { get; set; } = new List<SessaoDTO>();
+        public List<AvaliacaoDTO> Avaliacoes { get; set; } = new List<AvaliacaoDTO>();
+        public List<SessaoDTO> Sessoes { get; set; } = new List<SessaoDTO>();
 
         public PessoaDTO() { }
 
@@ -34,8 +34,8 @@ namespace EventManager.DTOs
             TipoPessoa = pessoa.TipoPessoa;
 
             EventosOrganizados = pessoa.EventoOrganizadores.Select(e => new EventoDTO(e.Evento)).ToList();
-            //Avaliacoes = pessoa.Avaliacoes.Select(a => new AvaliacaoDTO(a)).ToList();
-            //Sessoes = pessoa.Sessoes.Select(s => new SessaoDTO(s.Sessao)).ToList();
+            Avaliacoes = pessoa.Avaliacoes.Select(a => new AvaliacaoDTO(a)).ToList();
+            Sessoes = pessoa.SessaoIntegrantes.Select(s => new SessaoDTO(s.Sessao)).ToList();
         }
     }
 }

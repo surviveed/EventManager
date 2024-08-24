@@ -30,7 +30,7 @@ namespace EventManager.DTOs
             Nota = avaliacao.Nota;
             PessoaId = avaliacao.Pessoa.Id;
             PessoaNome = avaliacao.Pessoa.Nome;
-            SessaoId = avaliacao.Sessao.Id;
+            SessaoId = avaliacao.SessaoId;
         }
     }
 }

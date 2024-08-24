@@ -16,7 +16,7 @@ namespace EventManager.Entities
         [Column("descricao")]
         public string Descricao { get; set; }
 
-        public List<Usuario> Usuarios { get; set; } = new List<Usuario>();
+        public virtual ICollection<UsuarioPapel> UsuarioPapeis { get; set; }
 
         public Papel() { }
         public Papel(int id, string descricao)

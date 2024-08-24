@@ -26,7 +26,7 @@ namespace EventManager.Entities
         [Column("senha")]
         public string Senha { get; set; }
 
-        public List<Papel> Papeis { get; set; } = new List<Papel>();
+        public virtual ICollection<UsuarioPapel> UsuarioPapeis { get; set; }
 
         public Usuario() { }
 
