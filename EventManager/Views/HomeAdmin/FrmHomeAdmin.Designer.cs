@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSessoes = new System.Windows.Forms.Button();
             this.btnPessoas = new System.Windows.Forms.Button();
             this.btnEventosNovo = new System.Windows.Forms.Button();
             this.btnEventos = new System.Windows.Forms.Button();
@@ -39,13 +40,14 @@
             this.btnPaises = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSessoes = new System.Windows.Forms.Button();
+            this.btnAvaliacoes = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnAvaliacoes);
             this.panel1.Controls.Add(this.btnSessoes);
             this.panel1.Controls.Add(this.btnPessoas);
             this.panel1.Controls.Add(this.btnEventosNovo);
@@ -59,6 +61,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(405, 332);
             this.panel1.TabIndex = 0;
+            // 
+            // btnSessoes
+            // 
+            this.btnSessoes.Location = new System.Drawing.Point(98, 246);
+            this.btnSessoes.Name = "btnSessoes";
+            this.btnSessoes.Size = new System.Drawing.Size(209, 23);
+            this.btnSessoes.TabIndex = 8;
+            this.btnSessoes.Text = "Sessões";
+            this.btnSessoes.UseVisualStyleBackColor = true;
+            this.btnSessoes.Click += new System.EventHandler(this.btnSessoes_Click_1);
             // 
             // btnPessoas
             // 
@@ -157,15 +169,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Admin";
             // 
-            // btnSessoes
+            // btnAvaliacoes
             // 
-            this.btnSessoes.Location = new System.Drawing.Point(98, 246);
-            this.btnSessoes.Name = "btnSessoes";
-            this.btnSessoes.Size = new System.Drawing.Size(209, 23);
-            this.btnSessoes.TabIndex = 8;
-            this.btnSessoes.Text = "Sessões";
-            this.btnSessoes.UseVisualStyleBackColor = true;
-            this.btnSessoes.Click += new System.EventHandler(this.btnSessoes_Click_1);
+            this.btnAvaliacoes.Location = new System.Drawing.Point(98, 275);
+            this.btnAvaliacoes.Name = "btnAvaliacoes";
+            this.btnAvaliacoes.Size = new System.Drawing.Size(209, 23);
+            this.btnAvaliacoes.TabIndex = 9;
+            this.btnAvaliacoes.Text = "Avaliações";
+            this.btnAvaliacoes.UseVisualStyleBackColor = true;
+            this.btnAvaliacoes.Click += new System.EventHandler(this.btnAvaliacoes_Click);
             // 
             // FrmHomeAdmin
             // 
@@ -200,5 +212,6 @@
         private System.Windows.Forms.Button btnEventosNovo;
         private System.Windows.Forms.Button btnPessoas;
         private System.Windows.Forms.Button btnSessoes;
+        private System.Windows.Forms.Button btnAvaliacoes;
     }
 }

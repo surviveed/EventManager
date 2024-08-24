@@ -118,6 +118,7 @@
   <ItemGroup>
     <Compile Include="Config\AppDbContext.cs" />
     <Compile Include="Config\DataGridViewCustomizations.cs" />
+    <Compile Include="DTOs\AvaliacaoDTO.cs" />
     <Compile Include="DTOs\CidadeDTO.cs" />
     <Compile Include="DTOs\EventoDTO.cs" />
     <Compile Include="DTOs\LocalDTO.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Entities\TipoEvento.cs" />
     <Compile Include="Entities\Uf.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Repositories\AvaliacaoRepository.cs" />
     <Compile Include="Repositories\CidadeRepository.cs" />
     <Compile Include="Repositories\EventoRepository.cs" />
     <Compile Include="Repositories\LocalRepository.cs" />
@@ -148,6 +150,7 @@
     <Compile Include="Repositories\SessaoRepository.cs" />
     <Compile Include="Repositories\TipoEventoRepository.cs" />
     <Compile Include="Repositories\UfRepository.cs" />
+    <Compile Include="Services\AvaliacaoService.cs" />
     <Compile Include="Services\CidadeService.cs" />
     <Compile Include="Services\EventoService.cs" />
     <Compile Include="Services\LocalService.cs" />
@@ -156,6 +159,12 @@
     <Compile Include="Services\SessaoService.cs" />
     <Compile Include="Services\TipoEventoService.cs" />
     <Compile Include="Services\UfService.cs" />
+    <Compile Include="Views\CrudAvaliacao\FrmAvaliacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CrudAvaliacao\FrmAvaliacao.Designer.cs">
+      <DependentUpon>FrmAvaliacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CrudCidade\FrmCidade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +237,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\CrudAvaliacao\FrmAvaliacao.resx">
+      <DependentUpon>FrmAvaliacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CrudCidade\FrmCidade.resx">
       <DependentUpon>FrmCidade.cs</DependentUpon>
     </EmbeddedResource>
