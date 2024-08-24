@@ -18,7 +18,7 @@ namespace EventManager.Views.CrudCidade
             InitializeComponent();
             // Inicializar a conexão com o banco de dados
             var connectionString = DatabaseConfig.connectionString;
-            var ufRepository = new UfRepository(connectionString);
+            var ufRepository = new UfRepository();
             _ufService = new UfService(ufRepository);
 
             var cidadeRepository = new CidadeRepository(connectionString);

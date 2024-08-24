@@ -34,7 +34,7 @@ namespace EventManager.Repositories
                             reader.GetInt32(3),                
                             reader.GetString(4),              
                             0,                                
-                            null                              
+                            0                              
                         );
                         var cidade = new Cidade(
                             reader.GetInt32(0),                
@@ -69,7 +69,7 @@ namespace EventManager.Repositories
                     {
                         if (reader.Read())
                         {
-                            var uf = new Uf(reader.GetInt32(3), reader.GetString(4), 0, null);
+                            var uf = new Uf(reader.GetInt32(3), reader.GetString(4), 0, 0);
                             cidade = new Cidade(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), uf);
                         }
                     }

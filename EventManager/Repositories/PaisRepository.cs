@@ -1,110 +1,54 @@
-﻿using EventManager.Entities;
-using Npgsql;
+﻿using EventManager.Config;
+using EventManager.Entities;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EventManager.Repositories
 {
     public class PaisRepository
     {
-        private readonly string _connectionString;
+        private readonly AppDbContext _context;
 
-        public PaisRepository(string connectionString)
+        public PaisRepository()
         {
-            _connectionString = connectionString;
+            _context = new AppDbContext();
         }
 
-        // Método para buscar todos os países
-        public IEnumerable<Pais> GetAll()
+        public List<Pais> BuscarTodos()
         {
-            var paises = new List<Pais>();
-
-            using (var connection = new NpgsqlConnection(_connectionString))
-            {
-                connection.Open();
-                var command = new NpgsqlCommand("SELECT id, descricao, codigo_ibge FROM pais ORDER BY id", connection);
-
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var pais = new Pais
-                        {
-                            Id = reader.GetInt32(0),
-                            Descricao = reader.GetString(1),
-                            CodigoIbge = reader.GetInt32(2)
-                        };
-                        paises.Add(pais);
-                    }
-                }
-            }
-
-            return paises;
+            return _context.Paises.OrderBy(p => p.Id).ToList();
         }
 
-        // Método para buscar um país por ID
-        public Pais GetById(int id)
+        public Pais BuscarPorId(int id)
         {
-            Pais pais = null;
-
-            using (var connection = new NpgsqlConnection(_connectionString))
-            {
-                connection.Open();
-                var command = new NpgsqlCommand("SELECT id, descricao, codigo_ibge FROM pais WHERE id = @id", connection);
-                command.Parameters.AddWithValue("id", id);
-
-                using (var reader = command.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        pais = new Pais
-                        {
-                            Id = reader.GetInt32(0),
-                            Descricao = reader.GetString(1),
-                            CodigoIbge = reader.GetInt32(2)
-                        };
-                    }
-                }
-            }
-
-            return pais;
+            return _context.Paises.FirstOrDefault(p => p.Id == id);
         }
 
-        // Método para inserir um novo país
-        public void Insert(Pais pais)
+        public void Inserir(Pais pais)
         {
-            using (var connection = new NpgsqlConnection(_connectionString))
+            _context.Paises.Add(pais);
+            _context.SaveChanges();
+        }
+
+        public void Atualizar(Pais pais)
+        {
+            var paisExistente = _context.Paises.Find(pais.Id);
+            if (paisExistente != null)
             {
-                connection.Open();
-                var command = new NpgsqlCommand("INSERT INTO pais (descricao, codigo_ibge) VALUES (@descricao, @codigoIbge)", connection);
-                command.Parameters.AddWithValue("descricao", pais.Descricao);
-                command.Parameters.AddWithValue("codigoIbge", pais.CodigoIbge);
-                command.ExecuteNonQuery();
+                paisExistente.Descricao = pais.Descricao;
+                paisExistente.CodigoIbge = pais.CodigoIbge;
+
+                _context.SaveChanges();
             }
         }
 
-        // Método para atualizar um país existente
-        public void Update(Pais pais)
+        public void Remover(int id)
         {
-            using (var connection = new NpgsqlConnection(_connectionString))
+            var pais = _context.Paises.Find(id);
+            if (pais != null)
             {
-                connection.Open();
-                var command = new NpgsqlCommand("UPDATE pais SET descricao = @descricao, codigo_ibge = @codigoIbge WHERE id = @id", connection);
-                command.Parameters.AddWithValue("id", pais.Id);
-                command.Parameters.AddWithValue("descricao", pais.Descricao);
-                command.Parameters.AddWithValue("codigoIbge", pais.CodigoIbge);
-                command.ExecuteNonQuery();
-            }
-        }
-
-        // Método para deletar um país por ID
-        public void Delete(int id)
-        {
-            using (var connection = new NpgsqlConnection(_connectionString))
-            {
-                connection.Open();
-                var command = new NpgsqlCommand("DELETE FROM pais WHERE id = @id", connection);
-                command.Parameters.AddWithValue("id", id);
-                command.ExecuteNonQuery();
+                _context.Paises.Remove(pais);
+                _context.SaveChanges();
             }
         }
     }

@@ -29,15 +29,13 @@ namespace EventManager.Services
 
         public void Inserir(UfDTO ufDto)
         {
-            var pais = new Pais(ufDto.PaisId, ufDto.PaisDescricao, 0);
-            var uf = new Uf(0, ufDto.Descricao, ufDto.CodigoIbge, pais);
+            var uf = new Uf(0, ufDto.Descricao, ufDto.CodigoIbge, ufDto.PaisId);
             _ufRepository.Inserir(uf);
         }
 
         public void Atualizar(UfDTO ufDto)
         {
-            var pais = new Pais(ufDto.PaisId, ufDto.PaisDescricao, 0);
-            var uf = new Uf(ufDto.Id, ufDto.Descricao, ufDto.CodigoIbge, pais);
+            var uf = new Uf(ufDto.Id, ufDto.Descricao, ufDto.CodigoIbge, ufDto.PaisId);
             _ufRepository.Atualizar(uf);
         }
 

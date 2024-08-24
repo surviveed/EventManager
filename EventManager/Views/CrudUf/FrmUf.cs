@@ -16,13 +16,8 @@ namespace EventManager.Views.CrudUf
         public FrmUf()
         {
             InitializeComponent();
-            // Inicializar a conexão com o banco de dados
-            var connectionString = DatabaseConfig.connectionString;
-            var ufRepository = new UfRepository(connectionString);
-            _ufService = new UfService(ufRepository);
-
-            var paisRepository = new PaisRepository(connectionString);
-            _paisService = new PaisService(paisRepository);
+            _ufService = new UfService(new UfRepository());
+            _paisService = new PaisService(new PaisRepository());
             
             LoadUfs();
             FillPaisComboBox(cbPais);

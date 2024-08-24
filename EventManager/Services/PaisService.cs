@@ -15,33 +15,33 @@ namespace EventManager.Services
             _paisRepository = paisRepository;
         }
 
-        public IEnumerable<PaisDTO> ObterTodos()
+        public List<PaisDTO> ObterTodos()
         {
-            var paises = _paisRepository.GetAll();
+            var paises = _paisRepository.BuscarTodos();
             return paises.Select(p => new PaisDTO(p)).ToList();
         }
 
-        public PaisDTO ObterPorId(int id)
+        public PaisDTO BuscarPorId(int id)
         {
-            var pais = _paisRepository.GetById(id);
+            var pais = _paisRepository.BuscarPorId(id);
             return pais != null ? new PaisDTO(pais) : null;
         }
 
-        public void Adicionar(PaisDTO paisDto)
+        public void Inserir(PaisDTO paisDto)
         {
-            var pais = new Pais(paisDto.Id, paisDto.Descricao, paisDto.CodigoIbge);
-            _paisRepository.Insert(pais);
+            var pais = new Pais(0, paisDto.Descricao, paisDto.CodigoIbge);
+            _paisRepository.Inserir(pais);
         }
 
         public void Atualizar(PaisDTO paisDto)
         {
             var pais = new Pais(paisDto.Id, paisDto.Descricao, paisDto.CodigoIbge);
-            _paisRepository.Update(pais);
+            _paisRepository.Atualizar(pais);
         }
 
         public void Remover(int id)
         {
-            _paisRepository.Delete(id);
+            _paisRepository.Remover(id);
         }
     }
 }

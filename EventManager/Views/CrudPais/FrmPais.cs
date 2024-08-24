@@ -17,9 +17,7 @@ namespace EventManager.Views.CrudPais
         {
             InitializeComponent();
 
-            // Inicializar a conexão com o banco de dados
-            var connectionString = DatabaseConfig.connectionString;
-            var paisRepository = new PaisRepository(connectionString);
+            var paisRepository = new PaisRepository();
             _paisService = new PaisService(paisRepository);
 
             // Carregar todos os países na lista ao iniciar o formulário
@@ -43,7 +41,7 @@ namespace EventManager.Views.CrudPais
                 CodigoIbge = int.Parse(txtCodigoIbge.Text)
             };
 
-            _paisService.Adicionar(paisDto);
+            _paisService.Inserir(paisDto);
             LoadPaises();
             ClearFields();
         }

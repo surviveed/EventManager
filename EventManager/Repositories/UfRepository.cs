@@ -1,130 +1,55 @@
-﻿using EventManager.Entities;
-using Npgsql;
+﻿using EventManager.Config;
+using EventManager.Entities;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EventManager.Repositories
 {
     public class UfRepository
     {
-        private readonly string _connectionString;
+        private readonly AppDbContext _context;
 
-        public UfRepository(string connectionString)
+        public UfRepository()
         {
-            _connectionString = connectionString;
+            _context = new AppDbContext();
         }
 
         public List<Uf> BuscarTodos()
         {
-            var ufs = new List<Uf>();
-
-            using (var connection = new NpgsqlConnection(_connectionString))
-            {
-                connection.Open();
-                var query = @"SELECT uf.id, uf.descricao, uf.codigo_ibge, p.id, p.descricao 
-                      FROM uf uf 
-                      JOIN pais p ON uf.pais_id = p.id 
-                      ORDER BY uf.id";
-
-                using (var command = new NpgsqlCommand(query, connection))
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var pais = new Pais(
-                            reader.GetInt32(3),                // Pais.Id
-                            reader.GetString(4),               // Pais.Descricao
-                            0                                  // Pais.CodigoIbge
-                        );
-                        var uf = new Uf(
-                            reader.GetInt32(0),                // Uf.Id
-                            reader.GetString(1),               // Uf.Descricao
-                            reader.GetInt32(2),                // Uf.CodigoIbge 
-                            pais
-                        );
-                        ufs.Add(uf);
-                    }
-                }
-            }
-
-            return ufs;
+            return _context.Ufs.Include("Pais").OrderBy(u => u.Id).ToList();
         }
 
         public Uf BuscarPorId(int id)
         {
-            Uf uf = null;
-
-            using (var connection = new NpgsqlConnection(_connectionString))
-            {
-                connection.Open();
-                var query = @"SELECT uf.id, uf.descricao, uf.codigo_ibge, p.id, p.descricao 
-                              FROM uf uf 
-                              JOIN pais p ON uf.pais_id = p.id 
-                              WHERE uf.id = @id";
-
-                using (var command = new NpgsqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@id", id);
-                    using (var reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            var pais = new Pais(reader.GetInt32(3), reader.GetString(4), 0);
-                            uf = new Uf(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), pais);
-                        }
-                    }
-                }
-            }
-
-            return uf;
+            return _context.Ufs.Include("Pais").FirstOrDefault(u => u.Id == id);
         }
 
         public void Inserir(Uf uf)
         {
-            using (var connection = new NpgsqlConnection(_connectionString))
-            {
-                connection.Open();
-                var query = "INSERT INTO uf (descricao, codigo_ibge, pais_id) VALUES (@descricao, @codigo_ibge, @pais_id)";
-
-                using (var command = new NpgsqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@descricao", uf.Descricao);
-                    command.Parameters.AddWithValue("@codigo_ibge", uf.CodigoIbge);
-                    command.Parameters.AddWithValue("@pais_id", uf.Pais.Id);
-                    command.ExecuteNonQuery();
-                }
-            }
+            _context.Ufs.Add(uf);
+            _context.SaveChanges();
         }
 
         public void Atualizar(Uf uf)
         {
-            using (var connection = new NpgsqlConnection(_connectionString))
+            var ufExistente = _context.Ufs.Find(uf.Id);
+            if (ufExistente != null)
             {
-                connection.Open();
-                var query = "UPDATE uf SET descricao = @descricao, codigo_ibge = @codigo_ibge, pais_id = @pais_id WHERE id = @id";
+                ufExistente.Descricao = uf.Descricao;
+                ufExistente.CodigoIbge = uf.CodigoIbge;
+                ufExistente.PaisId = uf.PaisId;
 
-                using (var command = new NpgsqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@descricao", uf.Descricao);
-                    command.Parameters.AddWithValue("@codigo_ibge", uf.CodigoIbge);
-                    command.Parameters.AddWithValue("@pais_id", uf.Pais.Id);
-                    command.Parameters.AddWithValue("@id", uf.Id);
-                    command.ExecuteNonQuery();
-                }
+                _context.SaveChanges();
             }
         }
 
         public void Remover(int id)
         {
-            using (var connection = new NpgsqlConnection(_connectionString))
+            var uf = _context.Ufs.Find(id);
+            if (uf != null)
             {
-                connection.Open();
-                var query = "DELETE FROM uf WHERE id = @id";
-
-                using (var command = new NpgsqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@id", id);
-                    command.ExecuteNonQuery();
-                }
+                _context.Ufs.Remove(uf);
+                _context.SaveChanges();
             }
         }
     }

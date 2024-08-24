@@ -29,14 +29,14 @@ namespace EventManager.Services
 
         public void Inserir(CidadeDTO cidadeDto)
         {
-            var uf = new Uf(cidadeDto.UfId, cidadeDto.UfDescricao, 0, null);
+            var uf = new Uf(cidadeDto.UfId, cidadeDto.UfDescricao, 0, 0);
             var cidade = new Cidade(0, cidadeDto.Descricao, cidadeDto.CodigoIbge, uf);
             _cidadeRepository.Inserir(cidade);
         }
 
         public void Atualizar(CidadeDTO cidadeDto)
         {
-            var uf = new Uf(cidadeDto.UfId, cidadeDto.UfDescricao, 0, null);
+            var uf = new Uf(cidadeDto.UfId, cidadeDto.UfDescricao, 0, 0);
             var cidade = new Cidade(cidadeDto.Id, cidadeDto.Descricao, cidadeDto.CodigoIbge, uf);
             _cidadeRepository.Atualizar(cidade);
         }
