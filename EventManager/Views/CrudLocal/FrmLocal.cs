@@ -1,5 +1,4 @@
-﻿using EventManager.Config;
-using EventManager.DTOs;
+﻿using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
 using System;
@@ -19,16 +18,41 @@ namespace EventManager.Views.CrudLocal
             _cidadeService = new CidadeService(new CidadeRepository());
             _localService = new LocalService(new LocalRepository());
 
+            ConfigureMaterialListView();
             LoadLocais();
             FillCidadeComboBox(cbCidade);
+        }
 
-            DataGridViewCustomizations.ApplyCustomizations(dataGridViewLocais);
+        private void ConfigureMaterialListView()
+        {
+            int size = materialListViewLocais.Size.Width / 6;
+            materialListViewLocais.Columns.Add("ID", size);
+            materialListViewLocais.Columns.Add("Nome", size);
+            materialListViewLocais.Columns.Add("Capacidade", size);
+            materialListViewLocais.Columns.Add("Endereço", size);
+            materialListViewLocais.Columns.Add("Cidade", size);
+            materialListViewLocais.Columns.Add("Observações", size);
         }
 
         private void LoadLocais()
         {
+            materialListViewLocais.Items.Clear();
             var locais = _localService.BuscarTodos();
-            dataGridViewLocais.DataSource = locais;
+
+            foreach (var local in locais)
+            {
+                var listViewItem = new ListViewItem(local.Id.ToString())
+                {
+                    Tag = local
+                };
+                listViewItem.SubItems.Add(local.Nome);
+                listViewItem.SubItems.Add(local.Capacidade.ToString());
+                listViewItem.SubItems.Add(local.Endereco);
+                listViewItem.SubItems.Add(local.CidadeDescricao);
+                listViewItem.SubItems.Add(local.Observacoes);
+
+                materialListViewLocais.Items.Add(listViewItem);
+            }
         }
 
         private void FillCidadeComboBox(ComboBox comboBox)
@@ -46,26 +70,26 @@ namespace EventManager.Views.CrudLocal
                 Nome = txtNome.Text,
                 Capacidade = Convert.ToInt32(txtCapacidade.Text),
                 Endereco = txtEndereco.Text,
-                Observacoes = txtObservacoes.Text,
-                CidadeId = Convert.ToInt32(cbCidade.SelectedValue)
+                CidadeId = Convert.ToInt32(cbCidade.SelectedValue),
+                Observacoes = txtObservacoes.Text
             };
             _localService.Inserir(localDto);
             LoadLocais();
             ClearFields();
         }
 
-        private void btnAtualizar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewLocais.SelectedRows.Count > 0)
+            if (materialListViewLocais.SelectedItems.Count > 0)
             {
-                var selectedRow = dataGridViewLocais.SelectedRows[0];
-                var localDto = (LocalDTO)selectedRow.DataBoundItem;
+                var selectedItem = materialListViewLocais.SelectedItems[0];
+                var localDto = (LocalDTO)selectedItem.Tag;
 
                 localDto.Nome = txtNome.Text;
                 localDto.Capacidade = Convert.ToInt32(txtCapacidade.Text);
                 localDto.Endereco = txtEndereco.Text;
-                localDto.Observacoes = txtObservacoes.Text;
                 localDto.CidadeId = Convert.ToInt32(cbCidade.SelectedValue);
+                localDto.Observacoes = txtObservacoes.Text;
 
                 _localService.Atualizar(localDto);
                 LoadLocais();
@@ -75,10 +99,10 @@ namespace EventManager.Views.CrudLocal
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewLocais.SelectedRows.Count > 0)
+            if (materialListViewLocais.SelectedItems.Count > 0)
             {
-                var selectedRow = dataGridViewLocais.SelectedRows[0];
-                var localDto = (LocalDTO)selectedRow.DataBoundItem;
+                var selectedItem = materialListViewLocais.SelectedItems[0];
+                var localDto = (LocalDTO)selectedItem.Tag;
 
                 var confirmResult = MessageBox.Show(
                     "Você realmente deseja excluir?",
@@ -96,18 +120,18 @@ namespace EventManager.Views.CrudLocal
             }
         }
 
-        private void dataGridViewLocais_SelectionChanged(object sender, EventArgs e)
+        private void materialListViewLocais_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dataGridViewLocais.SelectedRows.Count > 0)
+            if (materialListViewLocais.SelectedItems.Count > 0)
             {
-                var selectedRow = dataGridViewLocais.SelectedRows[0];
-                var localDto = (LocalDTO)selectedRow.DataBoundItem;
+                var selectedItem = materialListViewLocais.SelectedItems[0];
+                var localDto = (LocalDTO)selectedItem.Tag;
 
                 txtNome.Text = localDto.Nome;
                 txtCapacidade.Text = localDto.Capacidade.ToString();
                 txtEndereco.Text = localDto.Endereco;
+                cbCidade.SelectedValue = localDto.CidadeId;
                 txtObservacoes.Text = localDto.Observacoes;
-                cbCidade.SelectedIndex = (int)selectedRow.Cells[5].Value - 1;
             }
         }
 

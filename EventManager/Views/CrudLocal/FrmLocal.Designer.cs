@@ -28,259 +28,351 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.cbCidade = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCapacidade = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDeletar = new System.Windows.Forms.Button();
-            this.btnAtualizar = new System.Windows.Forms.Button();
-            this.btnAdicionar = new System.Windows.Forms.Button();
-            this.dataGridViewLocais = new System.Windows.Forms.DataGridView();
-            this.txtObservacoes = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtEndereco = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocais)).BeginInit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLocal));
+            this.btnDeletar = new ReaLTaiizor.Controls.HopeRoundButton();
+            this.btnEditar = new ReaLTaiizor.Controls.HopeRoundButton();
+            this.btnAdicionar = new ReaLTaiizor.Controls.HopeRoundButton();
+            this.hopeForm1 = new ReaLTaiizor.Forms.HopeForm();
+            this.materialListViewLocais = new ReaLTaiizor.Controls.MaterialListView();
+            this.hopeGroupBox1 = new ReaLTaiizor.Controls.HopeGroupBox();
+            this.txtObservacoes = new ReaLTaiizor.Controls.HopeRichTextBox();
+            this.foxLabel5 = new ReaLTaiizor.Controls.FoxLabel();
+            this.foxLabel4 = new ReaLTaiizor.Controls.FoxLabel();
+            this.txtEndereco = new ReaLTaiizor.Controls.HopeTextBox();
+            this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
+            this.cbCidade = new ReaLTaiizor.Controls.HopeComboBox();
+            this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
+            this.txtCapacidade = new ReaLTaiizor.Controls.HopeTextBox();
+            this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
+            this.txtNome = new ReaLTaiizor.Controls.HopeTextBox();
+            this.hopeGroupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.txtObservacoes);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.txtEndereco);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.cbCidade);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtCapacidade);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtNome);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(944, 135);
-            this.panel2.TabIndex = 7;
-            // 
-            // cbCidade
-            // 
-            this.cbCidade.FormattingEnabled = true;
-            this.cbCidade.Location = new System.Drawing.Point(593, 43);
-            this.cbCidade.Name = "cbCidade";
-            this.cbCidade.Size = new System.Drawing.Size(173, 21);
-            this.cbCidade.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(547, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Cidade";
-            // 
-            // txtCapacidade
-            // 
-            this.txtCapacidade.Location = new System.Drawing.Point(87, 70);
-            this.txtCapacidade.Name = "txtCapacidade";
-            this.txtCapacidade.Size = new System.Drawing.Size(170, 20);
-            this.txtCapacidade.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Capacidade";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(87, 44);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(170, 20);
-            this.txtNome.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nome";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Local";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnDeletar);
-            this.panel1.Controls.Add(this.btnAtualizar);
-            this.panel1.Controls.Add(this.btnAdicionar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 530);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(944, 87);
-            this.panel1.TabIndex = 6;
             // 
             // btnDeletar
             // 
-            this.btnDeletar.Location = new System.Drawing.Point(174, 15);
+            this.btnDeletar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnDeletar.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnDeletar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeletar.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnDeletar.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnDeletar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDeletar.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnDeletar.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnDeletar.Location = new System.Drawing.Point(677, 567);
             this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(75, 23);
-            this.btnDeletar.TabIndex = 2;
+            this.btnDeletar.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.btnDeletar.Size = new System.Drawing.Size(252, 40);
+            this.btnDeletar.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnDeletar.TabIndex = 30;
             this.btnDeletar.Text = "Deletar";
-            this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.TextColor = System.Drawing.Color.White;
+            this.btnDeletar.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
-            // btnAtualizar
+            // btnEditar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(93, 15);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizar.TabIndex = 1;
-            this.btnAtualizar.Text = "Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            this.btnEditar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnEditar.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnEditar.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnEditar.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnEditar.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnEditar.Location = new System.Drawing.Point(343, 567);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.btnEditar.Size = new System.Drawing.Size(252, 40);
+            this.btnEditar.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnEditar.TabIndex = 29;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextColor = System.Drawing.Color.White;
+            this.btnEditar.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(12, 15);
+            this.btnAdicionar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnAdicionar.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdicionar.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnAdicionar.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAdicionar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnAdicionar.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnAdicionar.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnAdicionar.Location = new System.Drawing.Point(9, 567);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
-            this.btnAdicionar.TabIndex = 0;
+            this.btnAdicionar.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.btnAdicionar.Size = new System.Drawing.Size(252, 40);
+            this.btnAdicionar.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnAdicionar.TabIndex = 28;
             this.btnAdicionar.Text = "Adicionar";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.TextColor = System.Drawing.Color.White;
+            this.btnAdicionar.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
-            // dataGridViewLocais
+            // hopeForm1
             // 
-            this.dataGridViewLocais.AllowUserToAddRows = false;
-            this.dataGridViewLocais.AllowUserToDeleteRows = false;
-            this.dataGridViewLocais.AllowUserToResizeRows = false;
-            this.dataGridViewLocais.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewLocais.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewLocais.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.dataGridViewLocais.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(125)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLocais.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewLocais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewLocais.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewLocais.Location = new System.Drawing.Point(12, 150);
-            this.dataGridViewLocais.MultiSelect = false;
-            this.dataGridViewLocais.Name = "dataGridViewLocais";
-            this.dataGridViewLocais.ReadOnly = true;
-            this.dataGridViewLocais.RowHeadersVisible = false;
-            this.dataGridViewLocais.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewLocais.ShowCellErrors = false;
-            this.dataGridViewLocais.ShowCellToolTips = false;
-            this.dataGridViewLocais.ShowEditingIcon = false;
-            this.dataGridViewLocais.ShowRowErrors = false;
-            this.dataGridViewLocais.Size = new System.Drawing.Size(920, 374);
-            this.dataGridViewLocais.TabIndex = 8;
-            this.dataGridViewLocais.SelectionChanged += new System.EventHandler(this.dataGridViewLocais_SelectionChanged);
+            this.hopeForm1.ControlBoxColorH = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.hopeForm1.ControlBoxColorHC = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.hopeForm1.ControlBoxColorN = System.Drawing.Color.White;
+            this.hopeForm1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.hopeForm1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.hopeForm1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.hopeForm1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
+            this.hopeForm1.Image = ((System.Drawing.Image)(resources.GetObject("hopeForm1.Image")));
+            this.hopeForm1.Location = new System.Drawing.Point(0, 0);
+            this.hopeForm1.MaximizeBox = false;
+            this.hopeForm1.Name = "hopeForm1";
+            this.hopeForm1.Size = new System.Drawing.Size(944, 40);
+            this.hopeForm1.TabIndex = 27;
+            this.hopeForm1.Text = "Locais";
+            this.hopeForm1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            // 
+            // materialListViewLocais
+            // 
+            this.materialListViewLocais.AutoSizeTable = false;
+            this.materialListViewLocais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialListViewLocais.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListViewLocais.Depth = 0;
+            this.materialListViewLocais.FullRowSelect = true;
+            this.materialListViewLocais.HideSelection = false;
+            this.materialListViewLocais.Location = new System.Drawing.Point(9, 191);
+            this.materialListViewLocais.MinimumSize = new System.Drawing.Size(200, 100);
+            this.materialListViewLocais.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListViewLocais.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.materialListViewLocais.MultiSelect = false;
+            this.materialListViewLocais.Name = "materialListViewLocais";
+            this.materialListViewLocais.OwnerDraw = true;
+            this.materialListViewLocais.Size = new System.Drawing.Size(920, 364);
+            this.materialListViewLocais.TabIndex = 32;
+            this.materialListViewLocais.UseCompatibleStateImageBehavior = false;
+            this.materialListViewLocais.View = System.Windows.Forms.View.Details;
+            this.materialListViewLocais.SelectedIndexChanged += new System.EventHandler(this.materialListViewLocais_SelectedIndexChanged);
+            // 
+            // hopeGroupBox1
+            // 
+            this.hopeGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.hopeGroupBox1.Controls.Add(this.txtObservacoes);
+            this.hopeGroupBox1.Controls.Add(this.foxLabel5);
+            this.hopeGroupBox1.Controls.Add(this.foxLabel4);
+            this.hopeGroupBox1.Controls.Add(this.txtEndereco);
+            this.hopeGroupBox1.Controls.Add(this.foxLabel3);
+            this.hopeGroupBox1.Controls.Add(this.cbCidade);
+            this.hopeGroupBox1.Controls.Add(this.foxLabel2);
+            this.hopeGroupBox1.Controls.Add(this.txtCapacidade);
+            this.hopeGroupBox1.Controls.Add(this.foxLabel1);
+            this.hopeGroupBox1.Controls.Add(this.txtNome);
+            this.hopeGroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.hopeGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.hopeGroupBox1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.hopeGroupBox1.Location = new System.Drawing.Point(9, 48);
+            this.hopeGroupBox1.Name = "hopeGroupBox1";
+            this.hopeGroupBox1.ShowText = false;
+            this.hopeGroupBox1.Size = new System.Drawing.Size(920, 137);
+            this.hopeGroupBox1.TabIndex = 31;
+            this.hopeGroupBox1.TabStop = false;
+            this.hopeGroupBox1.Text = "hopeGroupBox1";
+            this.hopeGroupBox1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             // 
             // txtObservacoes
             // 
-            this.txtObservacoes.Location = new System.Drawing.Point(352, 70);
+            this.txtObservacoes.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtObservacoes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservacoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtObservacoes.Hint = "";
+            this.txtObservacoes.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtObservacoes.Location = new System.Drawing.Point(691, 28);
+            this.txtObservacoes.MaxLength = 32767;
+            this.txtObservacoes.Multiline = true;
             this.txtObservacoes.Name = "txtObservacoes";
-            this.txtObservacoes.Size = new System.Drawing.Size(170, 20);
-            this.txtObservacoes.TabIndex = 10;
+            this.txtObservacoes.PasswordChar = '\0';
+            this.txtObservacoes.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtObservacoes.SelectedText = "";
+            this.txtObservacoes.SelectionLength = 0;
+            this.txtObservacoes.SelectionStart = 0;
+            this.txtObservacoes.Size = new System.Drawing.Size(200, 78);
+            this.txtObservacoes.TabIndex = 14;
+            this.txtObservacoes.TabStop = false;
+            this.txtObservacoes.UseSystemPasswordChar = false;
             // 
-            // label5
+            // foxLabel5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(276, 70);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Observações";
+            this.foxLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
+            this.foxLabel5.Location = new System.Drawing.Point(601, 38);
+            this.foxLabel5.Name = "foxLabel5";
+            this.foxLabel5.Size = new System.Drawing.Size(84, 19);
+            this.foxLabel5.TabIndex = 13;
+            this.foxLabel5.Text = "Observações";
+            // 
+            // foxLabel4
+            // 
+            this.foxLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
+            this.foxLabel4.Location = new System.Drawing.Point(325, 82);
+            this.foxLabel4.Name = "foxLabel4";
+            this.foxLabel4.Size = new System.Drawing.Size(70, 19);
+            this.foxLabel4.TabIndex = 12;
+            this.foxLabel4.Text = "Endereço";
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(352, 44);
+            this.txtEndereco.BackColor = System.Drawing.Color.White;
+            this.txtEndereco.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtEndereco.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtEndereco.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtEndereco.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndereco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtEndereco.Hint = "";
+            this.txtEndereco.Location = new System.Drawing.Point(404, 72);
+            this.txtEndereco.MaxLength = 32767;
+            this.txtEndereco.Multiline = false;
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(170, 20);
-            this.txtEndereco.TabIndex = 8;
+            this.txtEndereco.PasswordChar = '\0';
+            this.txtEndereco.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtEndereco.SelectedText = "";
+            this.txtEndereco.SelectionLength = 0;
+            this.txtEndereco.SelectionStart = 0;
+            this.txtEndereco.Size = new System.Drawing.Size(182, 34);
+            this.txtEndereco.TabIndex = 11;
+            this.txtEndereco.TabStop = false;
+            this.txtEndereco.UseSystemPasswordChar = false;
             // 
-            // label6
+            // foxLabel3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(276, 44);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Endereço";
+            this.foxLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
+            this.foxLabel3.Location = new System.Drawing.Point(325, 38);
+            this.foxLabel3.Name = "foxLabel3";
+            this.foxLabel3.Size = new System.Drawing.Size(46, 19);
+            this.foxLabel3.TabIndex = 9;
+            this.foxLabel3.Text = "Cidade";
+            // 
+            // cbCidade
+            // 
+            this.cbCidade.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbCidade.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbCidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCidade.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCidade.FormattingEnabled = true;
+            this.cbCidade.ItemHeight = 30;
+            this.cbCidade.Location = new System.Drawing.Point(404, 28);
+            this.cbCidade.Name = "cbCidade";
+            this.cbCidade.Size = new System.Drawing.Size(182, 36);
+            this.cbCidade.TabIndex = 10;
+            // 
+            // foxLabel2
+            // 
+            this.foxLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
+            this.foxLabel2.Location = new System.Drawing.Point(27, 82);
+            this.foxLabel2.Name = "foxLabel2";
+            this.foxLabel2.Size = new System.Drawing.Size(84, 19);
+            this.foxLabel2.TabIndex = 7;
+            this.foxLabel2.Text = "Capacidade";
+            // 
+            // txtCapacidade
+            // 
+            this.txtCapacidade.BackColor = System.Drawing.Color.White;
+            this.txtCapacidade.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtCapacidade.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtCapacidade.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtCapacidade.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCapacidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtCapacidade.Hint = "";
+            this.txtCapacidade.Location = new System.Drawing.Point(115, 72);
+            this.txtCapacidade.MaxLength = 32767;
+            this.txtCapacidade.Multiline = false;
+            this.txtCapacidade.Name = "txtCapacidade";
+            this.txtCapacidade.PasswordChar = '\0';
+            this.txtCapacidade.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCapacidade.SelectedText = "";
+            this.txtCapacidade.SelectionLength = 0;
+            this.txtCapacidade.SelectionStart = 0;
+            this.txtCapacidade.Size = new System.Drawing.Size(91, 34);
+            this.txtCapacidade.TabIndex = 6;
+            this.txtCapacidade.TabStop = false;
+            this.txtCapacidade.UseSystemPasswordChar = false;
+            // 
+            // foxLabel1
+            // 
+            this.foxLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
+            this.foxLabel1.Location = new System.Drawing.Point(27, 38);
+            this.foxLabel1.Name = "foxLabel1";
+            this.foxLabel1.Size = new System.Drawing.Size(64, 19);
+            this.foxLabel1.TabIndex = 5;
+            this.foxLabel1.Text = "Nome";
+            // 
+            // txtNome
+            // 
+            this.txtNome.BackColor = System.Drawing.Color.White;
+            this.txtNome.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtNome.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtNome.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtNome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtNome.Hint = "";
+            this.txtNome.Location = new System.Drawing.Point(115, 28);
+            this.txtNome.MaxLength = 32767;
+            this.txtNome.Multiline = false;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.PasswordChar = '\0';
+            this.txtNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNome.SelectedText = "";
+            this.txtNome.SelectionLength = 0;
+            this.txtNome.SelectionStart = 0;
+            this.txtNome.Size = new System.Drawing.Size(182, 34);
+            this.txtNome.TabIndex = 4;
+            this.txtNome.TabStop = false;
+            this.txtNome.UseSystemPasswordChar = false;
             // 
             // FrmLocal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 617);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridViewLocais);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.btnDeletar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnAdicionar);
+            this.Controls.Add(this.hopeForm1);
+            this.Controls.Add(this.materialListViewLocais);
+            this.Controls.Add(this.hopeGroupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1920, 1032);
+            this.MinimumSize = new System.Drawing.Size(190, 40);
             this.Name = "FrmLocal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Local";
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocais)).EndInit();
+            this.Text = "FrmLocalNovo";
+            this.hopeGroupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cbCidade;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCapacidade;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnDeletar;
-        private System.Windows.Forms.Button btnAtualizar;
-        private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.DataGridView dataGridViewLocais;
-        private System.Windows.Forms.TextBox txtObservacoes;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEndereco;
-        private System.Windows.Forms.Label label6;
+        private ReaLTaiizor.Controls.HopeRoundButton btnDeletar;
+        private ReaLTaiizor.Controls.HopeRoundButton btnEditar;
+        private ReaLTaiizor.Controls.HopeRoundButton btnAdicionar;
+        private ReaLTaiizor.Forms.HopeForm hopeForm1;
+        private ReaLTaiizor.Controls.MaterialListView materialListViewLocais;
+        private ReaLTaiizor.Controls.HopeGroupBox hopeGroupBox1;
+        private ReaLTaiizor.Controls.FoxLabel foxLabel3;
+        private ReaLTaiizor.Controls.HopeComboBox cbCidade;
+        private ReaLTaiizor.Controls.FoxLabel foxLabel2;
+        private ReaLTaiizor.Controls.HopeTextBox txtCapacidade;
+        private ReaLTaiizor.Controls.FoxLabel foxLabel1;
+        private ReaLTaiizor.Controls.HopeTextBox txtNome;
+        private ReaLTaiizor.Controls.FoxLabel foxLabel4;
+        private ReaLTaiizor.Controls.HopeTextBox txtEndereco;
+        private ReaLTaiizor.Controls.FoxLabel foxLabel5;
+        private ReaLTaiizor.Controls.HopeRichTextBox txtObservacoes;
     }
 }
