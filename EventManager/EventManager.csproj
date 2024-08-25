@@ -231,6 +231,12 @@
     <Compile Include="Views\Cruds\CrudUsuario\FrmUsuario.Designer.cs">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Details\FrmEventoDetalhes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Details\FrmEventoDetalhes.Designer.cs">
+      <DependentUpon>FrmEventoDetalhes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomeAdmin\FrmHomeAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Cruds\CrudUsuario\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Details\FrmEventoDetalhes.resx">
+      <DependentUpon>FrmEventoDetalhes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HomeAdmin\FrmHomeAdmin.resx">
       <DependentUpon>FrmHomeAdmin.cs</DependentUpon>

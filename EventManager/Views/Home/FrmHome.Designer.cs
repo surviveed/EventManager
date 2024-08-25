@@ -175,6 +175,7 @@
             this.materialListViewEventos.TabIndex = 20;
             this.materialListViewEventos.UseCompatibleStateImageBehavior = false;
             this.materialListViewEventos.View = System.Windows.Forms.View.Details;
+            this.materialListViewEventos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListViewEventos_MouseDoubleClick);
             // 
             // panel1
             // 

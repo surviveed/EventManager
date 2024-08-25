@@ -2,7 +2,9 @@
 using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
+using EventManager.Views.Details;
 using EventManager.Views.HomeAdmin;
+using ReaLTaiizor.Controls;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -121,6 +123,19 @@ namespace EventManager.Views.Home
                 listItem.SubItems.Add(evento.MediaAvaliacoes.ToString() != "NaN" ? evento.MediaAvaliacoes.ToString("0.0") : "0.0");
                 listItem.Tag = evento;
                 materialListViewEventos.Items.Add(listItem);
+            }
+        }
+
+        private void materialListViewEventos_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var listView = sender as MaterialListView;
+            if (listView.SelectedItems.Count > 0)
+            {
+                var selectedItem = listView.SelectedItems[0];
+                var evento = (EventoDTO)selectedItem.Tag;
+
+                FrmEventoDetalhes frmDetalhes = new FrmEventoDetalhes(evento);
+                frmDetalhes.ShowDialog(); 
             }
         }
     }
