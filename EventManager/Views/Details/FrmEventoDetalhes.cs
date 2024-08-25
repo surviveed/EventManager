@@ -1,7 +1,4 @@
 ﻿using EventManager.DTOs;
-using EventManager.Repositories;
-using EventManager.Services;
-using System;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -11,18 +8,18 @@ namespace EventManager.Views.Details
 {
     public partial class FrmEventoDetalhes : Form
     {
-        private readonly EventoService _eventoService;
-        private readonly PessoaService _pessoaService;
-        private readonly SessaoService _sessaoService;
 
         public FrmEventoDetalhes(EventoDTO evento)
         {
             InitializeComponent();
-            _eventoService = new EventoService(new EventoRepository());
             ConfiguracoesIniciais(evento);
 
             ConfigureMaterialListViewSessoes();
             LoadSessoes(evento);
+
+            ConfigureMaterialListViewOrganizadores();
+            LoadPessoas(evento);
+
             CreatePictureBoxes((int)evento.MediaAvaliacoes);
         }
 
@@ -31,7 +28,8 @@ namespace EventManager.Views.Details
             lblNome.Text = evento.Nome;
             lblDescricao.Text = evento.Descricao;
             lblDescricaoTipoEvento.Text = evento.TipoEventoDescricao;
-            lblNumeroDeSessoes.Text = evento.Sessoes.Count.ToString();
+            lblNumeroDeSessoes.Text = evento?.Sessoes.Count.ToString();
+            lblNumeroDeOrganizadores.Text = evento?.Organizadores.Count.ToString();
         }
 
         private void ConfigureMaterialListViewSessoes()
@@ -61,6 +59,34 @@ namespace EventManager.Views.Details
                 listViewItem.SubItems.Add(sessao.LocalNome);
 
                 materialListViewSessoes.Items.Add(listViewItem);
+            }
+        }
+
+        private void ConfigureMaterialListViewOrganizadores()
+        {
+            int size = materialListViewOrganizadores.Size.Width / 4;
+            materialListViewOrganizadores.Columns.Add("ID", size);
+            materialListViewOrganizadores.Columns.Add("Nome", size);
+            materialListViewOrganizadores.Columns.Add("CPF", size);
+            materialListViewOrganizadores.Columns.Add("Tipo Pessoa", size);
+        }
+
+        private void LoadPessoas(EventoDTO evento)
+        {
+            materialListViewOrganizadores.Items.Clear();
+            var pessoas = evento.Organizadores;
+
+            foreach (var pessoa in pessoas)
+            {
+                var listViewItem = new ListViewItem(pessoa.Id.ToString())
+                {
+                    Tag = pessoa
+                };
+                listViewItem.SubItems.Add(pessoa.Nome);
+                listViewItem.SubItems.Add(pessoa.Cpf);
+                listViewItem.SubItems.Add(pessoa.TipoPessoa.ToString());
+
+                materialListViewOrganizadores.Items.Add(listViewItem);
             }
         }
 
@@ -100,7 +126,5 @@ namespace EventManager.Views.Details
                 return null;
             }
         }
-
-
     }
 }

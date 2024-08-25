@@ -14,6 +14,7 @@ namespace EventManager.DTOs
         public double MediaAvaliacoes { get; set; }
 
         public List<SessaoDTO> Sessoes { get; set; } = new List<SessaoDTO>();
+        public List<PessoaDTO> Organizadores { get; set; } = new List<PessoaDTO>();
 
         public EventoDTO() { }
 
@@ -37,8 +38,19 @@ namespace EventManager.DTOs
                 TipoEventoDescricao = entity.TipoEvento.Descricao;
             }
 
-            foreach(Sessao sessao in entity.Sessoes){
+            foreach(Sessao sessao in entity.Sessoes)
+            {
                 Sessoes.Add(new SessaoDTO(sessao));
+            }
+
+            foreach(EventoOrganizadores organizador in entity.EventoOrganizadores)
+            {
+                Organizadores.Add(new PessoaDTO(
+                    organizador.Pessoa.Id,
+                    organizador.Pessoa.Nome,
+                    organizador.Pessoa.Cpf,
+                    organizador.Pessoa.TipoPessoa
+                    ));
             }
 
             MediaAvaliacoes = entity.CalcularMediaAvaliacoes();
