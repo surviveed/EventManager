@@ -2,6 +2,7 @@
 using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
+using EventManager.Util;
 using EventManager.Views.Details;
 using EventManager.Views.HomeAdmin;
 using ReaLTaiizor.Controls;
@@ -15,9 +16,11 @@ namespace EventManager.Views.Home
     {
         private readonly EventoService _eventoService;
         private readonly TipoEventoService _tipoEventoService;
+        private UsuarioDTO _usuario;
 
         public FrmHome(UsuarioDTO usuario)
         {
+            _usuario = usuario;
             InitializeComponent();
             _tipoEventoService = new TipoEventoService(new TipoEventoRepository());
             _eventoService = new EventoService(new EventoRepository());
@@ -35,12 +38,9 @@ namespace EventManager.Views.Home
 
         private void VerificarAdmin(UsuarioDTO usuario)
         {
-            foreach(PapelDTO papel in usuario.Papeis){
-                if (papel.Descricao.Equals("Administrador"))
-                {
-                    btnAdmin.Visible = true;
-                    break;
-                }
+            if (AuthService.VerificarAdmin(usuario))
+            {
+                btnAdmin.Visible = true;
             }
         }
 
@@ -134,7 +134,7 @@ namespace EventManager.Views.Home
                 var selectedItem = listView.SelectedItems[0];
                 var evento = (EventoDTO)selectedItem.Tag;
 
-                FrmEventoDetalhes frmDetalhes = new FrmEventoDetalhes(evento);
+                FrmEventoDetalhes frmDetalhes = new FrmEventoDetalhes(evento, _usuario);
                 frmDetalhes.ShowDialog(); 
             }
         }

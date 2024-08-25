@@ -1,4 +1,8 @@
 ﻿using EventManager.DTOs;
+using EventManager.Entities;
+using EventManager.Services;
+using EventManager.Util;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -9,7 +13,7 @@ namespace EventManager.Views.Details
     public partial class FrmEventoDetalhes : Form
     {
 
-        public FrmEventoDetalhes(EventoDTO evento)
+        public FrmEventoDetalhes(EventoDTO evento, UsuarioDTO usuario)
         {
             InitializeComponent();
             ConfiguracoesIniciais(evento);
@@ -20,7 +24,20 @@ namespace EventManager.Views.Details
             ConfigureMaterialListViewOrganizadores();
             LoadPessoas(evento);
 
+            ConfigureMaterialListViewAvaliacoes();
+            LoadAvaliacoes(evento);
+
             CreatePictureBoxes((int)evento.MediaAvaliacoes);
+
+            VerificarAdmin(usuario);
+        }
+
+        private void VerificarAdmin(UsuarioDTO usuario)
+        {
+            if (AuthService.VerificarAdmin(usuario))
+            {
+                groupBoxAvaliacoes.Visible = true;
+            }
         }
 
         private void ConfiguracoesIniciais(EventoDTO evento)
@@ -64,11 +81,9 @@ namespace EventManager.Views.Details
 
         private void ConfigureMaterialListViewOrganizadores()
         {
-            int size = materialListViewOrganizadores.Size.Width / 4;
+            int size = materialListViewOrganizadores.Size.Width / 2;
             materialListViewOrganizadores.Columns.Add("ID", size);
             materialListViewOrganizadores.Columns.Add("Nome", size);
-            materialListViewOrganizadores.Columns.Add("CPF", size);
-            materialListViewOrganizadores.Columns.Add("Tipo Pessoa", size);
         }
 
         private void LoadPessoas(EventoDTO evento)
@@ -83,10 +98,46 @@ namespace EventManager.Views.Details
                     Tag = pessoa
                 };
                 listViewItem.SubItems.Add(pessoa.Nome);
-                listViewItem.SubItems.Add(pessoa.Cpf);
-                listViewItem.SubItems.Add(pessoa.TipoPessoa.ToString());
 
                 materialListViewOrganizadores.Items.Add(listViewItem);
+            }
+        }
+
+        private void ConfigureMaterialListViewAvaliacoes()
+        {
+            int size = materialListViewAvaliacoes.Size.Width / 5;
+            materialListViewAvaliacoes.Columns.Add("ID", size);
+            materialListViewAvaliacoes.Columns.Add("Nota", size);
+            materialListViewAvaliacoes.Columns.Add("Comentário", size);
+            materialListViewAvaliacoes.Columns.Add("Pessoa", size);
+            materialListViewAvaliacoes.Columns.Add("Sessão", size);
+        }
+
+        private void LoadAvaliacoes(EventoDTO evento)
+        {
+            materialListViewAvaliacoes.Items.Clear();
+            List<AvaliacaoDTO> avaliacoes = new List<AvaliacaoDTO>();
+
+            foreach(SessaoDTO sessao in evento.Sessoes)
+            {
+                foreach(AvaliacaoDTO avaliacao in sessao.Avaliacoes)
+                {
+                    avaliacoes.Add(avaliacao);
+                }
+            }
+
+            foreach (var avaliacao in avaliacoes)
+            {
+                var listViewItem = new ListViewItem(avaliacao.Id.ToString())
+                {
+                    Tag = avaliacao
+                };
+                listViewItem.SubItems.Add(avaliacao.Nota.ToString());
+                listViewItem.SubItems.Add(avaliacao.Comentario);
+                listViewItem.SubItems.Add(avaliacao.PessoaNome);
+                listViewItem.SubItems.Add(avaliacao.SessaoId.ToString());
+
+                materialListViewAvaliacoes.Items.Add(listViewItem);
             }
         }
 

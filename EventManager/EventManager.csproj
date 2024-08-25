@@ -169,6 +169,7 @@
     <Compile Include="Services\TipoEventoService.cs" />
     <Compile Include="Services\UfService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
+    <Compile Include="Util\AuthService.cs" />
     <Compile Include="Views\Cruds\CrudAvaliacao\FrmAvaliacao.cs">
       <SubType>Form</SubType>
     </Compile>
