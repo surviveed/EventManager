@@ -17,10 +17,27 @@ namespace EventManager.Repositories
 
         public List<Evento> BuscarTodos()
         {
-            var eventos = _context.Eventos
+            return BuscarComFiltros(null, null); 
+        }
+
+        public List<Evento> BuscarComFiltros(string nome = null, int? tipoEventoId = null)
+        {
+            var query = _context.Eventos
                 .Include(e => e.TipoEvento)
                 .Include(e => e.Sessoes)
-                .OrderBy(u => u.Id).ToList();
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(nome))
+            {
+                query = query.Where(e => e.Nome.Contains(nome));
+            }
+
+            if (tipoEventoId.HasValue)
+            {
+                query = query.Where(e => e.TipoEventoId == tipoEventoId.Value);
+            }
+
+            var eventos = query.OrderBy(u => u.Id).ToList();
 
             // Carrega avaliações para cada sessão
             foreach (var evento in eventos)
@@ -32,7 +49,6 @@ namespace EventManager.Repositories
             }
 
             return eventos;
-
         }
 
         public Evento BuscarPorId(int id)

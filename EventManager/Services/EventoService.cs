@@ -15,6 +15,12 @@ namespace EventManager.Services
             _eventoRepository = eventoRepository;
         }
 
+        public List<EventoDTO> BuscarTodosPorNomeETipoDeEvento(string nome = null, int? tipoEventoId = null)
+        {
+            var eventos = _eventoRepository.BuscarComFiltros(nome, tipoEventoId);
+            return eventos.Select(evento => new EventoDTO(evento)).ToList();
+        }
+
         public List<EventoDTO> BuscarTodos()
         {
             var eventos = _eventoRepository.BuscarTodos();

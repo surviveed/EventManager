@@ -21,6 +21,9 @@ namespace EventManager.Views.CrudSessao
 
             LoadEventos();
             FillTipoEventoComboBox(cbTipoEvento);
+            FillTipoEventoComboBox(cbFiltroTipoEvento);
+            cbTipoEvento.SelectedIndex = -1;
+            cbFiltroTipoEvento.SelectedIndex = -1;
 
             ConfigureMaterialListView();
 
@@ -115,7 +118,7 @@ namespace EventManager.Views.CrudSessao
             }
         }
 
-        private void materialListViewEventos_SelectedIndexChanged(object sender, EventArgs e)
+        private void materialListViewEventos_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (materialListViewEventos.SelectedItems.Count > 0)
             {
@@ -133,6 +136,48 @@ namespace EventManager.Views.CrudSessao
             txtNome.Clear();
             txtDescricao.Clear();
             cbTipoEvento.SelectedIndex = -1;
+        }
+
+        private void FiltrarEventos()
+        {
+            string nomeFiltro = txtFiltroNome.Text;
+            int? tipoEventoIdFiltro = null;
+
+            if (cbFiltroTipoEvento.SelectedValue != null && int.TryParse(cbFiltroTipoEvento.SelectedValue.ToString(), out int tipoEventoId))
+            {
+                tipoEventoIdFiltro = tipoEventoId > 0 ? tipoEventoId : (int?)null; 
+            }
+
+            var eventosFiltrados = _eventoService.BuscarTodosPorNomeETipoDeEvento(nomeFiltro, tipoEventoIdFiltro);
+
+            materialListViewEventos.Items.Clear();
+            foreach (var evento in eventosFiltrados)
+            {
+                var listItem = new ListViewItem(evento.Id.ToString());
+                listItem.SubItems.Add(evento.Nome);
+                listItem.SubItems.Add(evento.Descricao);
+                listItem.SubItems.Add(evento.TipoEventoDescricao);
+                listItem.SubItems.Add(evento.MediaAvaliacoes.ToString() != "NaN" ? evento.MediaAvaliacoes.ToString("0.0") : "0.0");
+                listItem.Tag = evento;
+                materialListViewEventos.Items.Add(listItem);
+            }
+        }
+
+
+        private void txtFiltroNome_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarEventos();
+        }
+
+        private void cbFiltroTipoEvento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarEventos();
+        }
+
+        private void txtLimparFiltros_Click(object sender, EventArgs e)
+        {
+            txtFiltroNome.Clear();
+            cbFiltroTipoEvento.SelectedIndex = -1;
         }
     }
 }

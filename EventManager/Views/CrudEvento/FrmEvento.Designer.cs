@@ -35,12 +35,18 @@
             this.btnDeletar = new ReaLTaiizor.Controls.HopeRoundButton();
             this.txtNome = new ReaLTaiizor.Controls.HopeTextBox();
             this.hopeGroupBox1 = new ReaLTaiizor.Controls.HopeGroupBox();
-            this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
+            this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
+            this.cbTipoEvento = new ReaLTaiizor.Controls.HopeComboBox();
             this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
             this.txtDescricao = new ReaLTaiizor.Controls.HopeTextBox();
-            this.cbTipoEvento = new ReaLTaiizor.Controls.HopeComboBox();
-            this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
+            this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
             this.materialListViewEventos = new ReaLTaiizor.Controls.MaterialListView();
+            this.foxLabel4 = new ReaLTaiizor.Controls.FoxLabel();
+            this.txtFiltroNome = new ReaLTaiizor.Controls.HopeTextBox();
+            this.foxLabel5 = new ReaLTaiizor.Controls.FoxLabel();
+            this.cbFiltroTipoEvento = new ReaLTaiizor.Controls.HopeComboBox();
+            this.foxLabel6 = new ReaLTaiizor.Controls.FoxLabel();
+            this.txtLimparFiltros = new ReaLTaiizor.Controls.HopeButton();
             this.hopeGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,16 +175,29 @@
             this.hopeGroupBox1.Text = "hopeGroupBox1";
             this.hopeGroupBox1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             // 
-            // foxLabel1
+            // foxLabel3
             // 
-            this.foxLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.foxLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.foxLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
-            this.foxLabel1.Location = new System.Drawing.Point(27, 38);
-            this.foxLabel1.Name = "foxLabel1";
-            this.foxLabel1.Size = new System.Drawing.Size(45, 19);
-            this.foxLabel1.TabIndex = 5;
-            this.foxLabel1.Text = "Nome";
+            this.foxLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
+            this.foxLabel3.Location = new System.Drawing.Point(286, 36);
+            this.foxLabel3.Name = "foxLabel3";
+            this.foxLabel3.Size = new System.Drawing.Size(100, 19);
+            this.foxLabel3.TabIndex = 8;
+            this.foxLabel3.Text = "Tipo de Evento";
+            // 
+            // cbTipoEvento
+            // 
+            this.cbTipoEvento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbTipoEvento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbTipoEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTipoEvento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoEvento.FormattingEnabled = true;
+            this.cbTipoEvento.ItemHeight = 30;
+            this.cbTipoEvento.Location = new System.Drawing.Point(392, 28);
+            this.cbTipoEvento.Name = "cbTipoEvento";
+            this.cbTipoEvento.Size = new System.Drawing.Size(194, 36);
+            this.cbTipoEvento.TabIndex = 8;
             // 
             // foxLabel2
             // 
@@ -214,29 +233,16 @@
             this.txtDescricao.TabStop = false;
             this.txtDescricao.UseSystemPasswordChar = false;
             // 
-            // cbTipoEvento
+            // foxLabel1
             // 
-            this.cbTipoEvento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbTipoEvento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbTipoEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTipoEvento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTipoEvento.FormattingEnabled = true;
-            this.cbTipoEvento.ItemHeight = 30;
-            this.cbTipoEvento.Location = new System.Drawing.Point(392, 28);
-            this.cbTipoEvento.Name = "cbTipoEvento";
-            this.cbTipoEvento.Size = new System.Drawing.Size(194, 36);
-            this.cbTipoEvento.TabIndex = 8;
-            // 
-            // foxLabel3
-            // 
-            this.foxLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.foxLabel3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.foxLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
-            this.foxLabel3.Location = new System.Drawing.Point(286, 36);
-            this.foxLabel3.Name = "foxLabel3";
-            this.foxLabel3.Size = new System.Drawing.Size(100, 19);
-            this.foxLabel3.TabIndex = 8;
-            this.foxLabel3.Text = "Tipo de Evento";
+            this.foxLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
+            this.foxLabel1.Location = new System.Drawing.Point(27, 38);
+            this.foxLabel1.Name = "foxLabel1";
+            this.foxLabel1.Size = new System.Drawing.Size(45, 19);
+            this.foxLabel1.TabIndex = 5;
+            this.foxLabel1.Text = "Nome";
             // 
             // materialListViewEventos
             // 
@@ -246,24 +252,123 @@
             this.materialListViewEventos.Depth = 0;
             this.materialListViewEventos.FullRowSelect = true;
             this.materialListViewEventos.HideSelection = false;
-            this.materialListViewEventos.Location = new System.Drawing.Point(12, 189);
+            this.materialListViewEventos.Location = new System.Drawing.Point(12, 253);
             this.materialListViewEventos.MinimumSize = new System.Drawing.Size(200, 100);
             this.materialListViewEventos.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListViewEventos.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.materialListViewEventos.MultiSelect = false;
             this.materialListViewEventos.Name = "materialListViewEventos";
             this.materialListViewEventos.OwnerDraw = true;
-            this.materialListViewEventos.Size = new System.Drawing.Size(920, 364);
+            this.materialListViewEventos.Size = new System.Drawing.Size(920, 300);
             this.materialListViewEventos.TabIndex = 8;
             this.materialListViewEventos.UseCompatibleStateImageBehavior = false;
             this.materialListViewEventos.View = System.Windows.Forms.View.Details;
+            this.materialListViewEventos.SelectedIndexChanged += new System.EventHandler(this.materialListViewEventos_SelectedIndexChanged_1);
             // 
-            // FrmSessao
+            // foxLabel4
+            // 
+            this.foxLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.foxLabel4.Location = new System.Drawing.Point(129, 208);
+            this.foxLabel4.Name = "foxLabel4";
+            this.foxLabel4.Size = new System.Drawing.Size(45, 19);
+            this.foxLabel4.TabIndex = 10;
+            this.foxLabel4.Text = "Nome";
+            // 
+            // txtFiltroNome
+            // 
+            this.txtFiltroNome.BackColor = System.Drawing.Color.White;
+            this.txtFiltroNome.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtFiltroNome.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtFiltroNome.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtFiltroNome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltroNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtFiltroNome.Hint = "";
+            this.txtFiltroNome.Location = new System.Drawing.Point(180, 200);
+            this.txtFiltroNome.MaxLength = 32767;
+            this.txtFiltroNome.Multiline = false;
+            this.txtFiltroNome.Name = "txtFiltroNome";
+            this.txtFiltroNome.PasswordChar = '\0';
+            this.txtFiltroNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFiltroNome.SelectedText = "";
+            this.txtFiltroNome.SelectionLength = 0;
+            this.txtFiltroNome.SelectionStart = 0;
+            this.txtFiltroNome.Size = new System.Drawing.Size(234, 34);
+            this.txtFiltroNome.TabIndex = 9;
+            this.txtFiltroNome.TabStop = false;
+            this.txtFiltroNome.UseSystemPasswordChar = false;
+            this.txtFiltroNome.TextChanged += new System.EventHandler(this.txtFiltroNome_TextChanged);
+            // 
+            // foxLabel5
+            // 
+            this.foxLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.foxLabel5.Location = new System.Drawing.Point(420, 208);
+            this.foxLabel5.Name = "foxLabel5";
+            this.foxLabel5.Size = new System.Drawing.Size(100, 19);
+            this.foxLabel5.TabIndex = 9;
+            this.foxLabel5.Text = "Tipo de Evento";
+            // 
+            // cbFiltroTipoEvento
+            // 
+            this.cbFiltroTipoEvento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbFiltroTipoEvento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbFiltroTipoEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbFiltroTipoEvento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFiltroTipoEvento.FormattingEnabled = true;
+            this.cbFiltroTipoEvento.ItemHeight = 30;
+            this.cbFiltroTipoEvento.Location = new System.Drawing.Point(526, 200);
+            this.cbFiltroTipoEvento.Name = "cbFiltroTipoEvento";
+            this.cbFiltroTipoEvento.Size = new System.Drawing.Size(280, 36);
+            this.cbFiltroTipoEvento.TabIndex = 10;
+            this.cbFiltroTipoEvento.SelectedIndexChanged += new System.EventHandler(this.cbFiltroTipoEvento_SelectedIndexChanged);
+            // 
+            // foxLabel6
+            // 
+            this.foxLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.foxLabel6.Location = new System.Drawing.Point(39, 208);
+            this.foxLabel6.Name = "foxLabel6";
+            this.foxLabel6.Size = new System.Drawing.Size(65, 19);
+            this.foxLabel6.TabIndex = 11;
+            this.foxLabel6.Text = "Filtrar por";
+            // 
+            // txtLimparFiltros
+            // 
+            this.txtLimparFiltros.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtLimparFiltros.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.txtLimparFiltros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtLimparFiltros.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.txtLimparFiltros.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtLimparFiltros.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtLimparFiltros.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtLimparFiltros.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.txtLimparFiltros.Location = new System.Drawing.Point(812, 200);
+            this.txtLimparFiltros.Name = "txtLimparFiltros";
+            this.txtLimparFiltros.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtLimparFiltros.Size = new System.Drawing.Size(120, 40);
+            this.txtLimparFiltros.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.txtLimparFiltros.TabIndex = 12;
+            this.txtLimparFiltros.Text = "Limpar";
+            this.txtLimparFiltros.TextColor = System.Drawing.Color.White;
+            this.txtLimparFiltros.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.txtLimparFiltros.Click += new System.EventHandler(this.txtLimparFiltros_Click);
+            // 
+            // FrmEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(944, 617);
+            this.Controls.Add(this.txtLimparFiltros);
+            this.Controls.Add(this.foxLabel6);
+            this.Controls.Add(this.foxLabel5);
+            this.Controls.Add(this.foxLabel4);
+            this.Controls.Add(this.cbFiltroTipoEvento);
+            this.Controls.Add(this.txtFiltroNome);
             this.Controls.Add(this.materialListViewEventos);
             this.Controls.Add(this.hopeGroupBox1);
             this.Controls.Add(this.btnDeletar);
@@ -274,7 +379,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1920, 1032);
             this.MinimumSize = new System.Drawing.Size(190, 40);
-            this.Name = "FrmSessao";
+            this.Name = "FrmEvento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sessões";
             this.hopeGroupBox1.ResumeLayout(false);
@@ -296,5 +401,11 @@
         private ReaLTaiizor.Controls.HopeTextBox txtDescricao;
         private ReaLTaiizor.Controls.FoxLabel foxLabel1;
         private ReaLTaiizor.Controls.MaterialListView materialListViewEventos;
+        private ReaLTaiizor.Controls.FoxLabel foxLabel4;
+        private ReaLTaiizor.Controls.HopeTextBox txtFiltroNome;
+        private ReaLTaiizor.Controls.FoxLabel foxLabel5;
+        private ReaLTaiizor.Controls.HopeComboBox cbFiltroTipoEvento;
+        private ReaLTaiizor.Controls.FoxLabel foxLabel6;
+        private ReaLTaiizor.Controls.HopeButton txtLimparFiltros;
     }
 }
