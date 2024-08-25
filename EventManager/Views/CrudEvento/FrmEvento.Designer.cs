@@ -45,9 +45,10 @@
             this.txtFiltroNome = new ReaLTaiizor.Controls.HopeTextBox();
             this.foxLabel5 = new ReaLTaiizor.Controls.FoxLabel();
             this.cbFiltroTipoEvento = new ReaLTaiizor.Controls.HopeComboBox();
-            this.foxLabel6 = new ReaLTaiizor.Controls.FoxLabel();
             this.txtLimparFiltros = new ReaLTaiizor.Controls.HopeButton();
+            this.hopePictureBox1 = new ReaLTaiizor.Controls.HopePictureBox();
             this.hopeGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hopePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // hopeForm1
@@ -270,7 +271,7 @@
             this.foxLabel4.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.foxLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.foxLabel4.Location = new System.Drawing.Point(129, 208);
+            this.foxLabel4.Location = new System.Drawing.Point(81, 209);
             this.foxLabel4.Name = "foxLabel4";
             this.foxLabel4.Size = new System.Drawing.Size(45, 19);
             this.foxLabel4.TabIndex = 10;
@@ -285,7 +286,7 @@
             this.txtFiltroNome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltroNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
             this.txtFiltroNome.Hint = "";
-            this.txtFiltroNome.Location = new System.Drawing.Point(180, 200);
+            this.txtFiltroNome.Location = new System.Drawing.Point(132, 201);
             this.txtFiltroNome.MaxLength = 32767;
             this.txtFiltroNome.Multiline = false;
             this.txtFiltroNome.Name = "txtFiltroNome";
@@ -294,7 +295,7 @@
             this.txtFiltroNome.SelectedText = "";
             this.txtFiltroNome.SelectionLength = 0;
             this.txtFiltroNome.SelectionStart = 0;
-            this.txtFiltroNome.Size = new System.Drawing.Size(234, 34);
+            this.txtFiltroNome.Size = new System.Drawing.Size(282, 34);
             this.txtFiltroNome.TabIndex = 9;
             this.txtFiltroNome.TabStop = false;
             this.txtFiltroNome.UseSystemPasswordChar = false;
@@ -305,7 +306,7 @@
             this.foxLabel5.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.foxLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.foxLabel5.Location = new System.Drawing.Point(420, 208);
+            this.foxLabel5.Location = new System.Drawing.Point(420, 209);
             this.foxLabel5.Name = "foxLabel5";
             this.foxLabel5.Size = new System.Drawing.Size(100, 19);
             this.foxLabel5.TabIndex = 9;
@@ -325,17 +326,6 @@
             this.cbFiltroTipoEvento.TabIndex = 10;
             this.cbFiltroTipoEvento.SelectedIndexChanged += new System.EventHandler(this.cbFiltroTipoEvento_SelectedIndexChanged);
             // 
-            // foxLabel6
-            // 
-            this.foxLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.foxLabel6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.foxLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.foxLabel6.Location = new System.Drawing.Point(39, 208);
-            this.foxLabel6.Name = "foxLabel6";
-            this.foxLabel6.Size = new System.Drawing.Size(65, 19);
-            this.foxLabel6.TabIndex = 11;
-            this.foxLabel6.Text = "Filtrar por";
-            // 
             // txtLimparFiltros
             // 
             this.txtLimparFiltros.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
@@ -346,7 +336,7 @@
             this.txtLimparFiltros.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtLimparFiltros.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
             this.txtLimparFiltros.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.txtLimparFiltros.Location = new System.Drawing.Point(812, 200);
+            this.txtLimparFiltros.Location = new System.Drawing.Point(812, 198);
             this.txtLimparFiltros.Name = "txtLimparFiltros";
             this.txtLimparFiltros.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.txtLimparFiltros.Size = new System.Drawing.Size(120, 40);
@@ -357,14 +347,28 @@
             this.txtLimparFiltros.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
             this.txtLimparFiltros.Click += new System.EventHandler(this.txtLimparFiltros_Click);
             // 
+            // hopePictureBox1
+            // 
+            this.hopePictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
+            this.hopePictureBox1.Image = global::EventManager.Properties.Resources.search;
+            this.hopePictureBox1.Location = new System.Drawing.Point(12, 200);
+            this.hopePictureBox1.Name = "hopePictureBox1";
+            this.hopePictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.hopePictureBox1.Size = new System.Drawing.Size(35, 36);
+            this.hopePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.hopePictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.hopePictureBox1.TabIndex = 13;
+            this.hopePictureBox1.TabStop = false;
+            this.hopePictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
             // FrmEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(944, 617);
+            this.Controls.Add(this.hopePictureBox1);
             this.Controls.Add(this.txtLimparFiltros);
-            this.Controls.Add(this.foxLabel6);
             this.Controls.Add(this.foxLabel5);
             this.Controls.Add(this.foxLabel4);
             this.Controls.Add(this.cbFiltroTipoEvento);
@@ -383,6 +387,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sessões";
             this.hopeGroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.hopePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -405,7 +410,7 @@
         private ReaLTaiizor.Controls.HopeTextBox txtFiltroNome;
         private ReaLTaiizor.Controls.FoxLabel foxLabel5;
         private ReaLTaiizor.Controls.HopeComboBox cbFiltroTipoEvento;
-        private ReaLTaiizor.Controls.FoxLabel foxLabel6;
         private ReaLTaiizor.Controls.HopeButton txtLimparFiltros;
+        private ReaLTaiizor.Controls.HopePictureBox hopePictureBox1;
     }
 }
