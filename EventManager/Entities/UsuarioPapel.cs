@@ -16,5 +16,13 @@ namespace EventManager.Entities
         public int PapelId { get; set; }
 
         public virtual Papel Papel { get; set; }
+
+        public UsuarioPapel() { }
+
+        public UsuarioPapel(int usuarioId, int papelId) 
+        { 
+            UsuarioId = usuarioId;
+            PapelId = papelId;
+        }
     }
 }

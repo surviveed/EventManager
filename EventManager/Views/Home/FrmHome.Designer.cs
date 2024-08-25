@@ -207,7 +207,7 @@
             this.btnLogout.Location = new System.Drawing.Point(891, 8);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnLogout.NormalColor = System.Drawing.Color.White;
+            this.btnLogout.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnLogout.NormalTextColor = System.Drawing.Color.Black;
             this.btnLogout.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnLogout.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
@@ -235,7 +235,7 @@
             this.btnAdmin.Location = new System.Drawing.Point(11, 8);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnAdmin.NormalColor = System.Drawing.Color.White;
+            this.btnAdmin.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnAdmin.NormalTextColor = System.Drawing.Color.Black;
             this.btnAdmin.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnAdmin.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
@@ -246,6 +246,7 @@
             this.btnAdmin.TabIndex = 0;
             this.btnAdmin.ThemeAuthor = "Taiizor";
             this.btnAdmin.ThemeName = "MetroLight";
+            this.btnAdmin.Visible = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // hopePictureBox1

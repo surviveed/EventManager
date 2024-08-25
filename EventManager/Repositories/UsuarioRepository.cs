@@ -29,9 +29,38 @@ namespace EventManager.Repositories
                 .FirstOrDefault(u => u.Id == id);
         }
 
+        public Usuario BuscarPorEmail(string email)
+        {
+            return _context.Usuarios
+                .Include(u => u.UsuarioPapeis)
+                .FirstOrDefault(u => u.Email == email);
+        }
+
+        public Usuario Autenticar(string email, string senha)
+        {
+            var usuario = _context.Usuarios
+                .Include(u => u.UsuarioPapeis)
+                .FirstOrDefault(u => u.Email == email);
+
+            if (usuario != null)
+            {
+                bool senhaValida = BCrypt.Net.BCrypt.Verify(senha, usuario.Senha);
+
+                if (senhaValida)
+                {
+                    return usuario;
+                }
+            }
+
+            return null;
+        }
+
         public void Inserir(Usuario usuario)
         {
             _context.Usuarios.Add(usuario);
+            _context.SaveChanges();
+
+            usuario.UsuarioPapeis.Add(new UsuarioPapel(usuario.Id, 2));
             _context.SaveChanges();
         }
 
@@ -42,7 +71,12 @@ namespace EventManager.Repositories
             {
                 usuarioExistente.Nome = usuario.Nome;
                 usuarioExistente.Email = usuario.Email;
-                usuarioExistente.Senha = usuario.Senha;
+
+                // Apenas criptografa e atualiza a senha se ela for diferente
+                if (usuarioExistente.Senha != usuario.Senha)
+                {
+                    usuarioExistente.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.Senha);
+                }
 
                 _context.SaveChanges();
             }

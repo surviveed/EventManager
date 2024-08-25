@@ -36,11 +36,11 @@
             this.materialListViewUfs = new ReaLTaiizor.Controls.MaterialListView();
             this.txtDescricao = new ReaLTaiizor.Controls.HopeTextBox();
             this.hopeGroupBox1 = new ReaLTaiizor.Controls.HopeGroupBox();
+            this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
+            this.cbPais = new ReaLTaiizor.Controls.HopeComboBox();
             this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
             this.txtCodigoIbge = new ReaLTaiizor.Controls.HopeTextBox();
             this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
-            this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
-            this.cbPais = new ReaLTaiizor.Controls.HopeComboBox();
             this.hopeGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,6 +190,30 @@
             this.hopeGroupBox1.Text = "hopeGroupBox1";
             this.hopeGroupBox1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             // 
+            // foxLabel3
+            // 
+            this.foxLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
+            this.foxLabel3.Location = new System.Drawing.Point(401, 38);
+            this.foxLabel3.Name = "foxLabel3";
+            this.foxLabel3.Size = new System.Drawing.Size(46, 19);
+            this.foxLabel3.TabIndex = 9;
+            this.foxLabel3.Text = "País";
+            // 
+            // cbPais
+            // 
+            this.cbPais.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbPais.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbPais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbPais.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPais.FormattingEnabled = true;
+            this.cbPais.ItemHeight = 30;
+            this.cbPais.Location = new System.Drawing.Point(453, 28);
+            this.cbPais.Name = "cbPais";
+            this.cbPais.Size = new System.Drawing.Size(194, 36);
+            this.cbPais.TabIndex = 10;
+            // 
             // foxLabel2
             // 
             this.foxLabel2.BackColor = System.Drawing.Color.Transparent;
@@ -235,34 +259,11 @@
             this.foxLabel1.TabIndex = 5;
             this.foxLabel1.Text = "Descrição";
             // 
-            // foxLabel3
-            // 
-            this.foxLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.foxLabel3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.foxLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
-            this.foxLabel3.Location = new System.Drawing.Point(401, 38);
-            this.foxLabel3.Name = "foxLabel3";
-            this.foxLabel3.Size = new System.Drawing.Size(46, 19);
-            this.foxLabel3.TabIndex = 9;
-            this.foxLabel3.Text = "País";
-            // 
-            // cbPais
-            // 
-            this.cbPais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbPais.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbPais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbPais.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPais.FormattingEnabled = true;
-            this.cbPais.ItemHeight = 30;
-            this.cbPais.Location = new System.Drawing.Point(453, 28);
-            this.cbPais.Name = "cbPais";
-            this.cbPais.Size = new System.Drawing.Size(194, 36);
-            this.cbPais.TabIndex = 10;
-            // 
-            // FrmUfNovo
+            // FrmUf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(944, 617);
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnEditar);
@@ -274,7 +275,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1920, 1032);
             this.MinimumSize = new System.Drawing.Size(190, 40);
-            this.Name = "FrmUfNovo";
+            this.Name = "FrmUf";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUfNovo";
             this.hopeGroupBox1.ResumeLayout(false);

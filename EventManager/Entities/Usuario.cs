@@ -22,11 +22,11 @@ namespace EventManager.Entities
         public string Email { get; set; }
 
         [Required]
-        [MaxLength(20)]
+        [MaxLength(100)]
         [Column("senha")]
         public string Senha { get; set; }
 
-        public virtual ICollection<UsuarioPapel> UsuarioPapeis { get; set; }
+        public virtual ICollection<UsuarioPapel> UsuarioPapeis { get; set; } = new HashSet<UsuarioPapel>();
 
         public Usuario() { }
 

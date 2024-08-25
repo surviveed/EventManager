@@ -259,10 +259,11 @@
             this.foxLabel1.TabIndex = 5;
             this.foxLabel1.Text = "Descrição";
             // 
-            // FrmCidadeNovo
+            // FrmCidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(944, 617);
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnEditar);
@@ -274,7 +275,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1920, 1032);
             this.MinimumSize = new System.Drawing.Size(190, 40);
-            this.Name = "FrmCidadeNovo";
+            this.Name = "FrmCidade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCidadeNovo";
             this.hopeGroupBox1.ResumeLayout(false);

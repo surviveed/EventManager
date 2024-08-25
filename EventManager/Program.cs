@@ -1,4 +1,5 @@
 ﻿using EventManager.Views.Home;
+using EventManager.Views.Login;
 using System;
 using System.Windows.Forms;
 
@@ -14,7 +15,7 @@ namespace EventManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmHome());
+            Application.Run(new FrmLogin());
         }
     }
 }

@@ -34,13 +34,13 @@
             this.btnAdicionar = new ReaLTaiizor.Controls.HopeRoundButton();
             this.hopeForm1 = new ReaLTaiizor.Forms.HopeForm();
             this.hopeGroupBox1 = new ReaLTaiizor.Controls.HopeGroupBox();
+            this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
+            this.txtSenha = new ReaLTaiizor.Controls.HopeTextBox();
             this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
             this.txtEmail = new ReaLTaiizor.Controls.HopeTextBox();
             this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
             this.txtNome = new ReaLTaiizor.Controls.HopeTextBox();
             this.materialListViewUsuarios = new ReaLTaiizor.Controls.MaterialListView();
-            this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
-            this.txtSenha = new ReaLTaiizor.Controls.HopeTextBox();
             this.hopeGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,6 +146,40 @@
             this.hopeGroupBox1.Text = "hopeGroupBox1";
             this.hopeGroupBox1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             // 
+            // foxLabel3
+            // 
+            this.foxLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
+            this.foxLabel3.Location = new System.Drawing.Point(291, 28);
+            this.foxLabel3.Name = "foxLabel3";
+            this.foxLabel3.Size = new System.Drawing.Size(45, 19);
+            this.foxLabel3.TabIndex = 9;
+            this.foxLabel3.Text = "Senha";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.BackColor = System.Drawing.Color.White;
+            this.txtSenha.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtSenha.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtSenha.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtSenha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtSenha.Hint = "";
+            this.txtSenha.Location = new System.Drawing.Point(362, 18);
+            this.txtSenha.MaxLength = 32767;
+            this.txtSenha.Multiline = false;
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '\0';
+            this.txtSenha.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSenha.SelectedText = "";
+            this.txtSenha.SelectionLength = 0;
+            this.txtSenha.SelectionStart = 0;
+            this.txtSenha.Size = new System.Drawing.Size(182, 34);
+            this.txtSenha.TabIndex = 8;
+            this.txtSenha.TabStop = false;
+            this.txtSenha.UseSystemPasswordChar = false;
+            // 
             // foxLabel2
             // 
             this.foxLabel2.BackColor = System.Drawing.Color.Transparent;
@@ -235,44 +269,11 @@
             this.materialListViewUsuarios.View = System.Windows.Forms.View.Details;
             this.materialListViewUsuarios.SelectedIndexChanged += new System.EventHandler(this.materialListViewUsuarios_SelectedIndexChanged);
             // 
-            // foxLabel3
-            // 
-            this.foxLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.foxLabel3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.foxLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
-            this.foxLabel3.Location = new System.Drawing.Point(291, 28);
-            this.foxLabel3.Name = "foxLabel3";
-            this.foxLabel3.Size = new System.Drawing.Size(45, 19);
-            this.foxLabel3.TabIndex = 9;
-            this.foxLabel3.Text = "Senha";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.BackColor = System.Drawing.Color.White;
-            this.txtSenha.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtSenha.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.txtSenha.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtSenha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.txtSenha.Hint = "";
-            this.txtSenha.Location = new System.Drawing.Point(362, 18);
-            this.txtSenha.MaxLength = 32767;
-            this.txtSenha.Multiline = false;
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '\0';
-            this.txtSenha.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSenha.SelectedText = "";
-            this.txtSenha.SelectionLength = 0;
-            this.txtSenha.SelectionStart = 0;
-            this.txtSenha.Size = new System.Drawing.Size(182, 34);
-            this.txtSenha.TabIndex = 8;
-            this.txtSenha.TabStop = false;
-            this.txtSenha.UseSystemPasswordChar = false;
-            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(944, 617);
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnEditar);

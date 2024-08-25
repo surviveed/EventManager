@@ -14,7 +14,7 @@ namespace EventManager.Views.Home
         private readonly EventoService _eventoService;
         private readonly TipoEventoService _tipoEventoService;
 
-        public FrmHome()
+        public FrmHome(UsuarioDTO usuario)
         {
             InitializeComponent();
             _tipoEventoService = new TipoEventoService(new TipoEventoRepository());
@@ -27,6 +27,19 @@ namespace EventManager.Views.Home
             ConfigureMaterialListView();
 
             MaterialListViewCustomizations.ApplyCustomizations(materialListViewEventos);
+
+            VerificarAdmin(usuario);
+        }
+
+        private void VerificarAdmin(UsuarioDTO usuario)
+        {
+            foreach(PapelDTO papel in usuario.Papeis){
+                if (papel.Descricao.Equals("Administrador"))
+                {
+                    btnAdmin.Visible = true;
+                    break;
+                }
+            }
         }
 
         private void LoadEventos()

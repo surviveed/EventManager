@@ -1,6 +1,5 @@
 ﻿using EventManager.Config;
 using EventManager.DTOs;
-using EventManager.Entities.enums;
 using EventManager.Repositories;
 using EventManager.Services;
 using System;

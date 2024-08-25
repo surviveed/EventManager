@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEvento));
-            this.hopeForm1 = new ReaLTaiizor.Forms.HopeForm();
             this.btnAdicionar = new ReaLTaiizor.Controls.HopeRoundButton();
             this.btnEditar = new ReaLTaiizor.Controls.HopeRoundButton();
             this.btnDeletar = new ReaLTaiizor.Controls.HopeRoundButton();
@@ -47,27 +46,10 @@
             this.cbFiltroTipoEvento = new ReaLTaiizor.Controls.HopeComboBox();
             this.txtLimparFiltros = new ReaLTaiizor.Controls.HopeButton();
             this.hopePictureBox1 = new ReaLTaiizor.Controls.HopePictureBox();
+            this.hopeForm1 = new ReaLTaiizor.Forms.HopeForm();
             this.hopeGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hopePictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // hopeForm1
-            // 
-            this.hopeForm1.ControlBoxColorH = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
-            this.hopeForm1.ControlBoxColorHC = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.hopeForm1.ControlBoxColorN = System.Drawing.Color.White;
-            this.hopeForm1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.hopeForm1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.hopeForm1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.hopeForm1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
-            this.hopeForm1.Image = ((System.Drawing.Image)(resources.GetObject("hopeForm1.Image")));
-            this.hopeForm1.Location = new System.Drawing.Point(0, 0);
-            this.hopeForm1.MaximizeBox = false;
-            this.hopeForm1.Name = "hopeForm1";
-            this.hopeForm1.Size = new System.Drawing.Size(944, 40);
-            this.hopeForm1.TabIndex = 0;
-            this.hopeForm1.Text = "Eventos";
-            this.hopeForm1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             // 
             // btnAdicionar
             // 
@@ -360,6 +342,24 @@
             this.hopePictureBox1.TabIndex = 13;
             this.hopePictureBox1.TabStop = false;
             this.hopePictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
+            // hopeForm1
+            // 
+            this.hopeForm1.ControlBoxColorH = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.hopeForm1.ControlBoxColorHC = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.hopeForm1.ControlBoxColorN = System.Drawing.Color.White;
+            this.hopeForm1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.hopeForm1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.hopeForm1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.hopeForm1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
+            this.hopeForm1.Image = ((System.Drawing.Image)(resources.GetObject("hopeForm1.Image")));
+            this.hopeForm1.Location = new System.Drawing.Point(0, 0);
+            this.hopeForm1.MaximizeBox = false;
+            this.hopeForm1.Name = "hopeForm1";
+            this.hopeForm1.Size = new System.Drawing.Size(944, 40);
+            this.hopeForm1.TabIndex = 0;
+            this.hopeForm1.Text = "Eventos";
+            this.hopeForm1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             // 
             // FrmEvento
             // 

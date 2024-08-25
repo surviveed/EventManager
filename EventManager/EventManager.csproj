@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net48\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -149,6 +152,7 @@
     <Compile Include="Repositories\EventoRepository.cs" />
     <Compile Include="Repositories\LocalRepository.cs" />
     <Compile Include="Repositories\PaisRepository.cs" />
+    <Compile Include="Repositories\PapelRepository.cs" />
     <Compile Include="Repositories\PessoaRepository.cs" />
     <Compile Include="Repositories\SessaoRepository.cs" />
     <Compile Include="Repositories\TipoEventoRepository.cs" />
@@ -159,6 +163,7 @@
     <Compile Include="Services\EventoService.cs" />
     <Compile Include="Services\LocalService.cs" />
     <Compile Include="Services\PaisService.cs" />
+    <Compile Include="Services\PapelService.cs" />
     <Compile Include="Services\PessoaService.cs" />
     <Compile Include="Services\SessaoService.cs" />
     <Compile Include="Services\TipoEventoService.cs" />
@@ -238,6 +243,12 @@
     <Compile Include="Views\Home\FrmHome.Designer.cs">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Login\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Login\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -284,6 +295,9 @@
     <EmbeddedResource Include="Views\Home\FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -306,6 +320,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo event sem fundo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undraw_Booking_re_gw4j.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undraw_Booking_re_gw4j1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
