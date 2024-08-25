@@ -1,4 +1,4 @@
-﻿using EventManager.Views.HomeAdmin;
+﻿using EventManager.Views.Home;
 using System;
 using System.Windows.Forms;
 
@@ -14,7 +14,7 @@ namespace EventManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmHomeAdmin());
+            Application.Run(new FrmHome());
         }
     }
 }
