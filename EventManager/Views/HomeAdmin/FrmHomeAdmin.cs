@@ -21,62 +21,62 @@ namespace EventManager.Views.HomeAdmin
 
         private void btnPaises_Click(object sender, EventArgs e)
         {
-            FrmPais frm = new FrmPais();
-            frm.Show();
+            FrmPais f = new FrmPais();
+            f.Show();
         }
 
         private void btnUfs_Click(object sender, EventArgs e)
         {
-            FrmUf frm = new FrmUf();
-            frm.Show();
+            FrmUf f = new FrmUf();
+            f.Show();
         }
 
         private void btnCidades_Click(object sender, EventArgs e)
         {
-            FrmCidade frm = new FrmCidade();
-            frm.Show();
+            FrmCidade f = new FrmCidade();
+            f.Show();
         }
 
         private void btnLocais_Click(object sender, EventArgs e)
         {
-            FrmLocal frm = new FrmLocal();
-            frm.Show();
+            FrmLocal f = new FrmLocal();
+            f.Show();
         }
 
-        private void btnTiposEvento_Click(object sender, EventArgs e)
+        private void btnTiposDeEventos_Click(object sender, EventArgs e)
         {
-            FrmTipoEvento frm = new FrmTipoEvento();
-            frm.Show();
+            FrmTipoEvento f = new FrmTipoEvento();
+            f.Show();
+        }
+
+        private void btnEventos_Click(object sender, EventArgs e)
+        {
+            FrmEvento f = new FrmEvento();
+            f.Show();
         }
 
         private void btnSessoes_Click(object sender, EventArgs e)
         {
-            FrmEvento frm = new FrmEvento();
-            frm.Show();
-        }
-
-        private void btnPessoas_Click(object sender, EventArgs e)
-        {
-            FrmPessoa frm = new FrmPessoa();
-            frm.Show();
-        }
-
-        private void btnSessoes_Click_1(object sender, EventArgs e)
-        {
-            FrmSessao frm = new FrmSessao();
-            frm.Show();
+            FrmSessao f = new FrmSessao();
+            f.Show();
         }
 
         private void btnAvaliacoes_Click(object sender, EventArgs e)
         {
-            FrmAvaliacao frm = new FrmAvaliacao();
-            frm.Show();
+            FrmAvaliacao f = new FrmAvaliacao();
+            f.Show();
+        }
+
+        private void btnPessoas_Click(object sender, EventArgs e)
+        {
+            FrmPessoa f = new FrmPessoa();
+            f.Show();
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            FrmUsuario frm = new FrmUsuario();
-            frm.Show();
+            FrmUsuario f = new FrmUsuario();
+            f.Show();
         }
     }
 }
