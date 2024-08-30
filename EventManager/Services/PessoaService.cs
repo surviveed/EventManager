@@ -1,5 +1,6 @@
 ﻿using EventManager.DTOs;
 using EventManager.Entities;
+using EventManager.Entities.enums;
 using EventManager.Repositories;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,12 @@ namespace EventManager.Services
         public PessoaDTO BuscarPorId(int id)
         {
             var pessoa = _pessoaRepository.BuscarPorId(id);
+            return pessoa != null ? new PessoaDTO(pessoa) : null;
+        }
+
+        public PessoaDTO BuscarPorTipoPessoa(TipoPessoa tipoPessoa)
+        {
+            var pessoa = _pessoaRepository.BuscarPorTipoPessoa(tipoPessoa);
             return pessoa != null ? new PessoaDTO(pessoa) : null;
         }
 

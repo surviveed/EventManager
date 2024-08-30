@@ -1,7 +1,7 @@
 ﻿using EventManager.DTOs;
 using EventManager.Entities;
-using EventManager.Services;
 using EventManager.Util;
+using ReaLTaiizor.Controls;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -12,9 +12,11 @@ namespace EventManager.Views.Details
 {
     public partial class FrmEventoDetalhes : Form
     {
+        private readonly UsuarioDTO _usuario;
 
         public FrmEventoDetalhes(EventoDTO evento, UsuarioDTO usuario)
         {
+            _usuario = usuario;
             InitializeComponent();
             ConfiguracoesIniciais(evento);
 
@@ -175,6 +177,19 @@ namespace EventManager.Views.Details
             {
                 MessageBox.Show("Arquivo não encontrado: " + caminho);
                 return null;
+            }
+        }
+
+        private void materialListViewSessoes_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var listView = sender as MaterialListView;
+            if (listView.SelectedItems.Count > 0)
+            {
+                var selectedItem = listView.SelectedItems[0];
+                var sessao = (SessaoDTO)selectedItem.Tag;
+
+                FrmSessaoDetalhes frmDetalhes = new FrmSessaoDetalhes(sessao, _usuario);
+                frmDetalhes.ShowDialog();
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using EventManager.Config;
 using EventManager.Entities;
+using EventManager.Entities.enums;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -32,6 +33,15 @@ namespace EventManager.Repositories
                 .Include(p => p.Avaliacoes)
                 .Include(p => p.SessaoIntegrantes)
                 .FirstOrDefault(p => p.Id == id);
+        }
+
+        public Pessoa BuscarPorTipoPessoa(TipoPessoa tipoPessoa)
+        {
+            return _context.Pessoas
+                .Include(p => p.EventoOrganizadores)
+                .Include(p => p.Avaliacoes)
+                .Include(p => p.SessaoIntegrantes)
+                .FirstOrDefault(p => p.TipoPessoa == tipoPessoa);
         }
 
         public void Inserir(Pessoa pessoa)

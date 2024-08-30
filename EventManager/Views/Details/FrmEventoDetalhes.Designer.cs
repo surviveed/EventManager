@@ -32,7 +32,6 @@
             this.materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
             this.lblDescricao = new ReaLTaiizor.Controls.MetroLabel();
             this.lblNome = new ReaLTaiizor.Controls.BigLabel();
-            this.hopeForm1 = new ReaLTaiizor.Forms.HopeForm();
             this.materialCard2 = new ReaLTaiizor.Controls.MaterialCard();
             this.lblDescricaoTipoEvento = new ReaLTaiizor.Controls.BigLabel();
             this.materialCard3 = new ReaLTaiizor.Controls.MaterialCard();
@@ -48,6 +47,7 @@
             this.materialListViewOrganizadores = new ReaLTaiizor.Controls.MaterialListView();
             this.groupBoxAvaliacoes = new ReaLTaiizor.Controls.ForeverGroupBox();
             this.materialListViewAvaliacoes = new ReaLTaiizor.Controls.MaterialListView();
+            this.hopeForm1 = new ReaLTaiizor.Forms.HopeForm();
             this.materialCard1.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.materialCard3.SuspendLayout();
@@ -97,24 +97,6 @@
             this.lblNome.Size = new System.Drawing.Size(112, 46);
             this.lblNome.TabIndex = 4;
             this.lblNome.Text = "Nome";
-            // 
-            // hopeForm1
-            // 
-            this.hopeForm1.ControlBoxColorH = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
-            this.hopeForm1.ControlBoxColorHC = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.hopeForm1.ControlBoxColorN = System.Drawing.Color.White;
-            this.hopeForm1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.hopeForm1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.hopeForm1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.hopeForm1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
-            this.hopeForm1.Image = ((System.Drawing.Image)(resources.GetObject("hopeForm1.Image")));
-            this.hopeForm1.Location = new System.Drawing.Point(0, 0);
-            this.hopeForm1.MaximizeBox = false;
-            this.hopeForm1.Name = "hopeForm1";
-            this.hopeForm1.Size = new System.Drawing.Size(944, 40);
-            this.hopeForm1.TabIndex = 2;
-            this.hopeForm1.Text = "EventManager";
-            this.hopeForm1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             // 
             // materialCard2
             // 
@@ -285,6 +267,7 @@
             this.materialListViewSessoes.TabIndex = 21;
             this.materialListViewSessoes.UseCompatibleStateImageBehavior = false;
             this.materialListViewSessoes.View = System.Windows.Forms.View.Details;
+            this.materialListViewSessoes.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.materialListViewSessoes_MouseDoubleClick);
             // 
             // foreverGroupBox2
             // 
@@ -360,6 +343,24 @@
             this.materialListViewAvaliacoes.TabIndex = 22;
             this.materialListViewAvaliacoes.UseCompatibleStateImageBehavior = false;
             this.materialListViewAvaliacoes.View = System.Windows.Forms.View.Details;
+            // 
+            // hopeForm1
+            // 
+            this.hopeForm1.ControlBoxColorH = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
+            this.hopeForm1.ControlBoxColorHC = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.hopeForm1.ControlBoxColorN = System.Drawing.Color.White;
+            this.hopeForm1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.hopeForm1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.hopeForm1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.hopeForm1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
+            this.hopeForm1.Image = ((System.Drawing.Image)(resources.GetObject("hopeForm1.Image")));
+            this.hopeForm1.Location = new System.Drawing.Point(0, 0);
+            this.hopeForm1.MaximizeBox = false;
+            this.hopeForm1.Name = "hopeForm1";
+            this.hopeForm1.Size = new System.Drawing.Size(944, 40);
+            this.hopeForm1.TabIndex = 2;
+            this.hopeForm1.Text = "EventManager";
+            this.hopeForm1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             // 
             // FrmEventoDetalhes
             // 
