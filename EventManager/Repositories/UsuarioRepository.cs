@@ -35,6 +35,7 @@ namespace EventManager.Repositories
         {
             return _context.Usuarios
                 .Include(u => u.UsuarioPapeis)
+                .Include(u => u.Pessoa)
                 .FirstOrDefault(u => u.Email == email);
         }
 
@@ -42,6 +43,7 @@ namespace EventManager.Repositories
         {
             var usuario = _context.Usuarios
                 .Include(u => u.UsuarioPapeis)
+                .Include(u => u.Pessoa)
                 .FirstOrDefault(u => u.Email == email);
 
             if (usuario != null)

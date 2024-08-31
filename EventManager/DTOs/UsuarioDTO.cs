@@ -10,16 +10,19 @@ namespace EventManager.DTOs
         public string Email { get; set; }
         public string Senha { get; set; }
 
+        public PessoaDTO Pessoa { get; set; }
+
         public List<PapelDTO> Papeis { get; set; } = new List<PapelDTO>();
 
         public UsuarioDTO() { }
 
-        public UsuarioDTO(int id, string nome, string email, string senha)
+        public UsuarioDTO(int id, string nome, string email, string senha, PessoaDTO pessoa)
         {
             Id = id;
             Nome = nome;
             Email = email;
             Senha = senha;
+            Pessoa = pessoa;
         }
 
         public UsuarioDTO(Usuario usuario)
@@ -28,6 +31,7 @@ namespace EventManager.DTOs
             Nome = usuario.Nome;
             Email = usuario.Email;
             Senha = usuario.Senha;
+            Pessoa = new PessoaDTO(usuario.Pessoa);
 
             foreach (UsuarioPapel usuarioPapel in usuario.UsuarioPapeis)
             {

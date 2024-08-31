@@ -55,6 +55,24 @@ namespace EventManager.Repositories
             }
         }
 
+        public void AtualizarIntegrantes(Sessao sessao, List<Pessoa> integrantes)
+        {
+            var sessaoExistente = _context.Sessoes.Find(sessao.Id);
+            if (sessaoExistente != null)
+            {
+                List<SessaoIntegrante> sessaoIntegrantes = new List<SessaoIntegrante>();
+                foreach(Pessoa integrante in integrantes)
+                {
+                    SessaoIntegrante se = new SessaoIntegrante();
+                    se.SessaoId = sessao.Id;
+                    se.PessoaId = integrante.Id;
+                    sessaoIntegrantes.Add(se);
+                }
+
+                _context.SaveChanges();
+            }
+        }
+
         public void Remover(int id)
         {
             var sessao = _context.Sessoes.Find(id);

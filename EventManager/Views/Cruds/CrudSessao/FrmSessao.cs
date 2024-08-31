@@ -18,7 +18,7 @@ namespace EventManager.Views.CrudSessao
         public FrmSessao()
         {
             InitializeComponent();
-            _sessaoService = new SessaoService(new SessaoRepository());
+            _sessaoService = new SessaoService(new SessaoRepository(), new PessoaRepository());
             _eventoService = new EventoService(new EventoRepository());
             _localService = new LocalService(new LocalRepository());
             LoadSessoes();

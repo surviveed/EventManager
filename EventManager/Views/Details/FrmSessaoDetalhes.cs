@@ -1,12 +1,14 @@
 ﻿using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
+using System;
 using System.Windows.Forms;
 
 namespace EventManager.Views.Details
 {
     public partial class FrmSessaoDetalhes : Form
     {
+        private readonly SessaoService _sessaoService;
         private readonly EventoService _eventoService;
         private readonly LocalService _localService;
         private readonly PessoaService _pessoaService;
@@ -19,6 +21,7 @@ namespace EventManager.Views.Details
             _sessao = sessao;
             _usuario = usuario;
             InitializeComponent();
+            _sessaoService = new SessaoService(new SessaoRepository(), new PessoaRepository());
             _eventoService = new EventoService(new EventoRepository());
             _localService = new LocalService(new LocalRepository());
             _pessoaService = new PessoaService(new PessoaRepository());
@@ -30,7 +33,14 @@ namespace EventManager.Views.Details
             LoadPalestrantes(sessao);
             LoadParticipantes(sessao);
 
-
+            if (VerificarSeJaParticipante(sessao, usuario.Pessoa))
+            {
+                btnParticipar.Visible = false;
+            }
+            if(VerificarSeJaAvaliou(sessao, usuario.Pessoa))
+            {
+                groupBoxAvaliacoes.Visible = false;
+            }
         }
 
         private void ConfiguracoesIniciais(SessaoDTO sessao)
@@ -138,34 +148,38 @@ namespace EventManager.Views.Details
 
         private void btnEnviar_Click(object sender, System.EventArgs e)
         {
-            AvaliacaoDTO avaliacao = new AvaliacaoDTO();
-            int nota = 0;
-            if(rbNota1.Checked)
+            try
             {
-                nota = 1;
-            } 
-            else if (rbNota2.Checked)
-            {
-                nota = 2;
-            } 
-            else if (rbNota3.Checked)
-            {
-                nota = 3;
-            } 
-            else if (rbNota4.Checked)
-            {
-                nota = 4;
-            } 
-            else if(rbNota5.Checked)
-            {
-                nota = 5;
+                AvaliacaoDTO avaliacao = new AvaliacaoDTO
+                {
+                    Nota = ObterNotaSelecionada(),
+                    SessaoId = _sessao.Id,
+                    Comentario = txtComentarios.Text
+                };
+
+                _avaliacaoService.Inserir(avaliacao);
+                MessageBox.Show("Avaliação inserida com sucesso!");
             }
-            avaliacao.Nota = nota;
-            avaliacao.SessaoId = _sessao.Id;
-            avaliacao.Comentario = txtComentarios.Text;
-            //avaliacao.PessoaId = ;
-            _avaliacaoService.Inserir(avaliacao);
-            MessageBox.Show("Avaliação inserida com sucesso!");
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao inserir a avaliação: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private int ObterNotaSelecionada()
+        {
+            if (rbNota1.Checked) return 1;
+            if (rbNota2.Checked) return 2;
+            if (rbNota3.Checked) return 3;
+            if (rbNota4.Checked) return 4;
+            if (rbNota5.Checked) return 5;
+            throw new InvalidOperationException("Nenhuma nota selecionada.");
+        }
+
+        private void btnParticipar_Click(object sender, System.EventArgs e)
+        {
+            _sessao.Integrantes.Add(_usuario.Pessoa);
+            _sessaoService.AtualizarIntegrantes(_sessao, _sessao.Integrantes);
         }
     }
 }

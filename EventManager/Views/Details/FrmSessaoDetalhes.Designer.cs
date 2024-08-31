@@ -457,6 +457,7 @@
             this.btnParticipar.Text = "Participar";
             this.btnParticipar.TextColor = System.Drawing.Color.White;
             this.btnParticipar.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnParticipar.Click += new System.EventHandler(this.btnParticipar_Click);
             // 
             // rbNota1
             // 

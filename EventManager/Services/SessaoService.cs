@@ -9,10 +9,12 @@ namespace EventManager.Services
     public class SessaoService
     {
         private readonly SessaoRepository _sessaoRepository;
+        private readonly PessoaRepository _pessoaRepository;
 
-        public SessaoService(SessaoRepository sessaoRepository)
+        public SessaoService(SessaoRepository sessaoRepository, PessoaRepository pessoaRepository)
         {
             _sessaoRepository = sessaoRepository;
+            _pessoaRepository = pessoaRepository;
         }
 
         public List<SessaoDTO> BuscarTodos()
@@ -37,6 +39,17 @@ namespace EventManager.Services
         {
             var sessao = new Sessao(SessaoDTO.Id, SessaoDTO.DataInicio, SessaoDTO.DataFim, SessaoDTO.EventoId, SessaoDTO.LocalId);
             _sessaoRepository.Atualizar(sessao);
+        }
+
+        public void AtualizarIntegrantes(SessaoDTO SessaoDTO, List<PessoaDTO> Integrantes)
+        {
+            var sessao = new Sessao(SessaoDTO.Id, SessaoDTO.DataInicio, SessaoDTO.DataFim, SessaoDTO.EventoId, SessaoDTO.LocalId);
+            List<Pessoa> pessoas = new List<Pessoa>();
+            foreach(PessoaDTO pessoa in Integrantes)
+            {
+                pessoas.Add(_pessoaRepository.BuscarPorId(pessoa.Id));
+            }
+            _sessaoRepository.AtualizarIntegrantes(sessao, pessoas);
         }
 
         public void Remover(int id)

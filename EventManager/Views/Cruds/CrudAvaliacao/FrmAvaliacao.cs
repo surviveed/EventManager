@@ -20,7 +20,7 @@ namespace EventManager.Views.CrudAvaliacao
             InitializeComponent();
             _avaliacaoService = new AvaliacaoService(new AvaliacaoRepository());
             _pessoaService = new PessoaService(new PessoaRepository());
-            _sessaoService = new SessaoService(new SessaoRepository());
+            _sessaoService = new SessaoService(new SessaoRepository(), new PessoaRepository());
 
             ConfigureMaterialListView();
             LoadAvaliacoes();
