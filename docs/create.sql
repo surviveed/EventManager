@@ -242,6 +242,6 @@ usuario_ids AS (
 -- Inserção na tabela USUARIO_PAPEL usando os IDs de USUARIO e PAPEL
 INSERT INTO USUARIO_PAPEL (USUARIO_ID, PAPEL_ID) 
 VALUES 
-    ((SELECT ID FROM usuario_ids WHERE NOME = 'admin'), (SELECT ID FROM papel_ids WHERE DESCRICAO = 'Administrador')), 
-    ((SELECT ID FROM usuario_ids WHERE NOME = 'usuario'), (SELECT ID FROM papel_ids WHERE DESCRICAO = 'Usuario'));
+    ((SELECT ID FROM usuario_ids WHERE NOME = 'João Silva'), (SELECT ID FROM papel_ids WHERE DESCRICAO = 'Administrador')), 
+    ((SELECT ID FROM usuario_ids WHERE NOME = 'Maria Souza'), (SELECT ID FROM papel_ids WHERE DESCRICAO = 'Usuario'));
 
