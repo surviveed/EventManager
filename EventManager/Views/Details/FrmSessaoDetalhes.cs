@@ -11,7 +11,6 @@ namespace EventManager.Views.Details
         private readonly SessaoService _sessaoService;
         private readonly EventoService _eventoService;
         private readonly LocalService _localService;
-        private readonly PessoaService _pessoaService;
         private readonly AvaliacaoService _avaliacaoService;
         private readonly SessaoDTO _sessao;
         private readonly UsuarioDTO _usuario;
@@ -24,7 +23,6 @@ namespace EventManager.Views.Details
             _sessaoService = new SessaoService(new SessaoRepository(), new PessoaRepository());
             _eventoService = new EventoService(new EventoRepository());
             _localService = new LocalService(new LocalRepository());
-            _pessoaService = new PessoaService(new PessoaRepository());
             _avaliacaoService = new AvaliacaoService(new AvaliacaoRepository());
 
             ConfiguracoesIniciais(sessao);
@@ -33,14 +31,8 @@ namespace EventManager.Views.Details
             LoadPalestrantes(sessao);
             LoadParticipantes(sessao);
 
-            if (VerificarSeJaParticipante(sessao, usuario.Pessoa))
-            {
-                btnParticipar.Visible = false;
-            }
-            if(VerificarSeJaAvaliou(sessao, usuario.Pessoa))
-            {
-                groupBoxAvaliacoes.Visible = false;
-            }
+            VerificarSeJaParticipante(sessao, usuario.Pessoa);
+            VerificarSeJaAvaliou(sessao, usuario.Pessoa);
         }
 
         private void ConfiguracoesIniciais(SessaoDTO sessao)
@@ -125,25 +117,25 @@ namespace EventManager.Views.Details
             }
         }
 
-        private bool VerificarSeJaParticipante(SessaoDTO sessao, PessoaDTO pessoa)
+        private void VerificarSeJaParticipante(SessaoDTO sessao, PessoaDTO pessoa)
         {
             if (sessao.Integrantes.Contains(pessoa))
             {
-                return true;
+                btnParticipar.Visible = false;
             }
-            return false;
+
         }
 
-        private bool VerificarSeJaAvaliou(SessaoDTO sessao, PessoaDTO pessoa)
+        private void VerificarSeJaAvaliou(SessaoDTO sessao, PessoaDTO pessoa)
         {
             foreach(AvaliacaoDTO avaliacao in sessao.Avaliacoes)
             {
                 if(avaliacao.PessoaId == pessoa.Id) 
-                { 
-                    return true;
+                {
+                    groupBoxAvaliacoes.Visible = false;
+                    break;
                 }
             }
-            return false;
         }
 
         private void btnEnviar_Click(object sender, System.EventArgs e)
@@ -154,11 +146,14 @@ namespace EventManager.Views.Details
                 {
                     Nota = ObterNotaSelecionada(),
                     SessaoId = _sessao.Id,
+                    PessoaId = _usuario.Pessoa.Id,
                     Comentario = txtComentarios.Text
                 };
 
                 _avaliacaoService.Inserir(avaliacao);
                 MessageBox.Show("Avaliação inserida com sucesso!");
+                LimparCampos();
+                VerificarSeJaAvaliou(_sessao, _usuario.Pessoa);
             }
             catch (Exception ex)
             {
@@ -180,6 +175,14 @@ namespace EventManager.Views.Details
         {
             _sessao.Integrantes.Add(_usuario.Pessoa);
             _sessaoService.AtualizarIntegrantes(_sessao, _sessao.Integrantes);
+            LoadPalestrantes(_sessao);
+            LoadParticipantes(_sessao);
+        }
+
+        private void LimparCampos()
+        {
+            txtComentarios.Clear();
+            rbNota1.Checked = false; rbNota2.Checked = false; rbNota3.Checked = false; rbNota4.Checked = false; rbNota5.Checked = false;
         }
     }
 }

@@ -37,7 +37,10 @@ namespace EventManager.DTOs
             DataInicio = entity.DataInicio;
             DataFim = entity.DataFim;
             EventoId = entity.EventoId;
-            EventoNome = entity.Evento.Nome;
+            if(entity.Evento != null)
+            {
+                EventoNome = entity.Evento.Nome;
+            }
             LocalId = entity.LocalId;
             if(entity.Local != null)
             {
