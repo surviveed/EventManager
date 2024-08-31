@@ -26,6 +26,12 @@ namespace EventManager.Entities
         [Column("senha")]
         public string Senha { get; set; }
 
+        [Column("pessoa_id")]
+        public int PessoaId { get; set; }
+
+        [ForeignKey("pessoa_id")]
+        public Pessoa Pessoa { get; set; }
+
         public virtual ICollection<UsuarioPapel> UsuarioPapeis { get; set; } = new HashSet<UsuarioPapel>();
 
         public Usuario() { }

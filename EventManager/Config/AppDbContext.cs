@@ -185,6 +185,11 @@ namespace EventManager.Config
                 .HasKey(u => u.Id);
 
             modelBuilder.Entity<Usuario>()
+                .HasRequired(u => u.Pessoa)
+                .WithMany()
+                .HasForeignKey(u => u.PessoaId);
+
+            modelBuilder.Entity<Usuario>()
                .HasMany(e => e.UsuarioPapeis)
                .WithRequired()
                .HasForeignKey(e => e.UsuarioId);

@@ -19,6 +19,7 @@ namespace EventManager.Repositories
         {
             return _context.Usuarios
                 .Include(u => u.UsuarioPapeis)
+                .Include(u => u.Pessoa)
                 .OrderBy(u => u.Id).ToList();
         }
 
@@ -26,6 +27,7 @@ namespace EventManager.Repositories
         {
             return _context.Usuarios
                 .Include(u => u.UsuarioPapeis)
+                .Include(u => u.Pessoa)
                 .FirstOrDefault(u => u.Id == id);
         }
 
