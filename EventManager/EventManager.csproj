@@ -121,6 +121,7 @@
   <ItemGroup>
     <Compile Include="Config\AppDbContext.cs" />
     <Compile Include="Config\MaterialListViewCustomizations.cs" />
+    <Compile Include="Contracts\IAvaliacaoRepository.cs" />
     <Compile Include="DTOs\AvaliacaoDTO.cs" />
     <Compile Include="DTOs\CidadeDTO.cs" />
     <Compile Include="DTOs\EventoDTO.cs" />
