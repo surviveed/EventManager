@@ -62,8 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\Repositories\InMemoryAvaliacaoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Builder\Repositories\AvaliacaoRepositoryBuilder.cs" />
     <Compile Include="UnitTests\Services\AvaliacaoServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
