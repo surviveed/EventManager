@@ -1,4 +1,5 @@
 ﻿using EventManager.Config;
+using EventManager.Contracts;
 using EventManager.Entities;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -6,7 +7,7 @@ using System.Linq;
 
 namespace EventManager.Repositories
 {
-    public class PaisRepository
+    public class PaisRepository : IPaisRepository
     {
         private readonly AppDbContext _context;
 

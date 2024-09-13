@@ -123,6 +123,15 @@
     <Compile Include="Config\MaterialListViewCustomizations.cs" />
     <Compile Include="Contracts\IAvaliacaoRepository.cs" />
     <Compile Include="Contracts\ICidadeRepository.cs" />
+    <Compile Include="Contracts\ILocalRepository.cs" />
+    <Compile Include="Contracts\IEventoRepository.cs" />
+    <Compile Include="Contracts\IPaisRepository.cs" />
+    <Compile Include="Contracts\IPapelRepository.cs" />
+    <Compile Include="Contracts\IPessoaRepository.cs" />
+    <Compile Include="Contracts\ISessaoRepository.cs" />
+    <Compile Include="Contracts\ITipoEventoRepository.cs" />
+    <Compile Include="Contracts\IUsuarioRepository.cs" />
+    <Compile Include="Contracts\IUfRepository.cs" />
     <Compile Include="DTOs\AvaliacaoDTO.cs" />
     <Compile Include="DTOs\CidadeDTO.cs" />
     <Compile Include="DTOs\EventoDTO.cs" />

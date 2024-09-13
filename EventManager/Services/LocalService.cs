@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Contracts;
+using EventManager.DTOs;
 using EventManager.Entities;
 using EventManager.Repositories;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ namespace EventManager.Services
 {
     public class LocalService
     {
-        private readonly LocalRepository _localRepository;
+        private readonly ILocalRepository _localRepository;
 
-        public LocalService(LocalRepository localRepository)
+        public LocalService(ILocalRepository localRepository)
         {
             _localRepository = localRepository;
         }

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace EventManager.Contracts
 {
-    public interface ICidadeRepository
+    public interface ILocalRepository
     {
-        List<Cidade> BuscarTodos();
-        Cidade BuscarPorId(int id);
-        void Inserir(Cidade cidade);
-        void Atualizar(Cidade cidade);
+        List<Local> BuscarTodos();
+        Local BuscarPorId(int id);
+        void Inserir(Local local);
+        void Atualizar(Local local);
         void Remover(int id);
     }
 }
