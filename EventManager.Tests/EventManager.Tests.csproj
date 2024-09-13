@@ -71,6 +71,15 @@
     <Compile Include="Builder\Factories\MakeCidade.cs" />
     <Compile Include="Builder\Repositories\InMemoryCidadeRepository.cs" />
     <Compile Include="Builder\Repositories\InMemoryAvaliacaoRepository.cs" />
+    <Compile Include="Builder\Repositories\InMemoryPaisRepository.cs" />
+    <Compile Include="Builder\Repositories\InMemoryEventoRepository.cs" />
+    <Compile Include="Builder\Repositories\InMemoryLocalRepository.cs" />
+    <Compile Include="Builder\Repositories\InMemoryPapelRepository.cs" />
+    <Compile Include="Builder\Repositories\InMemoryPessoaRepository.cs" />
+    <Compile Include="Builder\Repositories\InMemorySessaoRepository.cs" />
+    <Compile Include="Builder\Repositories\InMemoryTipoEventoRepository.cs" />
+    <Compile Include="Builder\Repositories\InMemoryUsuarioRepository.cs" />
+    <Compile Include="Builder\Repositories\InMemoryUfRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTests\Services\CidadeServiceTest.cs" />
     <Compile Include="UnitTests\Services\AvaliacaoServiceTest.cs" />
