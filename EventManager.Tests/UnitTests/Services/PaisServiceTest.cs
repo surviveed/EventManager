@@ -53,7 +53,7 @@ namespace EventManager.Tests.UnitTests.Services
         }
 
         [TestMethod]
-        public void ShouldBeFindByIdTipoPais()
+        public void ShouldBeFindByIdPais()
         {
 
             inMemoryPaisRepository.items.Add(new MakePais().GetData(id: 1, descricao: "Pais 1"));
@@ -68,7 +68,7 @@ namespace EventManager.Tests.UnitTests.Services
         }
 
         [TestMethod]
-        public void ShouldBeDeleteTipoPais()
+        public void ShouldBeDeletePais()
         {
 
             inMemoryPaisRepository.items.Add(new MakePais().GetData(id: 1, descricao: "Pais 1"));
@@ -83,7 +83,7 @@ namespace EventManager.Tests.UnitTests.Services
         }
 
         [TestMethod]
-        public void ShouldBeUpdateTipoPais()
+        public void ShouldBeUpdatePais()
         {
 
             inMemoryPaisRepository.items.Add(new MakePais().GetData(id: 1, descricao: "Tipo 1"));

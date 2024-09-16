@@ -28,11 +28,15 @@ namespace EventManager.Tests.Builder.Factories
         public Uf GetData(int? id = null, string descricao = null, int? codigoIbge = null, int? paisId = null)
         {
             var uf = _fakerUF.Generate();
+            var _paisId = paisId ?? uf.PaisId;
+
+            var pais = new MakePais().GetData(_paisId);
 
             uf.Id = id ?? uf.Id;
             uf.Descricao = descricao ?? uf.Descricao;
             uf.CodigoIbge = codigoIbge ?? uf.CodigoIbge;
-            uf.PaisId = paisId ?? uf.PaisId;
+            uf.PaisId = pais.Id;
+            uf.Pais = pais;
 
             return uf;
         }
