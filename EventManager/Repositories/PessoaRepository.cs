@@ -35,6 +35,15 @@ namespace EventManager.Repositories
                 .FirstOrDefault(p => p.Id == id);
         }
 
+        public Pessoa BuscarPorCpf(string cpf)
+        {
+            return _context.Pessoas
+                .Include(p => p.EventoOrganizadores)
+                .Include(p => p.Avaliacoes)
+                .Include(p => p.SessaoIntegrantes)
+                .FirstOrDefault(p => p.Cpf == cpf);
+        }
+
         public Pessoa BuscarPorTipoPessoa(TipoPessoa tipoPessoa)
         {
             return _context.Pessoas

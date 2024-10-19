@@ -28,6 +28,12 @@ namespace EventManager.Services
             return pessoa != null ? new PessoaDTO(pessoa) : null;
         }
 
+        public PessoaDTO BuscarPorCpf(string cpf)
+        {
+            var pessoa = _pessoaRepository.BuscarPorCpf(cpf);
+            return pessoa != null ? new PessoaDTO(pessoa) : null;
+        }
+
         public PessoaDTO BuscarPorTipoPessoa(TipoPessoa tipoPessoa)
         {
             var pessoa = _pessoaRepository.BuscarPorTipoPessoa(tipoPessoa);

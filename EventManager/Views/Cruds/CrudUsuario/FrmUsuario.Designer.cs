@@ -41,6 +41,8 @@
             this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
             this.txtNome = new ReaLTaiizor.Controls.HopeTextBox();
             this.materialListViewUsuarios = new ReaLTaiizor.Controls.MaterialListView();
+            this.foxLabel4 = new ReaLTaiizor.Controls.FoxLabel();
+            this.cbPessoa = new ReaLTaiizor.Controls.HopeComboBox();
             this.hopeGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,6 +130,8 @@
             // hopeGroupBox1
             // 
             this.hopeGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.hopeGroupBox1.Controls.Add(this.foxLabel4);
+            this.hopeGroupBox1.Controls.Add(this.cbPessoa);
             this.hopeGroupBox1.Controls.Add(this.foxLabel3);
             this.hopeGroupBox1.Controls.Add(this.txtSenha);
             this.hopeGroupBox1.Controls.Add(this.foxLabel2);
@@ -269,6 +273,30 @@
             this.materialListViewUsuarios.View = System.Windows.Forms.View.Details;
             this.materialListViewUsuarios.SelectedIndexChanged += new System.EventHandler(this.materialListViewUsuarios_SelectedIndexChanged);
             // 
+            // foxLabel4
+            // 
+            this.foxLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.foxLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
+            this.foxLabel4.Location = new System.Drawing.Point(298, 72);
+            this.foxLabel4.Name = "foxLabel4";
+            this.foxLabel4.Size = new System.Drawing.Size(46, 19);
+            this.foxLabel4.TabIndex = 11;
+            this.foxLabel4.Text = "Pessoa";
+            // 
+            // cbPessoa
+            // 
+            this.cbPessoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbPessoa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbPessoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbPessoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPessoa.FormattingEnabled = true;
+            this.cbPessoa.ItemHeight = 30;
+            this.cbPessoa.Location = new System.Drawing.Point(362, 62);
+            this.cbPessoa.Name = "cbPessoa";
+            this.cbPessoa.Size = new System.Drawing.Size(182, 36);
+            this.cbPessoa.TabIndex = 12;
+            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,5 +335,7 @@
         private ReaLTaiizor.Controls.MaterialListView materialListViewUsuarios;
         private ReaLTaiizor.Controls.FoxLabel foxLabel3;
         private ReaLTaiizor.Controls.HopeTextBox txtSenha;
+        private ReaLTaiizor.Controls.FoxLabel foxLabel4;
+        private ReaLTaiizor.Controls.HopeComboBox cbPessoa;
     }
 }

@@ -73,7 +73,8 @@ namespace EventManager.Views.Login
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-
+            FrmRegistrar f = new FrmRegistrar();
+            f.Show();
         }
     }
 }

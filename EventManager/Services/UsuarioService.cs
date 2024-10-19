@@ -47,13 +47,16 @@ namespace EventManager.Services
                 // Converta DTO para o modelo de entidade
                 var usuario = new Usuario
                 {
+                    Id = 0,
                     Nome = usuarioDto.Nome,
                     Email = usuarioDto.Email,
-                    Senha = BCrypt.Net.BCrypt.HashPassword(usuarioDto.Senha) // Criptografa a senha
+                    Senha = BCrypt.Net.BCrypt.HashPassword(usuarioDto.Senha), // Criptografa a senha
+                    PessoaId = usuarioDto.Pessoa.Id
                 };
 
                 // Insere o usuário no repositório
                 _usuarioRepository.Inserir(usuario);
+
             }
             catch (Exception ex)
             {

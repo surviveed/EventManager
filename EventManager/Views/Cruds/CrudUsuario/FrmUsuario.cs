@@ -3,6 +3,7 @@ using EventManager.DTOs;
 using EventManager.Repositories;
 using EventManager.Services;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace EventManager.Views.CrudUsuario
@@ -10,11 +11,14 @@ namespace EventManager.Views.CrudUsuario
     public partial class FrmUsuario : Form
     {
         private readonly UsuarioService _usuarioService;
+        private readonly PessoaService _pessoaService;
 
         public FrmUsuario()
         {
             InitializeComponent();
             _usuarioService = new UsuarioService(new UsuarioRepository());
+            _pessoaService = new PessoaService(new PessoaRepository());
+            FillPessoaComboBox(cbPessoa);
             ConfigureMaterialListView();
             LoadUsuarios();
 
@@ -28,6 +32,14 @@ namespace EventManager.Views.CrudUsuario
             materialListViewUsuarios.Columns.Add("Nome", size);
             materialListViewUsuarios.Columns.Add("Email", size);
             materialListViewUsuarios.Columns.Add("Senha", size);
+        }
+
+        private void FillPessoaComboBox(ComboBox comboBox)
+        {
+            IEnumerable<PessoaDTO> pessoas = _pessoaService.BuscarTodos();
+            comboBox.DataSource = pessoas;
+            comboBox.DisplayMember = "nome";
+            comboBox.ValueMember = "id";
         }
 
         private void LoadUsuarios()
@@ -55,7 +67,8 @@ namespace EventManager.Views.CrudUsuario
             {
                 Nome = txtNome.Text,
                 Email = txtEmail.Text,
-                Senha = txtSenha.Text
+                Senha = txtSenha.Text,
+                Pessoa = _pessoaService.BuscarPorId(Convert.ToInt32(cbPessoa.SelectedValue))
             };
             _usuarioService.Inserir(usuarioDto);
             LoadUsuarios();
