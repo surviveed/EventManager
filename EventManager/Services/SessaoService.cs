@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Contracts;
+using EventManager.DTOs;
 using EventManager.Entities;
 using EventManager.Repositories;
 using System.Collections.Generic;
@@ -8,10 +9,10 @@ namespace EventManager.Services
 {
     public class SessaoService
     {
-        private readonly SessaoRepository _sessaoRepository;
-        private readonly PessoaRepository _pessoaRepository;
+        private readonly ISessaoRepository _sessaoRepository;
+        private readonly IPessoaRepository _pessoaRepository;
 
-        public SessaoService(SessaoRepository sessaoRepository, PessoaRepository pessoaRepository)
+        public SessaoService(ISessaoRepository sessaoRepository, IPessoaRepository pessoaRepository)
         {
             _sessaoRepository = sessaoRepository;
             _pessoaRepository = pessoaRepository;

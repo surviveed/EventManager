@@ -1,11 +1,12 @@
 ﻿using EventManager.Config;
+using EventManager.Contracts;
 using EventManager.Entities;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace EventManager.Repositories
 {
-    public class PapelRepository
+    public class PapelRepository : IPapelRepository
     {
         private readonly AppDbContext _context;
 

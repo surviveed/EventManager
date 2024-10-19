@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Contracts;
+using EventManager.DTOs;
 using EventManager.Entities;
 using EventManager.Repositories;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ namespace EventManager.Services
 {
     public class UfService
     {
-        private readonly UfRepository _ufRepository;
+        private readonly IUfRepository _ufRepository;
 
-        public UfService(UfRepository ufRepository)
+        public UfService(IUfRepository ufRepository)
         {
             _ufRepository = ufRepository;
         }

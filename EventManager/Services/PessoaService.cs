@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Contracts;
+using EventManager.DTOs;
 using EventManager.Entities;
 using EventManager.Entities.enums;
 using EventManager.Repositories;
@@ -9,9 +10,9 @@ namespace EventManager.Services
 {
     public class PessoaService
     {
-        private readonly PessoaRepository _pessoaRepository;
+        private readonly IPessoaRepository _pessoaRepository;
 
-        public PessoaService(PessoaRepository pessoaRepository)
+        public PessoaService(IPessoaRepository pessoaRepository)
         {
             _pessoaRepository = pessoaRepository;
         }

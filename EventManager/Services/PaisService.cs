@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Contracts;
+using EventManager.DTOs;
 using EventManager.Entities;
 using EventManager.Repositories;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ namespace EventManager.Services
 {
     public class PaisService
     {
-        private readonly PaisRepository _paisRepository;
+        private readonly IPaisRepository _paisRepository;
 
-        public PaisService(PaisRepository paisRepository)
+        public PaisService(IPaisRepository paisRepository)
         {
             _paisRepository = paisRepository;
         }

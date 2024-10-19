@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Contracts;
+using EventManager.DTOs;
 using EventManager.Repositories;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ namespace EventManager.Services
 {
     public class PapelService
     {
-        private readonly PapelRepository _papelRepository;
+        private readonly IPapelRepository _papelRepository;
 
-        public PapelService(PapelRepository paisRepository)
+        public PapelService(IPapelRepository paisRepository)
         {
             _papelRepository = paisRepository;
         }

@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Contracts;
+using EventManager.DTOs;
 using EventManager.Entities;
 using EventManager.Repositories;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ namespace EventManager.Services
 {
     public class EventoService
     {
-        private readonly EventoRepository _eventoRepository;
+        private readonly IEventoRepository _eventoRepository;
 
-        public EventoService(EventoRepository eventoRepository)
+        public EventoService(IEventoRepository eventoRepository)
         {
             _eventoRepository = eventoRepository;
         }

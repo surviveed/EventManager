@@ -1,11 +1,12 @@
 ﻿using EventManager.Config;
+using EventManager.Contracts;
 using EventManager.Entities;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace EventManager.Repositories
 {
-    public class TipoEventoRepository
+    public class TipoEventoRepository : ITipoEventoRepository
     {
         private readonly AppDbContext _context;
 

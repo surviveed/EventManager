@@ -1,4 +1,5 @@
-﻿using EventManager.DTOs;
+﻿using EventManager.Contracts;
+using EventManager.DTOs;
 using EventManager.Entities;
 using EventManager.Repositories;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ namespace EventManager.Services
 {
     public class CidadeService
     {
-        private readonly CidadeRepository _cidadeRepository;
+        private readonly ICidadeRepository _cidadeRepository;
 
-        public CidadeService(CidadeRepository cidadeRepository)
+        public CidadeService(ICidadeRepository cidadeRepository)
         {
             _cidadeRepository = cidadeRepository;
         }
