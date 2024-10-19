@@ -40,6 +40,9 @@ namespace EventManager.Views.Login
                 Pessoa = pessoaComId
             };
             _usuarioService.Inserir(usuarioDto);
+
+            MessageBox.Show("Usuário cadastrado com sucesso");
+            Close();
             
         }
 
