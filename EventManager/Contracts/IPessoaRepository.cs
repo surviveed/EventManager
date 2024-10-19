@@ -1,10 +1,6 @@
 ﻿using EventManager.Entities;
 using EventManager.Entities.enums;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventManager.Contracts
 {
@@ -12,6 +8,7 @@ namespace EventManager.Contracts
     {
         List<Pessoa> BuscarTodos();
         Pessoa BuscarPorId(int id);
+        Pessoa BuscarPorCpf(string cpf);
         Pessoa BuscarPorTipoPessoa(TipoPessoa tipoPessoa);
         void Inserir(Pessoa pessoa);
         void Atualizar(Pessoa pessoa);
