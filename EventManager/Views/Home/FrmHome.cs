@@ -138,5 +138,10 @@ namespace EventManager.Views.Home
                 frmDetalhes.ShowDialog(); 
             }
         }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            LoadEventos();
+        }
     }
 }

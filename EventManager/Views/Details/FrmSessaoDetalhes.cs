@@ -17,13 +17,15 @@ namespace EventManager.Views.Details
 
         public FrmSessaoDetalhes(SessaoDTO sessao, UsuarioDTO usuario)
         {
-            _sessao = sessao;
             _usuario = usuario;
             InitializeComponent();
             _sessaoService = new SessaoService(new SessaoRepository(), new PessoaRepository());
             _eventoService = new EventoService(new EventoRepository());
             _localService = new LocalService(new LocalRepository());
             _avaliacaoService = new AvaliacaoService(new AvaliacaoRepository());
+
+            sessao = _sessaoService.BuscarPorId(sessao.Id);
+            _sessao = sessao;
 
             ConfiguracoesIniciais(sessao);
             ConfigureMaterialListViewPalestrantes();
@@ -119,11 +121,14 @@ namespace EventManager.Views.Details
 
         private void VerificarSeJaParticipante(SessaoDTO sessao, PessoaDTO pessoa)
         {
-            if (sessao.Integrantes.Contains(pessoa))
+            foreach(PessoaDTO integrante in sessao.Integrantes)
             {
-                btnParticipar.Visible = false;
+                if (integrante.Id.Equals(pessoa.Id))
+                {
+                    btnParticipar.Visible = false;
+                    break;
+                }
             }
-
         }
 
         private void VerificarSeJaAvaliou(SessaoDTO sessao, PessoaDTO pessoa)
@@ -132,7 +137,7 @@ namespace EventManager.Views.Details
             {
                 if(avaliacao.PessoaId == pessoa.Id) 
                 {
-                    groupBoxAvaliacoes.Visible = false;
+                    groupBoxAvaliar.Visible = false;
                     break;
                 }
             }
@@ -153,12 +158,12 @@ namespace EventManager.Views.Details
                 _avaliacaoService.Inserir(avaliacao);
                 MessageBox.Show("Avaliação inserida com sucesso!");
                 LimparCampos();
-                VerificarSeJaAvaliou(_sessao, _usuario.Pessoa);
+                groupBoxAvaliar.Visible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Ocorreu um erro ao inserir a avaliação: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            } 
         }
 
         private int ObterNotaSelecionada()
@@ -177,6 +182,7 @@ namespace EventManager.Views.Details
             _sessaoService.AtualizarIntegrantes(_sessao, _sessao.Integrantes);
             LoadPalestrantes(_sessao);
             LoadParticipantes(_sessao);
+            VerificarSeJaParticipante(_sessao, _usuario.Pessoa);
         }
 
         private void LimparCampos()

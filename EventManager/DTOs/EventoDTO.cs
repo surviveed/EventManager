@@ -43,14 +43,17 @@ namespace EventManager.DTOs
                 Sessoes.Add(new SessaoDTO(sessao));
             }
 
-            foreach(EventoOrganizadores organizador in entity.EventoOrganizadores)
+            if(entity.EventoOrganizadores != null)
             {
-                Organizadores.Add(new PessoaDTO(
-                    organizador.Pessoa.Id,
-                    organizador.Pessoa.Nome,
-                    organizador.Pessoa.Cpf,
-                    organizador.Pessoa.TipoPessoa
-                    ));
+                foreach (EventoOrganizadores organizador in entity.EventoOrganizadores)
+                {
+                    Organizadores.Add(new PessoaDTO(
+                        organizador.Pessoa.Id,
+                        organizador.Pessoa.Nome,
+                        organizador.Pessoa.Cpf,
+                        organizador.Pessoa.TipoPessoa
+                        ));
+                }
             }
 
             MediaAvaliacoes = entity.CalcularMediaAvaliacoes();

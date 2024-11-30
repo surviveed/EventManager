@@ -32,8 +32,17 @@
             this.materialListViewParticipantes = new ReaLTaiizor.Controls.MaterialListView();
             this.materialListViewPalestrantes = new ReaLTaiizor.Controls.MaterialListView();
             this.foreverGroupBox2 = new ReaLTaiizor.Controls.ForeverGroupBox();
-            this.groupBoxAvaliacoes = new ReaLTaiizor.Controls.ForeverGroupBox();
+            this.groupBoxParticipantes = new ReaLTaiizor.Controls.ForeverGroupBox();
             this.groupBoxAvaliar = new ReaLTaiizor.Controls.ForeverGroupBox();
+            this.btnEnviar = new ReaLTaiizor.Controls.HopeButton();
+            this.txtComentarios = new ReaLTaiizor.Controls.HopeRichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rbNota5 = new ReaLTaiizor.Controls.HopeRadioButton();
+            this.rbNota4 = new ReaLTaiizor.Controls.HopeRadioButton();
+            this.rbNota3 = new ReaLTaiizor.Controls.HopeRadioButton();
+            this.rbNota2 = new ReaLTaiizor.Controls.HopeRadioButton();
+            this.rbNota1 = new ReaLTaiizor.Controls.HopeRadioButton();
             this.materialCard4 = new ReaLTaiizor.Controls.MaterialCard();
             this.lblNumeroDeParticipantes = new ReaLTaiizor.Controls.NightLinkLabel();
             this.lblNumeroDePalestrantes = new ReaLTaiizor.Controls.NightLinkLabel();
@@ -44,26 +53,17 @@
             this.lblDataInicio = new ReaLTaiizor.Controls.MetroLabel();
             this.lblNome = new ReaLTaiizor.Controls.BigLabel();
             this.materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
-            this.hopeForm1 = new ReaLTaiizor.Forms.HopeForm();
-            this.lblDataFim = new ReaLTaiizor.Controls.MetroLabel();
-            this.metroLabel4 = new ReaLTaiizor.Controls.MetroLabel();
-            this.metroLabel5 = new ReaLTaiizor.Controls.MetroLabel();
-            this.metroLabel6 = new ReaLTaiizor.Controls.MetroLabel();
-            this.metroLabel7 = new ReaLTaiizor.Controls.MetroLabel();
-            this.lblCapacidade = new ReaLTaiizor.Controls.MetroLabel();
             this.lblLocal = new ReaLTaiizor.Controls.MetroLabel();
+            this.lblCapacidade = new ReaLTaiizor.Controls.MetroLabel();
+            this.metroLabel7 = new ReaLTaiizor.Controls.MetroLabel();
+            this.metroLabel6 = new ReaLTaiizor.Controls.MetroLabel();
+            this.metroLabel5 = new ReaLTaiizor.Controls.MetroLabel();
+            this.metroLabel4 = new ReaLTaiizor.Controls.MetroLabel();
+            this.lblDataFim = new ReaLTaiizor.Controls.MetroLabel();
+            this.hopeForm1 = new ReaLTaiizor.Forms.HopeForm();
             this.btnParticipar = new ReaLTaiizor.Controls.HopeButton();
-            this.rbNota1 = new ReaLTaiizor.Controls.HopeRadioButton();
-            this.rbNota2 = new ReaLTaiizor.Controls.HopeRadioButton();
-            this.rbNota3 = new ReaLTaiizor.Controls.HopeRadioButton();
-            this.rbNota4 = new ReaLTaiizor.Controls.HopeRadioButton();
-            this.rbNota5 = new ReaLTaiizor.Controls.HopeRadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtComentarios = new ReaLTaiizor.Controls.HopeRichTextBox();
-            this.btnEnviar = new ReaLTaiizor.Controls.HopeButton();
             this.foreverGroupBox2.SuspendLayout();
-            this.groupBoxAvaliacoes.SuspendLayout();
+            this.groupBoxParticipantes.SuspendLayout();
             this.groupBoxAvaliar.SuspendLayout();
             this.materialCard4.SuspendLayout();
             this.materialCard2.SuspendLayout();
@@ -127,22 +127,22 @@
             this.foreverGroupBox2.Text = "Palestrantes";
             this.foreverGroupBox2.TextColor = System.Drawing.Color.White;
             // 
-            // groupBoxAvaliacoes
+            // groupBoxParticipantes
             // 
-            this.groupBoxAvaliacoes.ArrowColorF = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.groupBoxAvaliacoes.ArrowColorH = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.groupBoxAvaliacoes.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxAvaliacoes.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.groupBoxAvaliacoes.Controls.Add(this.materialListViewParticipantes);
-            this.groupBoxAvaliacoes.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxAvaliacoes.Location = new System.Drawing.Point(475, 304);
-            this.groupBoxAvaliacoes.Name = "groupBoxAvaliacoes";
-            this.groupBoxAvaliacoes.ShowArrow = true;
-            this.groupBoxAvaliacoes.ShowText = true;
-            this.groupBoxAvaliacoes.Size = new System.Drawing.Size(446, 289);
-            this.groupBoxAvaliacoes.TabIndex = 17;
-            this.groupBoxAvaliacoes.Text = "Participantes";
-            this.groupBoxAvaliacoes.TextColor = System.Drawing.Color.White;
+            this.groupBoxParticipantes.ArrowColorF = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.groupBoxParticipantes.ArrowColorH = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.groupBoxParticipantes.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxParticipantes.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.groupBoxParticipantes.Controls.Add(this.materialListViewParticipantes);
+            this.groupBoxParticipantes.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxParticipantes.Location = new System.Drawing.Point(475, 304);
+            this.groupBoxParticipantes.Name = "groupBoxParticipantes";
+            this.groupBoxParticipantes.ShowArrow = true;
+            this.groupBoxParticipantes.ShowText = true;
+            this.groupBoxParticipantes.Size = new System.Drawing.Size(446, 289);
+            this.groupBoxParticipantes.TabIndex = 17;
+            this.groupBoxParticipantes.Text = "Participantes";
+            this.groupBoxParticipantes.TextColor = System.Drawing.Color.White;
             // 
             // groupBoxAvaliar
             // 
@@ -168,6 +168,178 @@
             this.groupBoxAvaliar.TabIndex = 15;
             this.groupBoxAvaliar.Text = "Avaliar";
             this.groupBoxAvaliar.TextColor = System.Drawing.Color.White;
+            // 
+            // btnEnviar
+            // 
+            this.btnEnviar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnEnviar.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnEnviar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEnviar.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnEnviar.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnEnviar.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnEnviar.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnEnviar.Location = new System.Drawing.Point(757, 64);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.btnEnviar.Size = new System.Drawing.Size(124, 40);
+            this.btnEnviar.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnEnviar.TabIndex = 19;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.TextColor = System.Drawing.Color.White;
+            this.btnEnviar.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            // 
+            // txtComentarios
+            // 
+            this.txtComentarios.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtComentarios.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtComentarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.txtComentarios.Hint = "";
+            this.txtComentarios.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtComentarios.Location = new System.Drawing.Point(302, 49);
+            this.txtComentarios.MaxLength = 32767;
+            this.txtComentarios.Multiline = true;
+            this.txtComentarios.Name = "txtComentarios";
+            this.txtComentarios.PasswordChar = '\0';
+            this.txtComentarios.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtComentarios.SelectedText = "";
+            this.txtComentarios.SelectionLength = 0;
+            this.txtComentarios.SelectionStart = 0;
+            this.txtComentarios.Size = new System.Drawing.Size(433, 80);
+            this.txtComentarios.TabIndex = 7;
+            this.txtComentarios.TabStop = false;
+            this.txtComentarios.UseSystemPasswordChar = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(298, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Comentários";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(23, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Nota";
+            // 
+            // rbNota5
+            // 
+            this.rbNota5.AutoSize = true;
+            this.rbNota5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.rbNota5.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.rbNota5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbNota5.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
+            this.rbNota5.DisabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
+            this.rbNota5.Enable = true;
+            this.rbNota5.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.rbNota5.EnabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
+            this.rbNota5.EnabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
+            this.rbNota5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.rbNota5.ForeColor = System.Drawing.Color.White;
+            this.rbNota5.Location = new System.Drawing.Point(227, 93);
+            this.rbNota5.Name = "rbNota5";
+            this.rbNota5.Size = new System.Drawing.Size(44, 20);
+            this.rbNota5.TabIndex = 4;
+            this.rbNota5.TabStop = true;
+            this.rbNota5.Text = "5";
+            this.rbNota5.UseVisualStyleBackColor = false;
+            // 
+            // rbNota4
+            // 
+            this.rbNota4.AutoSize = true;
+            this.rbNota4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.rbNota4.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.rbNota4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbNota4.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
+            this.rbNota4.DisabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
+            this.rbNota4.Enable = true;
+            this.rbNota4.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.rbNota4.EnabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
+            this.rbNota4.EnabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
+            this.rbNota4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.rbNota4.ForeColor = System.Drawing.Color.White;
+            this.rbNota4.Location = new System.Drawing.Point(177, 93);
+            this.rbNota4.Name = "rbNota4";
+            this.rbNota4.Size = new System.Drawing.Size(44, 20);
+            this.rbNota4.TabIndex = 3;
+            this.rbNota4.TabStop = true;
+            this.rbNota4.Text = "4";
+            this.rbNota4.UseVisualStyleBackColor = false;
+            // 
+            // rbNota3
+            // 
+            this.rbNota3.AutoSize = true;
+            this.rbNota3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.rbNota3.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.rbNota3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbNota3.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
+            this.rbNota3.DisabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
+            this.rbNota3.Enable = true;
+            this.rbNota3.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.rbNota3.EnabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
+            this.rbNota3.EnabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
+            this.rbNota3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.rbNota3.ForeColor = System.Drawing.Color.White;
+            this.rbNota3.Location = new System.Drawing.Point(127, 93);
+            this.rbNota3.Name = "rbNota3";
+            this.rbNota3.Size = new System.Drawing.Size(44, 20);
+            this.rbNota3.TabIndex = 2;
+            this.rbNota3.TabStop = true;
+            this.rbNota3.Text = "3";
+            this.rbNota3.UseVisualStyleBackColor = false;
+            // 
+            // rbNota2
+            // 
+            this.rbNota2.AutoSize = true;
+            this.rbNota2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.rbNota2.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.rbNota2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbNota2.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
+            this.rbNota2.DisabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
+            this.rbNota2.Enable = true;
+            this.rbNota2.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.rbNota2.EnabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
+            this.rbNota2.EnabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
+            this.rbNota2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.rbNota2.ForeColor = System.Drawing.Color.White;
+            this.rbNota2.Location = new System.Drawing.Point(77, 93);
+            this.rbNota2.Name = "rbNota2";
+            this.rbNota2.Size = new System.Drawing.Size(44, 20);
+            this.rbNota2.TabIndex = 1;
+            this.rbNota2.TabStop = true;
+            this.rbNota2.Text = "2";
+            this.rbNota2.UseVisualStyleBackColor = false;
+            // 
+            // rbNota1
+            // 
+            this.rbNota1.AutoSize = true;
+            this.rbNota1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.rbNota1.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.rbNota1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbNota1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
+            this.rbNota1.DisabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
+            this.rbNota1.Enable = true;
+            this.rbNota1.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.rbNota1.EnabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
+            this.rbNota1.EnabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
+            this.rbNota1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.rbNota1.ForeColor = System.Drawing.Color.White;
+            this.rbNota1.Location = new System.Drawing.Point(27, 93);
+            this.rbNota1.Name = "rbNota1";
+            this.rbNota1.Size = new System.Drawing.Size(44, 20);
+            this.rbNota1.TabIndex = 0;
+            this.rbNota1.TabStop = true;
+            this.rbNota1.Text = "1";
+            this.rbNota1.UseVisualStyleBackColor = false;
             // 
             // materialCard4
             // 
@@ -322,6 +494,104 @@
             this.materialCard1.Size = new System.Drawing.Size(446, 226);
             this.materialCard1.TabIndex = 11;
             // 
+            // lblLocal
+            // 
+            this.lblLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblLocal.IsDerivedStyle = true;
+            this.lblLocal.Location = new System.Drawing.Point(74, 147);
+            this.lblLocal.Name = "lblLocal";
+            this.lblLocal.Size = new System.Drawing.Size(355, 59);
+            this.lblLocal.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.lblLocal.StyleManager = null;
+            this.lblLocal.TabIndex = 11;
+            this.lblLocal.Text = "Local";
+            this.lblLocal.ThemeAuthor = "Taiizor";
+            this.lblLocal.ThemeName = "MetroLight";
+            // 
+            // lblCapacidade
+            // 
+            this.lblCapacidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblCapacidade.IsDerivedStyle = true;
+            this.lblCapacidade.Location = new System.Drawing.Point(116, 123);
+            this.lblCapacidade.Name = "lblCapacidade";
+            this.lblCapacidade.Size = new System.Drawing.Size(104, 24);
+            this.lblCapacidade.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.lblCapacidade.StyleManager = null;
+            this.lblCapacidade.TabIndex = 10;
+            this.lblCapacidade.Text = "Capacidade";
+            this.lblCapacidade.ThemeAuthor = "Taiizor";
+            this.lblCapacidade.ThemeName = "MetroLight";
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroLabel7.IsDerivedStyle = true;
+            this.metroLabel7.Location = new System.Drawing.Point(26, 123);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(104, 24);
+            this.metroLabel7.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.metroLabel7.StyleManager = null;
+            this.metroLabel7.TabIndex = 9;
+            this.metroLabel7.Text = "Capacidade:";
+            this.metroLabel7.ThemeAuthor = "Taiizor";
+            this.metroLabel7.ThemeName = "MetroLight";
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroLabel6.IsDerivedStyle = true;
+            this.metroLabel6.Location = new System.Drawing.Point(26, 147);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(51, 24);
+            this.metroLabel6.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.metroLabel6.StyleManager = null;
+            this.metroLabel6.TabIndex = 8;
+            this.metroLabel6.Text = "Local:";
+            this.metroLabel6.ThemeAuthor = "Taiizor";
+            this.metroLabel6.ThemeName = "MetroLight";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroLabel5.IsDerivedStyle = true;
+            this.metroLabel5.Location = new System.Drawing.Point(26, 99);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(123, 24);
+            this.metroLabel5.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.metroLabel5.StyleManager = null;
+            this.metroLabel5.TabIndex = 7;
+            this.metroLabel5.Text = "Data de Término:";
+            this.metroLabel5.ThemeAuthor = "Taiizor";
+            this.metroLabel5.ThemeName = "MetroLight";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroLabel4.IsDerivedStyle = true;
+            this.metroLabel4.Location = new System.Drawing.Point(26, 75);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(103, 24);
+            this.metroLabel4.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.metroLabel4.StyleManager = null;
+            this.metroLabel4.TabIndex = 6;
+            this.metroLabel4.Text = "Data de Início:";
+            this.metroLabel4.ThemeAuthor = "Taiizor";
+            this.metroLabel4.ThemeName = "MetroLight";
+            // 
+            // lblDataFim
+            // 
+            this.lblDataFim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblDataFim.IsDerivedStyle = true;
+            this.lblDataFim.Location = new System.Drawing.Point(146, 99);
+            this.lblDataFim.Name = "lblDataFim";
+            this.lblDataFim.Size = new System.Drawing.Size(283, 24);
+            this.lblDataFim.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            this.lblDataFim.StyleManager = null;
+            this.lblDataFim.TabIndex = 5;
+            this.lblDataFim.Text = "Data Início";
+            this.lblDataFim.ThemeAuthor = "Taiizor";
+            this.lblDataFim.ThemeName = "MetroLight";
+            // 
             // hopeForm1
             // 
             this.hopeForm1.ControlBoxColorH = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
@@ -339,104 +609,6 @@
             this.hopeForm1.TabIndex = 10;
             this.hopeForm1.Text = "EventManager";
             this.hopeForm1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            // 
-            // lblDataFim
-            // 
-            this.lblDataFim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDataFim.IsDerivedStyle = true;
-            this.lblDataFim.Location = new System.Drawing.Point(146, 99);
-            this.lblDataFim.Name = "lblDataFim";
-            this.lblDataFim.Size = new System.Drawing.Size(283, 24);
-            this.lblDataFim.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            this.lblDataFim.StyleManager = null;
-            this.lblDataFim.TabIndex = 5;
-            this.lblDataFim.Text = "Data Início";
-            this.lblDataFim.ThemeAuthor = "Taiizor";
-            this.lblDataFim.ThemeName = "MetroLight";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroLabel4.IsDerivedStyle = true;
-            this.metroLabel4.Location = new System.Drawing.Point(26, 75);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(103, 24);
-            this.metroLabel4.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            this.metroLabel4.StyleManager = null;
-            this.metroLabel4.TabIndex = 6;
-            this.metroLabel4.Text = "Data de Início:";
-            this.metroLabel4.ThemeAuthor = "Taiizor";
-            this.metroLabel4.ThemeName = "MetroLight";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroLabel5.IsDerivedStyle = true;
-            this.metroLabel5.Location = new System.Drawing.Point(26, 99);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(123, 24);
-            this.metroLabel5.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            this.metroLabel5.StyleManager = null;
-            this.metroLabel5.TabIndex = 7;
-            this.metroLabel5.Text = "Data de Término:";
-            this.metroLabel5.ThemeAuthor = "Taiizor";
-            this.metroLabel5.ThemeName = "MetroLight";
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroLabel6.IsDerivedStyle = true;
-            this.metroLabel6.Location = new System.Drawing.Point(26, 147);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(51, 24);
-            this.metroLabel6.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            this.metroLabel6.StyleManager = null;
-            this.metroLabel6.TabIndex = 8;
-            this.metroLabel6.Text = "Local:";
-            this.metroLabel6.ThemeAuthor = "Taiizor";
-            this.metroLabel6.ThemeName = "MetroLight";
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroLabel7.IsDerivedStyle = true;
-            this.metroLabel7.Location = new System.Drawing.Point(26, 123);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(104, 24);
-            this.metroLabel7.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            this.metroLabel7.StyleManager = null;
-            this.metroLabel7.TabIndex = 9;
-            this.metroLabel7.Text = "Capacidade:";
-            this.metroLabel7.ThemeAuthor = "Taiizor";
-            this.metroLabel7.ThemeName = "MetroLight";
-            // 
-            // lblCapacidade
-            // 
-            this.lblCapacidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblCapacidade.IsDerivedStyle = true;
-            this.lblCapacidade.Location = new System.Drawing.Point(116, 123);
-            this.lblCapacidade.Name = "lblCapacidade";
-            this.lblCapacidade.Size = new System.Drawing.Size(104, 24);
-            this.lblCapacidade.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            this.lblCapacidade.StyleManager = null;
-            this.lblCapacidade.TabIndex = 10;
-            this.lblCapacidade.Text = "Capacidade";
-            this.lblCapacidade.ThemeAuthor = "Taiizor";
-            this.lblCapacidade.ThemeName = "MetroLight";
-            // 
-            // lblLocal
-            // 
-            this.lblLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblLocal.IsDerivedStyle = true;
-            this.lblLocal.Location = new System.Drawing.Point(74, 147);
-            this.lblLocal.Name = "lblLocal";
-            this.lblLocal.Size = new System.Drawing.Size(355, 59);
-            this.lblLocal.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            this.lblLocal.StyleManager = null;
-            this.lblLocal.TabIndex = 11;
-            this.lblLocal.Text = "Local";
-            this.lblLocal.ThemeAuthor = "Taiizor";
-            this.lblLocal.ThemeName = "MetroLight";
             // 
             // btnParticipar
             // 
@@ -459,178 +631,6 @@
             this.btnParticipar.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
             this.btnParticipar.Click += new System.EventHandler(this.btnParticipar_Click);
             // 
-            // rbNota1
-            // 
-            this.rbNota1.AutoSize = true;
-            this.rbNota1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.rbNota1.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.rbNota1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbNota1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
-            this.rbNota1.DisabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
-            this.rbNota1.Enable = true;
-            this.rbNota1.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.rbNota1.EnabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
-            this.rbNota1.EnabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
-            this.rbNota1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.rbNota1.ForeColor = System.Drawing.Color.White;
-            this.rbNota1.Location = new System.Drawing.Point(27, 93);
-            this.rbNota1.Name = "rbNota1";
-            this.rbNota1.Size = new System.Drawing.Size(44, 20);
-            this.rbNota1.TabIndex = 0;
-            this.rbNota1.TabStop = true;
-            this.rbNota1.Text = "1";
-            this.rbNota1.UseVisualStyleBackColor = false;
-            // 
-            // rbNota2
-            // 
-            this.rbNota2.AutoSize = true;
-            this.rbNota2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.rbNota2.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.rbNota2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbNota2.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
-            this.rbNota2.DisabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
-            this.rbNota2.Enable = true;
-            this.rbNota2.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.rbNota2.EnabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
-            this.rbNota2.EnabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
-            this.rbNota2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.rbNota2.ForeColor = System.Drawing.Color.White;
-            this.rbNota2.Location = new System.Drawing.Point(77, 93);
-            this.rbNota2.Name = "rbNota2";
-            this.rbNota2.Size = new System.Drawing.Size(44, 20);
-            this.rbNota2.TabIndex = 1;
-            this.rbNota2.TabStop = true;
-            this.rbNota2.Text = "2";
-            this.rbNota2.UseVisualStyleBackColor = false;
-            // 
-            // rbNota3
-            // 
-            this.rbNota3.AutoSize = true;
-            this.rbNota3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.rbNota3.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.rbNota3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbNota3.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
-            this.rbNota3.DisabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
-            this.rbNota3.Enable = true;
-            this.rbNota3.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.rbNota3.EnabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
-            this.rbNota3.EnabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
-            this.rbNota3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.rbNota3.ForeColor = System.Drawing.Color.White;
-            this.rbNota3.Location = new System.Drawing.Point(127, 93);
-            this.rbNota3.Name = "rbNota3";
-            this.rbNota3.Size = new System.Drawing.Size(44, 20);
-            this.rbNota3.TabIndex = 2;
-            this.rbNota3.TabStop = true;
-            this.rbNota3.Text = "3";
-            this.rbNota3.UseVisualStyleBackColor = false;
-            // 
-            // rbNota4
-            // 
-            this.rbNota4.AutoSize = true;
-            this.rbNota4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.rbNota4.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.rbNota4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbNota4.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
-            this.rbNota4.DisabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
-            this.rbNota4.Enable = true;
-            this.rbNota4.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.rbNota4.EnabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
-            this.rbNota4.EnabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
-            this.rbNota4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.rbNota4.ForeColor = System.Drawing.Color.White;
-            this.rbNota4.Location = new System.Drawing.Point(177, 93);
-            this.rbNota4.Name = "rbNota4";
-            this.rbNota4.Size = new System.Drawing.Size(44, 20);
-            this.rbNota4.TabIndex = 3;
-            this.rbNota4.TabStop = true;
-            this.rbNota4.Text = "4";
-            this.rbNota4.UseVisualStyleBackColor = false;
-            // 
-            // rbNota5
-            // 
-            this.rbNota5.AutoSize = true;
-            this.rbNota5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.rbNota5.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.rbNota5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbNota5.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
-            this.rbNota5.DisabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
-            this.rbNota5.Enable = true;
-            this.rbNota5.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.rbNota5.EnabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
-            this.rbNota5.EnabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
-            this.rbNota5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.rbNota5.ForeColor = System.Drawing.Color.White;
-            this.rbNota5.Location = new System.Drawing.Point(227, 93);
-            this.rbNota5.Name = "rbNota5";
-            this.rbNota5.Size = new System.Drawing.Size(44, 20);
-            this.rbNota5.TabIndex = 4;
-            this.rbNota5.TabStop = true;
-            this.rbNota5.Text = "5";
-            this.rbNota5.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(23, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Nota";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(298, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Comentários";
-            // 
-            // txtComentarios
-            // 
-            this.txtComentarios.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.txtComentarios.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtComentarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.txtComentarios.Hint = "";
-            this.txtComentarios.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.txtComentarios.Location = new System.Drawing.Point(302, 49);
-            this.txtComentarios.MaxLength = 32767;
-            this.txtComentarios.Multiline = true;
-            this.txtComentarios.Name = "txtComentarios";
-            this.txtComentarios.PasswordChar = '\0';
-            this.txtComentarios.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtComentarios.SelectedText = "";
-            this.txtComentarios.SelectionLength = 0;
-            this.txtComentarios.SelectionStart = 0;
-            this.txtComentarios.Size = new System.Drawing.Size(433, 80);
-            this.txtComentarios.TabIndex = 7;
-            this.txtComentarios.TabStop = false;
-            this.txtComentarios.UseSystemPasswordChar = false;
-            // 
-            // btnEnviar
-            // 
-            this.btnEnviar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.btnEnviar.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
-            this.btnEnviar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEnviar.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.btnEnviar.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnEnviar.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.btnEnviar.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.btnEnviar.Location = new System.Drawing.Point(757, 64);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.btnEnviar.Size = new System.Drawing.Size(124, 40);
-            this.btnEnviar.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
-            this.btnEnviar.TabIndex = 19;
-            this.btnEnviar.Text = "Enviar";
-            this.btnEnviar.TextColor = System.Drawing.Color.White;
-            this.btnEnviar.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
-            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
-            // 
             // FrmSessaoDetalhes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -638,7 +638,7 @@
             this.ClientSize = new System.Drawing.Size(944, 760);
             this.Controls.Add(this.btnParticipar);
             this.Controls.Add(this.foreverGroupBox2);
-            this.Controls.Add(this.groupBoxAvaliacoes);
+            this.Controls.Add(this.groupBoxParticipantes);
             this.Controls.Add(this.groupBoxAvaliar);
             this.Controls.Add(this.materialCard4);
             this.Controls.Add(this.materialCard2);
@@ -652,7 +652,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSessaoDetalhes";
             this.foreverGroupBox2.ResumeLayout(false);
-            this.groupBoxAvaliacoes.ResumeLayout(false);
+            this.groupBoxParticipantes.ResumeLayout(false);
             this.groupBoxAvaliar.ResumeLayout(false);
             this.groupBoxAvaliar.PerformLayout();
             this.materialCard4.ResumeLayout(false);
@@ -670,7 +670,7 @@
         private ReaLTaiizor.Controls.MaterialListView materialListViewParticipantes;
         private ReaLTaiizor.Controls.MaterialListView materialListViewPalestrantes;
         private ReaLTaiizor.Controls.ForeverGroupBox foreverGroupBox2;
-        private ReaLTaiizor.Controls.ForeverGroupBox groupBoxAvaliacoes;
+        private ReaLTaiizor.Controls.ForeverGroupBox groupBoxParticipantes;
         private ReaLTaiizor.Controls.ForeverGroupBox groupBoxAvaliar;
         private ReaLTaiizor.Controls.MaterialCard materialCard4;
         private ReaLTaiizor.Controls.NightLinkLabel lblNumeroDeParticipantes;

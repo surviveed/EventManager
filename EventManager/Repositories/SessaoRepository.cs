@@ -58,16 +58,21 @@ namespace EventManager.Repositories
 
         public void AtualizarIntegrantes(Sessao sessao, List<Pessoa> integrantes)
         {
-            var sessaoExistente = _context.Sessoes.Find(sessao.Id);
+            var sessaoExistente = _context.Sessoes
+                .Include(s => s.SessaoIntegrantes)
+                .FirstOrDefault(s => s.Id == sessao.Id);
+
             if (sessaoExistente != null)
             {
-                List<SessaoIntegrante> sessaoIntegrantes = new List<SessaoIntegrante>();
-                foreach(Pessoa integrante in integrantes)
+                _context.SessaoIntegrantes.RemoveRange(sessaoExistente.SessaoIntegrantes);
+
+                foreach (var integrante in integrantes)
                 {
-                    SessaoIntegrante se = new SessaoIntegrante();
-                    se.SessaoId = sessao.Id;
-                    se.PessoaId = integrante.Id;
-                    sessaoIntegrantes.Add(se);
+                    sessaoExistente.SessaoIntegrantes.Add(new SessaoIntegrante
+                    {
+                        SessaoId = sessao.Id,
+                        PessoaId = integrante.Id
+                    });
                 }
 
                 _context.SaveChanges();

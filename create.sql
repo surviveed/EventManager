@@ -185,7 +185,7 @@ sessao_ids AS (
 pessoa_ids AS (
     INSERT INTO PESSOA (NOME, CPF, TIPOPESSOA) 
     VALUES 
-        ('João Silva', '123456789', 1),
+        ('João Silva', '123456789', 0),
         ('Maria Souza', '234567891', 2),
         ('Carlos Pereira', '34567891', 1),
         ('Ana Oliveira', '456789101', 2)

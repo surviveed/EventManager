@@ -28,8 +28,11 @@ namespace EventManager.DTOs
             Id = avaliacao.Id;
             Comentario = avaliacao.Comentario;
             Nota = avaliacao.Nota;
-            PessoaId = avaliacao.Pessoa.Id;
-            PessoaNome = avaliacao.Pessoa.Nome;
+            if(avaliacao.Pessoa != null)
+            {
+                PessoaId = avaliacao.Pessoa.Id;
+                PessoaNome = avaliacao.Pessoa.Nome;
+            }
             SessaoId = avaliacao.SessaoId;
         }
     }

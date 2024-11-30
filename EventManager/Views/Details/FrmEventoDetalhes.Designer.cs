@@ -48,6 +48,7 @@
             this.groupBoxAvaliacoes = new ReaLTaiizor.Controls.ForeverGroupBox();
             this.materialListViewAvaliacoes = new ReaLTaiizor.Controls.MaterialListView();
             this.hopeForm1 = new ReaLTaiizor.Forms.HopeForm();
+            this.btnAtualizar = new ReaLTaiizor.Controls.HopeButton();
             this.materialCard1.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.materialCard3.SuspendLayout();
@@ -239,7 +240,7 @@
             this.foreverGroupBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             this.foreverGroupBox1.Controls.Add(this.materialListViewSessoes);
             this.foreverGroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foreverGroupBox1.Location = new System.Drawing.Point(23, 285);
+            this.foreverGroupBox1.Location = new System.Drawing.Point(23, 328);
             this.foreverGroupBox1.Name = "foreverGroupBox1";
             this.foreverGroupBox1.ShowArrow = true;
             this.foreverGroupBox1.ShowText = true;
@@ -277,11 +278,11 @@
             this.foreverGroupBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             this.foreverGroupBox2.Controls.Add(this.materialListViewOrganizadores);
             this.foreverGroupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foreverGroupBox2.Location = new System.Drawing.Point(23, 536);
+            this.foreverGroupBox2.Location = new System.Drawing.Point(23, 579);
             this.foreverGroupBox2.Name = "foreverGroupBox2";
             this.foreverGroupBox2.ShowArrow = true;
             this.foreverGroupBox2.ShowText = true;
-            this.foreverGroupBox2.Size = new System.Drawing.Size(446, 212);
+            this.foreverGroupBox2.Size = new System.Drawing.Size(446, 169);
             this.foreverGroupBox2.TabIndex = 8;
             this.foreverGroupBox2.Text = "Organizadores";
             this.foreverGroupBox2.TextColor = System.Drawing.Color.White;
@@ -301,7 +302,7 @@
             this.materialListViewOrganizadores.MultiSelect = false;
             this.materialListViewOrganizadores.Name = "materialListViewOrganizadores";
             this.materialListViewOrganizadores.OwnerDraw = true;
-            this.materialListViewOrganizadores.Size = new System.Drawing.Size(387, 139);
+            this.materialListViewOrganizadores.Size = new System.Drawing.Size(387, 101);
             this.materialListViewOrganizadores.TabIndex = 22;
             this.materialListViewOrganizadores.UseCompatibleStateImageBehavior = false;
             this.materialListViewOrganizadores.View = System.Windows.Forms.View.Details;
@@ -314,11 +315,11 @@
             this.groupBoxAvaliacoes.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             this.groupBoxAvaliacoes.Controls.Add(this.materialListViewAvaliacoes);
             this.groupBoxAvaliacoes.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxAvaliacoes.Location = new System.Drawing.Point(475, 536);
+            this.groupBoxAvaliacoes.Location = new System.Drawing.Point(475, 579);
             this.groupBoxAvaliacoes.Name = "groupBoxAvaliacoes";
             this.groupBoxAvaliacoes.ShowArrow = true;
             this.groupBoxAvaliacoes.ShowText = true;
-            this.groupBoxAvaliacoes.Size = new System.Drawing.Size(446, 212);
+            this.groupBoxAvaliacoes.Size = new System.Drawing.Size(446, 169);
             this.groupBoxAvaliacoes.TabIndex = 9;
             this.groupBoxAvaliacoes.Text = "Avaliações";
             this.groupBoxAvaliacoes.TextColor = System.Drawing.Color.White;
@@ -339,7 +340,7 @@
             this.materialListViewAvaliacoes.MultiSelect = false;
             this.materialListViewAvaliacoes.Name = "materialListViewAvaliacoes";
             this.materialListViewAvaliacoes.OwnerDraw = true;
-            this.materialListViewAvaliacoes.Size = new System.Drawing.Size(387, 139);
+            this.materialListViewAvaliacoes.Size = new System.Drawing.Size(387, 101);
             this.materialListViewAvaliacoes.TabIndex = 22;
             this.materialListViewAvaliacoes.UseCompatibleStateImageBehavior = false;
             this.materialListViewAvaliacoes.View = System.Windows.Forms.View.Details;
@@ -362,11 +363,33 @@
             this.hopeForm1.Text = "EventManager";
             this.hopeForm1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnAtualizar.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnAtualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAtualizar.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnAtualizar.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAtualizar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnAtualizar.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnAtualizar.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnAtualizar.Location = new System.Drawing.Point(797, 291);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.btnAtualizar.Size = new System.Drawing.Size(114, 40);
+            this.btnAtualizar.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnAtualizar.TabIndex = 23;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.TextColor = System.Drawing.Color.White;
+            this.btnAtualizar.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
             // FrmEventoDetalhes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 760);
+            this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.groupBoxAvaliacoes);
             this.Controls.Add(this.foreverGroupBox2);
             this.Controls.Add(this.foreverGroupBox1);
@@ -417,5 +440,6 @@
         private ReaLTaiizor.Controls.MaterialListView materialListViewOrganizadores;
         private ReaLTaiizor.Controls.ForeverGroupBox groupBoxAvaliacoes;
         private ReaLTaiizor.Controls.MaterialListView materialListViewAvaliacoes;
+        private ReaLTaiizor.Controls.HopeButton btnAtualizar;
     }
 }

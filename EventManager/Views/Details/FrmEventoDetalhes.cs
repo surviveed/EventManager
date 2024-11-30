@@ -1,5 +1,7 @@
 ﻿using EventManager.DTOs;
 using EventManager.Entities;
+using EventManager.Repositories;
+using EventManager.Services;
 using EventManager.Util;
 using ReaLTaiizor.Controls;
 using System.Collections.Generic;
@@ -13,9 +15,15 @@ namespace EventManager.Views.Details
     public partial class FrmEventoDetalhes : Form
     {
         private readonly UsuarioDTO _usuario;
+        private readonly EventoDTO _evento;
+        private readonly EventoService _eventoService;
 
         public FrmEventoDetalhes(EventoDTO evento, UsuarioDTO usuario)
         {
+            _eventoService = new EventoService(new EventoRepository());
+            evento = _eventoService.BuscarPorId(evento.Id);
+            _evento = evento;
+
             _usuario = usuario;
             InitializeComponent();
             ConfiguracoesIniciais(evento);
@@ -53,12 +61,11 @@ namespace EventManager.Views.Details
 
         private void ConfigureMaterialListViewSessoes()
         {
-            int size = materialListViewSessoes.Size.Width / 5;
+            int size = materialListViewSessoes.Size.Width / 4;
             materialListViewSessoes.Columns.Add("ID", size);
             materialListViewSessoes.Columns.Add("Data Início", size);
             materialListViewSessoes.Columns.Add("Data Fim", size);
             materialListViewSessoes.Columns.Add("Evento", size);
-            materialListViewSessoes.Columns.Add("Local", size);
         }
 
         private void LoadSessoes(EventoDTO evento)
@@ -75,7 +82,6 @@ namespace EventManager.Views.Details
                 listViewItem.SubItems.Add(sessao.DataInicio.ToString("yyyy-MM-dd"));
                 listViewItem.SubItems.Add(sessao.DataFim.ToString("yyyy-MM-dd"));
                 listViewItem.SubItems.Add(sessao.EventoNome);
-                listViewItem.SubItems.Add(sessao.LocalNome);
 
                 materialListViewSessoes.Items.Add(listViewItem);
             }
@@ -118,6 +124,7 @@ namespace EventManager.Views.Details
         private void LoadAvaliacoes(EventoDTO evento)
         {
             materialListViewAvaliacoes.Items.Clear();
+            evento = _eventoService.BuscarPorId(evento.Id);
             List<AvaliacaoDTO> avaliacoes = new List<AvaliacaoDTO>();
 
             foreach(SessaoDTO sessao in evento.Sessoes)
@@ -145,6 +152,8 @@ namespace EventManager.Views.Details
 
         private void CreatePictureBoxes(int count)
         {
+            materialCard3.Controls.Clear();
+
             int spacingX = 5;
             int startX = 170; // Ponto inicial X
             int startY = 14; // Ponto inicial Y
@@ -160,7 +169,7 @@ namespace EventManager.Views.Details
                     SizeMode = PictureBoxSizeMode.StretchImage
                 };
 
-                pictureBox.Parent = materialCard3;
+                materialCard3.Controls.Add(pictureBox);
             }
         }
 
@@ -191,6 +200,41 @@ namespace EventManager.Views.Details
                 FrmSessaoDetalhes frmDetalhes = new FrmSessaoDetalhes(sessao, _usuario);
                 frmDetalhes.ShowDialog();
             }
+        }
+
+        private void btnAtualizar_Click(object sender, System.EventArgs e)
+        {
+            ClearMaterialListView(materialListViewSessoes);
+            ClearMaterialListView(materialListViewOrganizadores);
+            ClearMaterialListView(materialListViewAvaliacoes);
+
+            materialCard3.Controls.Clear();
+
+            Atualizar(_evento);
+        }
+
+        private void Atualizar(EventoDTO evento)
+        {
+            evento = _eventoService.BuscarPorId(evento.Id);
+
+            ConfiguracoesIniciais(evento);
+
+            ConfigureMaterialListViewSessoes();
+            LoadSessoes(evento);
+
+            ConfigureMaterialListViewOrganizadores();
+            LoadPessoas(evento);
+
+            ConfigureMaterialListViewAvaliacoes();
+            LoadAvaliacoes(evento);
+
+            CreatePictureBoxes((int)evento.MediaAvaliacoes);
+        }
+
+        private void ClearMaterialListView(MaterialListView listView)
+        {
+            listView.Items.Clear();   // Limpar os itens
+            listView.Columns.Clear(); // Limpar as colunas
         }
     }
 }

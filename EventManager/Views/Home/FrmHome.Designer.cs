@@ -42,6 +42,7 @@
             this.btnAdmin = new ReaLTaiizor.Controls.MetroEllipse();
             this.hopePictureBox1 = new ReaLTaiizor.Controls.HopePictureBox();
             this.hopeForm1 = new ReaLTaiizor.Forms.HopeForm();
+            this.btnAtualizar = new ReaLTaiizor.Controls.HopeButton();
             this.hopeGroupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hopePictureBox1)).BeginInit();
@@ -85,7 +86,7 @@
             this.txtLimparFiltros.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtLimparFiltros.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
             this.txtLimparFiltros.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.txtLimparFiltros.Location = new System.Drawing.Point(811, 130);
+            this.txtLimparFiltros.Location = new System.Drawing.Point(692, 130);
             this.txtLimparFiltros.Name = "txtLimparFiltros";
             this.txtLimparFiltros.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.txtLimparFiltros.Size = new System.Drawing.Size(120, 40);
@@ -101,7 +102,7 @@
             this.foxLabel5.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.foxLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.foxLabel5.Location = new System.Drawing.Point(419, 141);
+            this.foxLabel5.Location = new System.Drawing.Point(347, 141);
             this.foxLabel5.Name = "foxLabel5";
             this.foxLabel5.Size = new System.Drawing.Size(100, 19);
             this.foxLabel5.TabIndex = 14;
@@ -112,7 +113,7 @@
             this.foxLabel4.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.foxLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.foxLabel4.Location = new System.Drawing.Point(80, 141);
+            this.foxLabel4.Location = new System.Drawing.Point(51, 141);
             this.foxLabel4.Name = "foxLabel4";
             this.foxLabel4.Size = new System.Drawing.Size(45, 19);
             this.foxLabel4.TabIndex = 16;
@@ -126,9 +127,9 @@
             this.cbFiltroTipoEvento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFiltroTipoEvento.FormattingEnabled = true;
             this.cbFiltroTipoEvento.ItemHeight = 30;
-            this.cbFiltroTipoEvento.Location = new System.Drawing.Point(525, 132);
+            this.cbFiltroTipoEvento.Location = new System.Drawing.Point(453, 132);
             this.cbFiltroTipoEvento.Name = "cbFiltroTipoEvento";
-            this.cbFiltroTipoEvento.Size = new System.Drawing.Size(280, 36);
+            this.cbFiltroTipoEvento.Size = new System.Drawing.Size(233, 36);
             this.cbFiltroTipoEvento.TabIndex = 17;
             this.cbFiltroTipoEvento.SelectedIndexChanged += new System.EventHandler(this.cbFiltroTipoEvento_SelectedIndexChanged);
             // 
@@ -141,7 +142,7 @@
             this.txtFiltroNome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltroNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
             this.txtFiltroNome.Hint = "";
-            this.txtFiltroNome.Location = new System.Drawing.Point(131, 133);
+            this.txtFiltroNome.Location = new System.Drawing.Point(102, 133);
             this.txtFiltroNome.MaxLength = 32767;
             this.txtFiltroNome.Multiline = false;
             this.txtFiltroNome.Name = "txtFiltroNome";
@@ -150,7 +151,7 @@
             this.txtFiltroNome.SelectedText = "";
             this.txtFiltroNome.SelectionLength = 0;
             this.txtFiltroNome.SelectionStart = 0;
-            this.txtFiltroNome.Size = new System.Drawing.Size(282, 34);
+            this.txtFiltroNome.Size = new System.Drawing.Size(237, 34);
             this.txtFiltroNome.TabIndex = 15;
             this.txtFiltroNome.TabStop = false;
             this.txtFiltroNome.UseSystemPasswordChar = false;
@@ -282,12 +283,34 @@
             this.hopeForm1.Text = "EventManager";
             this.hopeForm1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnAtualizar.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnAtualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAtualizar.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnAtualizar.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAtualizar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnAtualizar.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnAtualizar.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnAtualizar.Location = new System.Drawing.Point(818, 130);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.btnAtualizar.Size = new System.Drawing.Size(114, 40);
+            this.btnAtualizar.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnAtualizar.TabIndex = 22;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.TextColor = System.Drawing.Color.White;
+            this.btnAtualizar.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(944, 617);
+            this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.materialListViewEventos);
             this.Controls.Add(this.hopePictureBox1);
@@ -328,5 +351,6 @@
         private ReaLTaiizor.Controls.Panel panel1;
         private ReaLTaiizor.Controls.MetroEllipse btnAdmin;
         private ReaLTaiizor.Controls.MetroEllipse btnLogout;
+        private ReaLTaiizor.Controls.HopeButton btnAtualizar;
     }
 }
